@@ -40,13 +40,13 @@ router.post(
     ]
   ],
   async (req, res) => {
+    console.log('coming in heree atleast');
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
     const { researchTopic } = req.body;
-
     // build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
