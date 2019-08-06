@@ -3,7 +3,7 @@
   --danger-color: #17a2b8;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
+  /* --danger-color: #dc3545; */
   --success-color: #28a745;
 }
 
@@ -133,6 +133,7 @@ img {
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
@@ -352,7 +353,8 @@ button {
 /* Profiles Page */
 .profile {
   display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
+  border-radius: 10px;
+  grid-template-columns: 6fr 2fr;
   align-items: center;
   grid-gap: 2rem;
   padding: 1rem;
@@ -467,7 +469,7 @@ button {
 }
 
 .post > div:first-child {
-  text-align: center;
+  text-align: left;
 }
 
 .post img {

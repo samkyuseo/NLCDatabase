@@ -52,4 +52,4 @@ SearchActions.propTypes = {
 export default connect(
   null,
   { addSearchHistory }
-)(SearchActions);
+)(withRouter(SearchActions));

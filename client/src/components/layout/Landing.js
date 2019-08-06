@@ -11,7 +11,7 @@ const Landing = ({ isAuthenticated }) => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <h1 className='x-large'>SCripts</h1>
+          <h1 className='x-large'>Norman Lear Center Database</h1>
           <p className='lead'>
             A database containing trancripts across US television. Sign up or
             login to access!

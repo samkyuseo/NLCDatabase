@@ -46,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-feather-alt' /> SCripts
+          <i className='fas fa-feather-alt' /> NLC Database
         </Link>
       </h1>
       {!loading && (

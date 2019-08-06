@@ -9,7 +9,7 @@ import Spinner from '../layout/Spinner';
 const Search = ({ getCurrentProfile, auth, profile: { profile, loading } }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []); //empty brackets because we only want to call it once
+  }, [getCurrentProfile]); //empty brackets because we only want to call it once
   return loading && profile === null ? (
     <Spinner />
   ) : (

@@ -40,7 +40,6 @@ router.post(
     ]
   ],
   async (req, res) => {
-    console.log('coming in heree atleast');
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -124,46 +123,47 @@ router.delete('/', auth, async (req, res) => {
   }
 });
 
-//@route PUT api/profile/searchHistory
-//@descript Add profile searchHistory
-//@access Private
+// //@route PUT api/profile/searchHistory
+// //@descript Add profile searchHistory
+// //@access Private
 
-router.put(
-  '/searchhistory',
-  [
-    auth,
-    [
-      check('searchString', 'Search String is required')
-        .not()
-        .isEmpty(),
-      check('searchResults', 'Search Results is required')
-        .not()
-        .isEmpty()
-    ]
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-    const { searchString, searchResults } = req.body;
-    const searchDate = Date.now();
-    const newHistory = {
-      searchString,
-      searchResults,
-      searchDate
-    };
-    try {
-      const profile = await Profile.findOne({ user: req.user.id });
-      profile.searchHistory.unshift(newHistory);
-      await profile.save();
-      res.json(profile);
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server Error');
-    }
-  }
-);
+// router.put(
+//   '/searchHistory',
+//   [
+//     auth,
+//     [
+//       check('searchString', 'Search String is required')
+//         .not()
+//         .isEmpty(),
+//       check('searchResults', 'Search Results is required')
+//         .not()
+//         .isEmpty()
+//     ]
+//   ],
+//   async (req, res) => {
+//     const errors = validationResult(req);
+//     if (!errors.isEmpty()) {
+//       return res.status(400).json({ errors: errors.array() });
+//     }
+//     const { searchString, searchResults } = req.body;
+//     const searchDate = Date.now();
+//     const newHistory = {
+//       searchString,
+//       searchResults,
+//       searchDate
+//     };
+//     try {
+//       const profile = await Profile.findOne({ user: req.user.id });
+//       profile.searchHistory.unshift(newHistory);
+//       await profile.save();
+//       res.json(profile);
+//     } catch (err) {
+//       console.error(err.message);
+//       res.status(500).send('Server Error');
+//     }
+//   }
+// );
+
 //@route DEL api/profile/searchHistory/:hist_id
 //@descript Delete a search history
 //@access Private
@@ -184,5 +184,85 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+//@route GET api/profile/searchHistory
+//@descript Get user profile's searchHistory
+//@access Private
+
+router.get('/searchHistory/me', auth, async (req, res) => {
+  try {
+    const profile = await Profile.findOne({ user: req.user.id });
+    res.json(profile.searchHistory);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+//@route GET api/profile/searchHistory/:entry_id
+//@descript Get return single search entry based on search entry id
+//@access Private
+
+router.get('/searchHistory/:entry_id', auth, async (req, res) => {
+  try {
+    const profile = await Profile.findOne({ user: req.user.id });
+    const entry = await profile.searchHistory.find(
+      x => x._id == req.params.entry_id
+    );
+    if (!entry) {
+      res.status(400).send('No search history entry found');
+    }
+    res.json(entry);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+//@route PUT api/profile/searchHistory
+//@descript Add profile searchHistory
+//@access Private
+
+router.put('/searchHistory', auth, async (req, res) => {
+  const { searchString, searchResults } = req.body;
+  const searchDate = Date.now();
+
+  const newHistory = {
+    searchDate,
+    searchString,
+    searchResults
+  };
+  try {
+    const profile = await Profile.findOne({ user: req.user.id });
+    profile.searchHistory.unshift(newHistory);
+    await profile.save();
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+//@route DEL api/profile/searchHistory/:hist_id
+//@descript Delete a search history
+//@access Private
+
+// router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
+//   console.log('hello');
+//   try {
+//     const profile = await Profile.findOne({ user: req.user.id });
+//     //Get the remove index
+//     const removeIndex = profile.searchHistory
+//       .map(item => item.id)
+//       .indexOf(req.params.hist_id);
+
+//     profile.searchHistory.splice(removeIndex, 1);
+//     await profile.save();
+//     res.json(profile);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).send('Server Error');
+//   }
+// });
 
 module.exports = router;

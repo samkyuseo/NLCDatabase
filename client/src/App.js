@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Search from './components/search/Search'; //set up route
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
+import SearchDetails from './components/search/SearchDetails';
 import PrivateRoute from './components/routing/PrivateRoute';
 //Redux
 import { loadUser } from './actions/auth';
@@ -42,6 +43,11 @@ const App = () => {
                 exact
                 path='/create-profile'
                 component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path='/profile/searchHistory/:id'
+                component={SearchDetails}
               />
               <PrivateRoute
                 exact

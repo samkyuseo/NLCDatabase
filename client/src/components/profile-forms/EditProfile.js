@@ -20,7 +20,7 @@ const EditProfile = ({
       researchTopic:
         loading || !profile.researchTopic ? '' : profile.researchTopic
     });
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
 
   const { researchTopic } = formData;
 

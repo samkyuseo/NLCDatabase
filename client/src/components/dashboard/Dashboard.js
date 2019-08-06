@@ -6,7 +6,7 @@ import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import SearchHistory from './SearchHistory';
-import { userInfo } from 'os';
+// import { userInfo } from 'os';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -16,7 +16,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
   return loading && profile === null ? (
     <Spinner />
   ) : (
@@ -27,6 +27,10 @@ const Dashboard = ({
       </p>
       {profile !== null ? (
         <Fragment>
+          <p className='my-1'>
+            <i class='far fa-edit' /> Current Research Topic:{' '}
+            {profile.researchTopic}
+          </p>
           <DashboardActions />
           <SearchHistory searchHistory={profile.searchHistory} />
           <div className='my-2'>

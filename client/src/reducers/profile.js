@@ -2,13 +2,15 @@ import {
   GET_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE,
-  UPDATE_PROFILE
+  UPDATE_PROFILE,
+  GET_PROFILES,
+  GET_SEARCHENTRY
 } from '../actions/types';
 
 const initialState = {
   profile: null,
   profiles: [],
-  searchHistory: [],
+  searchEntry: null,
   loading: true,
   error: {}
 };
@@ -19,6 +21,12 @@ export default function(state = initialState, action) {
   switch (type) {
     case GET_PROFILE:
     case UPDATE_PROFILE:
+      return {
+        ...state,
+        profile: payload,
+        loading: false
+      };
+    case GET_PROFILES:
       return {
         ...state,
         profile: payload,
@@ -35,6 +43,12 @@ export default function(state = initialState, action) {
         ...state,
         profile: null,
         searchHistory: [],
+        loading: false
+      };
+    case GET_SEARCHENTRY:
+      return {
+        ...state,
+        searchEntry: payload,
         loading: false
       };
     default:
