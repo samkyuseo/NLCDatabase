@@ -9,7 +9,7 @@ import {
   UPDATE_PROFILE,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
-  GET_PROFILES,
+  // GET_PROFILES,
   GET_SEARCHENTRY
 } from './types';
 
@@ -17,12 +17,10 @@ import {
 
 export const getCurrentProfile = () => async dispatch => {
   try {
-    console.log('Hell0');
     const res = await axios.get('api/profile/me');
-    console.log('hello1');
     console.log(res.data);
     dispatch({
-      type: GET_PROFILES,
+      type: GET_PROFILE,
       payload: res.data
     });
   } catch (err) {

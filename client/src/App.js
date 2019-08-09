@@ -10,6 +10,7 @@ import Search from './components/search/Search'; //set up route
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
 import SearchDetails from './components/search/SearchDetails';
+import Transcript from './components/transcript/Transcript';
 import PrivateRoute from './components/routing/PrivateRoute';
 //Redux
 import { loadUser } from './actions/auth';
@@ -55,6 +56,11 @@ const App = () => {
                 component={EditProfile}
               />
               <PrivateRoute exact path='/search' component={Search} />
+              <PrivateRoute
+                exact
+                path='/transcripts/:id'
+                component={Transcript}
+              />
             </Switch>
           </section>
         </Fragment>

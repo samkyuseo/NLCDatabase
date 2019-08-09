@@ -236,7 +236,12 @@ img {
 }
 
 /* Forms */
-.form .form-group {
+.form {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  margin: 1.2rem 0;
+}
+.form-group {
   margin: 1.2rem 0;
 }
 
@@ -462,9 +467,9 @@ button {
 }
 
 .post {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-gap: 2rem;
+  /* display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-gap: 2rem; */
   align-items: center;
 }
 
@@ -486,8 +491,8 @@ button {
 
 .post .post-date {
   color: #aaa;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
 }
 
 /* Mobile Styles */

@@ -1,0 +1,107 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { searchTranscripts } from '../../actions/search';
+
+const SearchBar = ({ searchTranscripts, searchString }) => {
+  const [text, setText] = useState('');
+
+  return (
+    <div>
+      <form
+        className='form'
+        onSubmit={e => {
+          e.preventDefault();
+          searchTranscripts(text);
+        }}
+      >
+        <div className='form-group'>
+          <input
+            name='text'
+            value={text}
+            type='text'
+            placeholder={
+              searchString === null ? 'Enter Search Terms' : searchString
+            }
+            onChange={e => setText(e.target.value)}
+            required
+          />
+        </div>
+        <input type='submit' value='Search' className='btn btn-primary m-1' />
+      </form>
+    </div>
+  );
+};
+
+SearchBar.propTypes = {
+  searchTranscripts: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  searchString: state.search.searchString
+});
+
+export default connect(
+  mapStateToProps,
+  { searchTranscripts }
+)(SearchBar);
+
+// import React, { Fragment, useState } from 'react';
+// import { Link, withRouter } from 'react-router-dom';
+// import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import { addSearchHistory } from '../../actions/profile';
+// import { searchTranscripts } from '../../actions/search';
+
+// const SearchBar = ({ addSearchHistory, searchTranscripts }) => {
+//   const [formData, setFormData] = useState({
+//     searchString: null,
+//     searchResults: []
+//   });
+
+//   const { searchString } = formData;
+
+//   const onChange = e => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value,
+//       searchResults: 'www.scripts.com'
+//     });
+//   };
+
+//   const onSubmit = e => {
+//     e.preventDefault();
+//     searchTranscripts();
+//     addSearchHistory(formData);
+//   };
+
+//   return (
+//     <Fragment>
+//       <div class='post-form'>
+//         <form class='form my-1' onSubmit={e => onSubmit(e)}>
+//           <input
+//             type='text'
+//             placeholder='Search'
+//             name='searchString'
+//             value={searchString}
+//             onChange={e => onChange(e)}
+//           />
+//           <input type='submit' class='btn btn-dark my-1' />
+//         </form>
+//       </div>
+//     </Fragment>
+//   );
+// };
+
+// SearchBar.propTypes = {
+//   addSearchHistory: PropTypes.func.isRequired
+// };
+
+// const mapStateToProps = state => ({
+//   search: state.search
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   { addSearchHistory, searchTranscripts }
+// )(withRouter(SearchBar));

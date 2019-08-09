@@ -1,19 +1,51 @@
 import axios from 'axios'; //requests to backend
-import setAlert from './alert';
+// import setAlert from './alert';
 
-import { GET_TRANSCRIPTS, GET_SEARCHENTRY, TRANSCRIPTS_ERROR } from './types';
+import {
+  SEARCH_TRANSCRIPTS,
+  SEARCH_ERROR,
+  CLEAR_SEARCH,
+  GET_TRANSCRIPT
+} from './types';
 
-//Get all transcripts
-export const getAllTranscripts = () => async dispatch => {
+//search transcripts
+export const searchTranscripts = searchString => async dispatch => {
   try {
     const res = await axios.get('api/transcripts');
     dispatch({
-      type: GET_TRANSCRIPTS,
+      type: SEARCH_TRANSCRIPTS,
+      extra: searchString,
       payload: res.data
     });
   } catch (err) {
     dispatch({
-      type: TRANSCRIPTS_ERROR,
+      type: SEARCH_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status
+      }
+    });
+  }
+};
+
+//clear search string
+export const clearSearch = () => async dispatch => {
+  dispatch({
+    type: CLEAR_SEARCH
+  });
+};
+
+//get transcript by id
+export const getTranscript = id => async dispatch => {
+  try {
+    const res = await axios.get(`/api/transcripts/${id}`);
+    dispatch({
+      type: GET_TRANSCRIPT,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: SEARCH_ERROR,
       payload: {
         msg: err.response.statusText,
         status: err.response.status

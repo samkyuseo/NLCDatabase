@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import SearchHistoryItem from './SearchHistoryItem';
 //search history passed in as a parameter from the parent Dashboard.

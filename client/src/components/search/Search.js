@@ -1,15 +1,25 @@
-import React, { Fragment, useEffect } from 'react'; //allows us to call get current profile as soon as it loads
-import { Link } from 'react-router-dom';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrentProfile } from '../../actions/profile';
-import SearchActions from './SearchActions';
+import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
-
-const Search = ({ getCurrentProfile, auth, profile: { profile, loading } }) => {
+import TranscriptItem from './TranscriptItem';
+import { getCurrentProfile, addSearchHistory } from '../../actions/profile'; //this checks if user has made a profile yet.
+import { clearSearch } from '../../actions/search'; //this checks if user has made a profile yet.
+import SearchBar from './SearchBar';
+import SaveSearch from './SaveSearch';
+const Search = ({
+  getCurrentProfile,
+  clearSearch,
+  profile: { profile, loading },
+  search,
+  search: { searchString, transcripts }
+}) => {
   useEffect(() => {
+    // clearSearch();
     getCurrentProfile();
-  }, [getCurrentProfile]); //empty brackets because we only want to call it once
+  }, [getCurrentProfile, clearSearch]);
+
   return loading && profile === null ? (
     <Spinner />
   ) : (
@@ -18,7 +28,27 @@ const Search = ({ getCurrentProfile, auth, profile: { profile, loading } }) => {
 
       {profile !== null ? (
         <Fragment>
-          <SearchActions />
+          <SearchBar />
+          {searchString === null ? (
+            <Fragment>
+              {' '}
+              <p className='lead'>Enter search terms to make a query!</p>
+            </Fragment>
+          ) : search.loading ? (
+            <Spinner />
+          ) : (
+            <Fragment>
+              <SaveSearch />
+              <div className='posts'>
+                {transcripts.map(transcript => (
+                  <TranscriptItem
+                    key={transcript._id}
+                    transcript={transcript}
+                  />
+                ))}
+              </div>
+            </Fragment>
+          )}
         </Fragment>
       ) : (
         <Fragment>
@@ -37,17 +67,79 @@ const Search = ({ getCurrentProfile, auth, profile: { profile, loading } }) => {
 
 Search.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  clearSearch: PropTypes.func.isRequired,
+  searchTranscripts: PropTypes.func.isRequired
 };
 
-//anything in the state within the reducer we will be able to bring into this component
 const mapStateToProps = state => ({
-  auth: state.auth,
-  profile: state.profile
+  search: state.search, //this prop type handles states related to searching
+  profile: state.profile //this prop type is here to check if the user has a profile.
 });
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile }
-)(Search); //bring in the get current profile action
+  { getCurrentProfile, clearSearch, addSearchHistory }
+)(Search);
+
+// import React, { Fragment, useEffect } from 'react'; //allows us to call get current profile as soon as it loads
+// import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import { getCurrentProfile } from '../../actions/profile';
+// import { searchTranscripts } from '../../actions/search';
+// import SearchBar from './SearchBar';
+// import Spinner from '../layout/Spinner';
+
+// const Search = ({
+//   getCurrentProfile,
+//   searchTranscripts,
+//   search: { transcripts, loading },
+//   profile: { profile }
+// }) => {
+//   useEffect(() => {
+//     getCurrentProfile();
+//   }, [getCurrentProfile]); //empty brackets because we only want to call it once
+//   return loading && profile === null ? (
+//     <Spinner />
+//   ) : (
+//     <Fragment>
+//       <h1 className='large text-primary'>Search</h1>
+
+//       {profile !== null ? (
+//         <Fragment>
+//           <SearchBar />
+//         </Fragment>
+//       ) : (
+//         <Fragment>
+//           <p>
+//             You have not yet set up a profile. Please some add some information
+//             to use the search function.
+//           </p>
+//           <Link to='create-profile' className='btn btn-primary my-1'>
+//             Create Profile
+//           </Link>
+//         </Fragment>
+//       )}
+//     </Fragment>
+//   );
+// };
+
+// Search.propTypes = {
+//   getCurrentProfile: PropTypes.func.isRequired,
+//   getTranscripts: PropTypes.func.isRequired,
+//   auth: PropTypes.object.isRequired,
+//   profile: PropTypes.object.isRequired,
+//   transcripts: PropTypes.object.isRequired
+// };
+
+// //anything in the state within the reducer we will be able to bring into this component
+// const mapStateToProps = state => ({
+//   auth: state.auth,
+//   profile: state.profile,
+//   search: state.search
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   { getCurrentProfile, searchTranscripts }
+// )(Search); //bring in the get current profile action

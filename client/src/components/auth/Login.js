@@ -38,11 +38,8 @@ const Login = ({ login, isAuthenticated }) => {
             onChange={e => onChange(e)}
             required
           />
-          <small className='form-text'>
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email
-          </small>
         </div>
+        <br />
         <div className='form-group'>
           <input
             type='password'
@@ -53,6 +50,8 @@ const Login = ({ login, isAuthenticated }) => {
             minLength='6'
           />
         </div>
+        <br />
+        <br />
         <input type='submit' className='btn btn-danger' value='Login' />
       </form>
       <p className='my-1'>
