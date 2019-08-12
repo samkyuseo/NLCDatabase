@@ -11,13 +11,13 @@ const Landing = ({ isAuthenticated }) => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <h1 className='x-large'>Norman Lear Center Database</h1>
+          <h1 className='x-large'>Norman Lear Center TV Database</h1>
           <p className='lead'>
             A database containing trancripts across US television. Sign up or
             login to access!
           </p>
           <div className='buttons'>
-            <Link to='/register' className='btn btn-danger'>
+            <Link to='/register' className='btn btn-primary'>
               Sign Up
             </Link>
             <Link to='/login' className='btn btn-light'>

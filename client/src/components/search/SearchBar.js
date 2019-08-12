@@ -27,7 +27,7 @@ const SearchBar = ({ searchTranscripts, searchString }) => {
             required
           />
         </div>
-        <input type='submit' value='Search' className='btn btn-primary m-1' />
+        <input type='submit' value='Search' className='btn btn-primary' />
       </form>
     </div>
   );

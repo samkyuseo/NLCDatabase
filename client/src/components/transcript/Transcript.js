@@ -13,7 +13,7 @@ const Transcript = ({
   useEffect(() => {
     getTranscript(match.params.id);
   }, [getTranscript]);
-  return loading === true ? (
+  return loading === true || transcript === null ? (
     <Spinner />
   ) : (
     <Fragment>

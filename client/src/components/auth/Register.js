@@ -28,7 +28,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
   return (
     <Fragment>
-      <h1 className='large text-danger'>Sign Up</h1>
+      <h1 className='large text-primary'>Sign Up</h1>
       <p className='lead'>
         <i className='fas fa-user' /> Create Your Account
       </p>
@@ -43,7 +43,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             required
           />
         </div>
-        <br />
+
         <div className='form-group'>
           <input
             type='email'
@@ -54,7 +54,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             required
           />
         </div>
-        <br />
+
         <div className='form-group'>
           <input
             type='password'
@@ -65,7 +65,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             minLength='6'
           />
         </div>
-        <br />
+
         <div className='form-group'>
           <input
             type='password'
@@ -76,8 +76,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             minLength='6'
           />
         </div>
-        <br />
-        <input type='submit' className='btn btn-danger' value='Register' />
+
+        <input type='submit' className='btn btn-primary' value='Register' />
       </form>
       <p className='my-1'>
         Already have an account? <Link to='/login'>Sign In</Link>

@@ -1,9 +1,9 @@
 /* Global Styles */
 :root {
-  --danger-color: #17a2b8;
+  --primary-color: #17a2b8;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
-  /* --danger-color: #dc3545; */
+  --danger-color: #dc3545;
   --success-color: #28a745;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: var(--danger-color);
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ img {
 }
 
 .text-primary {
-  color: var(--danger-color);
+  color: var(--primary-color);
 }
 
 .text-dark {
@@ -161,7 +161,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--danger-color);
+  background: var(--primary-color);
   color: #fff;
 }
 
@@ -237,8 +237,8 @@ img {
 
 /* Forms */
 .form {
-  display: grid;
-  grid-template-columns: 7fr 1fr;
+  /* display: grid;
+  grid-template-columns: 7fr 1fr; */
   margin: 1.2rem 0;
 }
 .form-group {
@@ -314,7 +314,7 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px var(--danger-color);
+  border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
 }
 
@@ -329,7 +329,7 @@ button {
 }
 
 .navbar a:hover {
-  color: var(--danger-color);
+  color: var(--primary-color);
 }
 
 .navbar .welcome span {
@@ -462,7 +462,7 @@ button {
 
 /* Posts Page */
 .post-form .post-form-header {
-  background: var(--danger-color);
+  background: var(--primary-color);
   padding: 0.5rem;
 }
 
@@ -483,7 +483,7 @@ button {
 
 .post .comment-count {
   background: var(--light-color);
-  color: var(--danger-color);
+  color: var(--primary-color);
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
   font-size: 0.8rem;
