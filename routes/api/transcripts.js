@@ -132,12 +132,14 @@ router.get('/', async (req, res) => {
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
   var xhr = new XMLHttpRequest();
+  var PORT = process.env.PORT || 5000;
   xhr.open(
     'POST',
     'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
       req.params.query_string +
-      'Page.BroadcastMetadata.Market.State:CA' +
-      '&destination=https://enjb48rya4a58.x.pipedream.net',
+      '&destination=https://' +
+      PORT +
+      '/api/transcripts/receiver',
     true
   );
 
@@ -150,11 +152,12 @@ router.post('/query/:query_string', async (req, res) => {
   xhr.send();
 });
 
-//@router  api/transcripts/query
+//@router  api/transcripts/reciever
 //@descript recieve data and put into db once query has been searched
 //@access Public
 
 router.post('/receiver', async (req, res) => {
+  console.log('yo');
   console.log(req.body);
 });
 
