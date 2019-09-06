@@ -12,6 +12,10 @@ import {
 export const searchTranscripts = searchString => async dispatch => {
   try {
     const res = await axios.get('api/transcripts');
+    //searchString = searchString.split(' ').join('+');
+
+    //const res2 = await axios.post(`api/transcripts/query/${searchString}`);
+
     dispatch({
       type: SEARCH_TRANSCRIPTS,
       extra: searchString,

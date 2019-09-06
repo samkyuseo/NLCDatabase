@@ -1,10 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
-
+const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+const convert = require('xml-js');
 const { check, validationResult } = require('express-validator');
+const requestbin = require('requestbin');
 
 const Transcript = require('../../models/Transcript');
+
+//credentials
+const config = require('config');
+const username = config.get('TVEyesUsername');
+const password = config.get('TVEyesPassword');
+const feedPartnerId = config.get('FeedPartnerId');
 
 //@route POST api/transcripts
 //@descript Post individual transcript
@@ -81,7 +89,6 @@ router.post(
     }
   }
 );
-
 //@route GET api/transcripts/:transcript_id
 //@descript Get transcript by transcript id
 //@access Public
@@ -118,6 +125,37 @@ router.get('/', async (req, res) => {
     }
     res.status(500).send('Server Error');
   }
+});
+
+//@route POST api/transcripts/:query_string
+//@descript Test
+//@access Public
+router.post('/query/:query_string', async (req, res) => {
+  var xhr = new XMLHttpRequest();
+  xhr.open(
+    'POST',
+    'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
+      req.params.query_string +
+      'Page.BroadcastMetadata.Market.State:CA' +
+      '&destination=https://enjb48rya4a58.x.pipedream.net',
+    true
+  );
+
+  xhr.onload = function() {
+    if (this.status == 200) {
+      var list = this.responseText;
+      res.send(list);
+    }
+  };
+  xhr.send();
+});
+
+//@router  api/transcripts/query
+//@descript recieve data and put into db once query has been searched
+//@access Public
+
+router.post('/receiver', async (req, res) => {
+  console.log(req.body);
 });
 
 module.exports = router;
