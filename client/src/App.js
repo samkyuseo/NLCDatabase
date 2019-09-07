@@ -61,6 +61,11 @@ const App = () => {
                 path='/transcripts/:id'
                 component={Transcript}
               />
+              <PrivateRoute
+                exact
+                path='/transcripts/query/:query_string'
+              ></PrivateRoute>
+              <PrivateRoute exact path='/transcripts/receiver'></PrivateRoute>
             </Switch>
           </section>
         </Fragment>

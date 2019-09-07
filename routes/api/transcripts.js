@@ -132,6 +132,7 @@ router.get('/', async (req, res) => {
 //@descript Test
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
+  console.log('coming into /query');
   var xhr = new XMLHttpRequest();
   var PORT = process.env.PORT || 5000;
   xhr.open(
