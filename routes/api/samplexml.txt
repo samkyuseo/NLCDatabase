@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Message>
+  <Header>
+    <Source>
+      <SavedSearch FeedPartnerID="20581" SearchGUID="e290def1-88f0-4217-b74c-7b83f6c9806a">
+        <SearchQuery>hi</SearchQuery>
+        <ParsedSearchQuery>content:hi</ParsedSearchQuery>
+        <Destination>https://ene7onkva2wdu.x.pipedream.net/</Destination>
+        <MatchRateMuteThreshold>0.5</MatchRateMuteThreshold>
+        <CurrentMatchRate>0.012</CurrentMatchRate>
+        <AnalyzerDescriptor>default</AnalyzerDescriptor>
+        <ParserDescriptor>default</ParserDescriptor>
+        <HighlighterDescriptor>default</HighlighterDescriptor>
+        <CurrentAnalyzer>org.apache.lucene.analysis.miscellaneous.PatternAnalyzer@536f23f9</CurrentAnalyzer>
+      </SavedSearch>
+      <SearchAgentHost>pouvmwsswatcher01</SearchAgentHost>
+    </Source>
+    <Destination>https://ene7onkva2wdu.x.pipedream.net/</Destination>
+  </Header>
+  <Body>
+    <Excerpts>
+      <TranscriptExcerpt LineDateTime="2019-09-06 19:38:56.218" Playerlette="/playerlette.aspx?PartnerID=20581&amp;StationID=680&amp;StartDateTime=2019-09-06+19%3A38%3A42.218&amp;Duration=300" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:56.218"><![CDATA[. Mary? Lunch is here. Where are you? Mary? (line ringing) MARY: Steve. <B>Hi</B>. Please tell me you haven't done something stupid. Steve, I was right about]]></TranscriptExcerpt>
+    </Excerpts>
+    <Page BreakType="LongPage" Duration="299.946" PageID="c8d1bd88-d67a-422e-8eba-0b1f51e66486" StationGUID="WBBM" StationID="680">
+      <BroadcastMetadata>
+        <Station StationID="680" UniqueIdentifier="WBBM">
+          <CallSign>WBBM</CallSign>
+          <StationName>WBBM-CHI (CBS)</StationName>
+          <MarketID>110</MarketID>
+          <Location>Chicago, IL</Location>
+          <GMTOffset>-6</GMTOffset>
+          <GMTOffsetMinutes>0</GMTOffsetMinutes>
+          <TextType>1</TextType>
+          <RightToLeft>0</RightToLeft>
+          <PhoneticType>0</PhoneticType>
+          <MediaType>1</MediaType>
+          <Active>1</Active>
+          <SortOrder>5</SortOrder>
+          <IsUnicode>0</IsUnicode>
+          <Website />
+          <MediaProcessType>0</MediaProcessType>
+          <MediaPurchase>0</MediaPurchase>
+          <NationalNetwork>CBS</NationalNetwork>
+          <PrimaryLanguage>en-us</PrimaryLanguage>
+          <MediaStationID>680</MediaStationID>
+          <TimeZoneIdentifier>Central Standard Time</TimeZoneIdentifier>
+          <SiteID>0</SiteID>
+          <RoviTVDataSourceID>11751</RoviTVDataSourceID>
+          <RoviFTPRemoteDir>RV1-1_Bnd_Infrm_US</RoviFTPRemoteDir>
+          <CaptureLocation>Chicago, IL</CaptureLocation>
+          <AlterTextCase>True</AlterTextCase>
+          <AllowMediaDownload>1</AllowMediaDownload>
+          <CaptureSiteCode>usord     </CaptureSiteCode>
+          <BackupStationID />
+          <DateAdded>10/5/2016 10:58:36 AM</DateAdded>
+          <AudioFingerprintingEnabled>True</AudioFingerprintingEnabled>
+          <BroadcastOwnerID />
+          <CaptureServer />
+          <ForSummariesUseBACK>0</ForSummariesUseBACK>
+          <MarketName>Chicago, IL</MarketName>
+        </Station>
+        <ProgramInfo ProgramDateTime="09/06/2019 19:00:00" ProgramEndDateTime="09/06/2019 20:00:00" ProgramInfoID="300082150">
+          <Station>WBBM</Station>
+          <Title>Hawaii Five-0</Title>
+          <Type />
+          <Category>Other</Category>
+          <Description>McGarrett helps his visiting sister, Mary, spy on her shady neighbors, while Five-0 investigates the murders of a ride-share driver and his passenger. Also, the team teases the youngest members of Five-0 when Junior escorts Tani to a wedding.</Description>
+          <CC>CC</CC>
+          <Live>Repeat</Live>
+          <SynNumber>0</SynNumber>
+          <ProgramOrigin>CBS</ProgramOrigin>
+          <SynNum />
+          <ProgramID>37802679</ProgramID>
+          <ScheduleID>1440492720</ScheduleID>
+          <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+          <RoviRemotePath>RV1-1_Bnd_Infrm_US</RoviRemotePath>
+          <ProgramDuration>3600</ProgramDuration>
+        </ProgramInfo>
+        <ViewershipData>
+          <LocalViewershipData>
+            <!--
+SELECT TOP 1 *, Abs(DateDiff(ss, '9/6/2019 8:00:00 PM', ReportDate)) as ReportDateDiff FROM ViewershipData.dbo.NielsenProgramAverages WHERE NielsenStationGUID='WBBM' AND NielsenDayCode='FRI' AND QuarterHourStartTime>=1815 AND QuarterHourStartTime<=1930 ORDER BY ReportDateDiff-->
+            <DMAHouseholdRating>2.708</DMAHouseholdRating>
+            <DMAHouseholdUsage>42.760</DMAHouseholdUsage>
+            <DMAHouseholdShare>6.333</DMAHouseholdShare>
+            <DMAHouseholdCount>88041</DMAHouseholdCount>
+            <TotalHouseholdCount>88231</TotalHouseholdCount>
+            <ProgramName>WHISTLBLWR-CBS           </ProgramName>
+            <NielsenDayCode>FRI</NielsenDayCode>
+            <NielsenStationGUID>WBBM        </NielsenStationGUID>
+            <ReportDateTime>6/21/2019 8:00:00 PM</ReportDateTime>
+            <QuarterHourStartTime>1900</QuarterHourStartTime>
+            <DMADemos>
+              <DMAChildren2to5>0</DMAChildren2to5>
+              <DMAChildren6to11>0</DMAChildren6to11>
+              <DMAMen12to17>0</DMAMen12to17>
+              <DMAWomen12to17>0</DMAWomen12to17>
+              <DMAMen18to20>0</DMAMen18to20>
+              <DMAMen21to24>0</DMAMen21to24>
+              <DMAMen25to34>0</DMAMen25to34>
+              <DMAMen35to49>2</DMAMen35to49>
+              <DMAMen50to54>8186</DMAMen50to54>
+              <DMAMen55to64>6377</DMAMen55to64>
+              <DMAMen65plus>16017</DMAMen65plus>
+              <DMAWomen18to20>0</DMAWomen18to20>
+              <DMAWomen21to24>0</DMAWomen21to24>
+              <DMAWomen25to34>2</DMAWomen25to34>
+              <DMAWomen35to49>0</DMAWomen35to49>
+              <DMAWomen50to54>6176</DMAWomen50to54>
+              <DMAWomen55to64>22770</DMAWomen55to64>
+              <DMAWomen65plus>35964</DMAWomen65plus>
+            </DMADemos>
+            <TotalDemos>
+              <TotalChildren2to5>0</TotalChildren2to5>
+              <TotalChildren6to11>3</TotalChildren6to11>
+              <TotalMen12to17>0</TotalMen12to17>
+              <TotalWomen12to17>0</TotalWomen12to17>
+              <TotalMen18to20>0</TotalMen18to20>
+              <TotalMen21to24>0</TotalMen21to24>
+              <TotalMen25to34>3</TotalMen25to34>
+              <TotalMen35to49>12</TotalMen35to49>
+              <TotalMen50to54>8202</TotalMen50to54>
+              <TotalMen55to64>6423</TotalMen55to64>
+              <TotalMen65plus>16041</TotalMen65plus>
+              <TotalWomen18to20>0</TotalWomen18to20>
+              <TotalWomen21to24>2</TotalWomen21to24>
+              <TotalWomen25to34>11</TotalWomen25to34>
+              <TotalWomen35to49>9</TotalWomen35to49>
+              <TotalWomen50to54>6190</TotalWomen50to54>
+              <TotalWomen55to64>22810</TotalWomen55to64>
+              <TotalWomen65plus>36007</TotalWomen65plus>
+            </TotalDemos>
+            <LocalAdRate>
+              <IssueDate>12/1/2018 12:00:00 AM</IssueDate>
+              <DataYear>1/1/2019 12:00:00 AM</DataYear>
+              <DataQuarter>3</DataQuarter>
+              <DayPart Code="PA" ID="6">Prime Access</DayPart>
+              <AdRates>
+                <AdRate LevelID="0" LevelName="AVG">836</AdRate>
+              </AdRates>
+            </LocalAdRate>
+          </LocalViewershipData>
+          <NationalViewershipData>
+            <!--SELECT TOP 1 *, Abs(DateDiff(ss, '9/6/2019 8:30:00 PM', EventDateTime)) as EventDateDiff  FROM ViewershipData.dbo.NielsenNationalNetworkData WHERE ACNNetworkCode='CBS' AND StartTime <= 2030 AND EndTime>2030   AND [Friday]=1 ORDER BY EventDateDiff-->
+            <EventDateTime>8/16/2019 8:00:00 PM</EventDateTime>
+            <ACNNetworkCode>CBS</ACNNetworkCode>
+            <StartTime>2000</StartTime>
+            <EndTime>2100</EndTime>
+            <ProgramName>HAWAII FIVE-0</ProgramName>
+            <EpisodeName>KE KUMU, O KA MANA, HO'OPUKA</EpisodeName>
+            <TelecastNumber>369</TelecastNumber>
+            <Repeat>False</Repeat>
+            <StationCount>254</StationCount>
+            <NationalProgramCoveragePercent>0</NationalProgramCoveragePercent>
+            <TotalUSProjection>2497410</TotalUSProjection>
+            <TotalUSRating>2.1</TotalUSRating>
+            <TotalAudienceProjection>3635631</TotalAudienceProjection>
+            <TotalAudienceRating>3.0</TotalAudienceRating>
+            <NielsenNationalDemographic>
+              <FemaleChildren2to5>13452</FemaleChildren2to5>
+              <FemaleChildren6to8>5967</FemaleChildren6to8>
+              <FemaleChildren9to11>8059</FemaleChildren9to11>
+              <FemaleTeens12to14>13623</FemaleTeens12to14>
+              <FemaleTeens15to17>13099</FemaleTeens15to17>
+              <Women18to20>8792</Women18to20>
+              <Women21to24>5486</Women21to24>
+              <Women25to29>5128</Women25to29>
+              <Women30to34>18213</Women30to34>
+              <Women35to39>32748</Women35to39>
+              <Women40to44>54112</Women40to44>
+              <Women45to49>103529</Women45to49>
+              <Women50to54>157889</Women50to54>
+              <Women55to64>457848</Women55to64>
+              <Women65Plus />
+              <MaleChildren2to5>11220</MaleChildren2to5>
+              <MaleChildren6to8>15712</MaleChildren6to8>
+              <MaleChildren9to11>19099</MaleChildren9to11>
+              <MaleTeens12to14>6646</MaleTeens12to14>
+              <MaleTeens15to17>18285</MaleTeens15to17>
+              <Men18to20>7893</Men18to20>
+              <Men21to24>16319</Men21to24>
+              <Men25to29>10446</Men25to29>
+              <Men30to34>31147</Men30to34>
+              <Men35to39>18273</Men35to39>
+              <Men40to44>28991</Men40to44>
+              <Men45to49>52300</Men45to49>
+              <Men50to54>95227</Men50to54>
+              <Men55to64>395389</Men55to64>
+              <Men65Plus />
+              <LOH18to49>0</LOH18to49>
+              <WorkingWomen18to20>928</WorkingWomen18to20>
+              <WorkingWomen21to24>1018</WorkingWomen21to24>
+              <WorkingWomen25to34>10965</WorkingWomen25to34>
+              <WorkingWomen35to44>49658</WorkingWomen35to44>
+              <WorkingWomen45to49>43214</WorkingWomen45to49>
+              <WorkingWomen50to54>99388</WorkingWomen50to54>
+              <WorkingWomen55Plus />
+              <LOH50Plus>0</LOH50Plus>
+            </NielsenNationalDemographic>
+            <NationalViewershipHouseholdData>
+              <HouseholdHalfHourProjection>2498815</HouseholdHalfHourProjection>
+              <HouseholdHalfHourTotalUSRating>2.1</HouseholdHalfHourTotalUSRating>
+              <TotalUSHouseholdUniverseEstimate>50287761</TotalUSHouseholdUniverseEstimate>
+              <HouseholdHalfHourTotalUSShare>5</HouseholdHalfHourTotalUSShare>
+              <FirstQuarterHourAudienceProjection>2514243</FirstQuarterHourAudienceProjection>
+              <FirstQuarterHourTotalUSRating>2.1</FirstQuarterHourTotalUSRating>
+              <SecondQuarterHourAudienceProjection>2483387</SecondQuarterHourAudienceProjection>
+              <SecondQuarterHourTotalUSRating>0.2</SecondQuarterHourTotalUSRating>
+            </NationalViewershipHouseholdData>
+            <!--Unable to find any matching AdValue Data-->
+          </NationalViewershipData>
+          <!--No Cable Viewership Data Found-->
+          <!--No Reach Value Data Found-->
+          <!--No Station Daypart Reach Data Found-->
+        </ViewershipData>
+        <Market xmlns:json="http://james.newtonking.com/projects/json" MarketID="110" MarketName="Chicago, IL" json:Array="true">
+          <Country>US</Country>
+          <Active>True</Active>
+          <FilterOrder>76</FilterOrder>
+          <State>IL</State>
+          <Latitude>41.879535</Latitude>
+          <Longitude>-87.624333</Longitude>
+          <DMARank>3</DMARank>
+        </Market>
+        <ExtendedProgramInfo>
+          <Schedule RoviRemotePath="RV1-1_Bnd_Infrm_US" ScheduleID="1440492720">
+            <Program ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+              <ShowType>SE</ShowType>
+              <SeriesID>15956802</SeriesID>
+              <SeasonProgramID>35462954</SeasonProgramID>
+              <VariantParentID />
+              <TitleParentID />
+              <GroupID>6221176577</GroupID>
+              <IsGroupLanguagePrimary>Y</IsGroupLanguagePrimary>
+              <GroupSize>1</GroupSize>
+              <LongTitle>Hawaii Five-0</LongTitle>
+              <MediumTitle>Hawaii Five-0</MediumTitle>
+              <ShortTitle>Hawaii Five-0</ShortTitle>
+              <GridTitle>Hawaii Five-0</GridTitle>
+              <Grid2Title>Hawaii</Grid2Title>
+              <AliasTitle />
+              <AliasTitle2 />
+              <AliasTitle3 />
+              <AliasTitle4 />
+              <OriginalTitle>Hawaii Five-0</OriginalTitle>
+              <OriginalEpisodeTitle>Ho'okahi no la o ka malihini (A stranger only for a day)</OriginalEpisodeTitle>
+              <Category>Other</Category>
+              <SportsSubtitle />
+              <EpisodeTitle>Ho'okahi no la o ka malihini (A stranger only for a day)</EpisodeTitle>
+              <EpisodeNumber>923</EpisodeNumber>
+              <RunTime>3600</RunTime>
+              <ReleaseYear>2019</ReleaseYear>
+              <RecordLanguage>en</RecordLanguage>
+              <Syndicated>N         </Syndicated>
+              <EventDate />
+              <HDTVLevel>1080i</HDTVLevel>
+              <AudioLevel>Dolby 5.1</AudioLevel>
+              <ThreeDLevel>None</ThreeDLevel>
+              <MovieType />
+              <ColorType>Color</ColorType>
+              <OfficialProgramURL>http://www.cbs.com/primetime/hawaii_five_0/</OfficialProgramURL>
+              <AdditionalProgramURL />
+              <Delta>Ins</Delta>
+              <PartNumber>0</PartNumber>
+              <TotalNumberOfParts>0</TotalNumberOfParts>
+              <CategoryID>1878</CategoryID>
+              <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+              <Credits>
+                <ProgramCredit ProgramCreditID="154615035" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>515971</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Alex</FirstName>
+                  <LastName>O'Loughlin</LastName>
+                  <FullCreditName>Alex O'Loughlin</FullCreditName>
+                  <PartName>Steve McGarrett</PartName>
+                  <SequenceNumber>1</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615036" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>102614</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Scott</FirstName>
+                  <LastName>Caan</LastName>
+                  <FullCreditName>Scott Caan</FullCreditName>
+                  <PartName>Danny Williams</PartName>
+                  <SequenceNumber>2</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615037" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>101363</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Chi</FirstName>
+                  <LastName>McBride</LastName>
+                  <FullCreditName>Chi McBride</FullCreditName>
+                  <PartName>Lou Grover</PartName>
+                  <SequenceNumber>3</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615038" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>100747</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Jorge</FirstName>
+                  <LastName>Garcia</LastName>
+                  <FullCreditName>Jorge Garcia</FullCreditName>
+                  <PartName>Jerry Ortega</PartName>
+                  <SequenceNumber>4</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615039" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>892065</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Taylor</FirstName>
+                  <LastName>Wily</LastName>
+                  <FullCreditName>Taylor Wily</FullCreditName>
+                  <PartName>Kamekona</PartName>
+                  <SequenceNumber>5</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615040" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>592691</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Meaghan</FirstName>
+                  <LastName>Rath</LastName>
+                  <FullCreditName>Meaghan Rath</FullCreditName>
+                  <PartName>Tani Rey</PartName>
+                  <SequenceNumber>6</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615041" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>498368</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Ian Anthony</FirstName>
+                  <LastName>Dale</LastName>
+                  <FullCreditName>Ian Anthony Dale</FullCreditName>
+                  <PartName>Adam Noshimuri</PartName>
+                  <SequenceNumber>7</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615042" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>1752938</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Beulah</FirstName>
+                  <LastName>Koale</LastName>
+                  <FullCreditName>Beulah Koale</FullCreditName>
+                  <PartName>Junior Reigns</PartName>
+                  <SequenceNumber>8</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="155057052" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>216559</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Actor</CreditType>
+                  <FirstName>Taryn</FirstName>
+                  <LastName>Manning</LastName>
+                  <FullCreditName>Taryn Manning</FullCreditName>
+                  <PartName>Mary McGarrett</PartName>
+                  <SequenceNumber>9</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2194</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615043" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>520084</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Executive Producer</CreditType>
+                  <FirstName>Alex</FirstName>
+                  <LastName>Kurtzman</LastName>
+                  <FullCreditName>Alex Kurtzman</FullCreditName>
+                  <PartName />
+                  <SequenceNumber>10</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2263</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615044" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>170309</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Executive Producer</CreditType>
+                  <FirstName>Peter M.</FirstName>
+                  <LastName>Lenkov</LastName>
+                  <FullCreditName>Peter M. Lenkov</FullCreditName>
+                  <PartName />
+                  <SequenceNumber>11</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2263</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615045" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>248493</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Executive Producer</CreditType>
+                  <FirstName>Roberto</FirstName>
+                  <LastName>Orci</LastName>
+                  <FullCreditName>Roberto Orci</FullCreditName>
+                  <PartName />
+                  <SequenceNumber>12</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2263</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615046" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>613853</CreditID>
+                  <OrgID>0</OrgID>
+                  <CreditType>Executive Producer</CreditType>
+                  <FirstName>Len</FirstName>
+                  <LastName>Wiseman</LastName>
+                  <FullCreditName>Len Wiseman</FullCreditName>
+                  <PartName />
+                  <SequenceNumber>13</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2263</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+                <ProgramCredit ProgramCreditID="154615047" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <CreditID>0</CreditID>
+                  <OrgID>682197</OrgID>
+                  <CreditType>Production Company</CreditType>
+                  <FirstName />
+                  <LastName>CBS Television Studios</LastName>
+                  <FullCreditName>CBS Television Studios</FullCreditName>
+                  <PartName />
+                  <SequenceNumber>14</SequenceNumber>
+                  <Delta>Ins</Delta>
+                  <CreditTypeID>2315</CreditTypeID>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramCredit>
+              </Credits>
+              <Genres>
+                <ProgramGenre ProgramGenreID="68907296" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <Genre>action/adventure</Genre>
+                  <GenreSequence>2</GenreSequence>
+                  <Delta>Ins</Delta>
+                  <GenreID>2622</GenreID>
+                  <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+                </ProgramGenre>
+                <ProgramGenre ProgramGenreID="68907297" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <Genre>police</Genre>
+                  <GenreSequence>3</GenreSequence>
+                  <Delta>Ins</Delta>
+                  <GenreID>2848</GenreID>
+                  <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+                </ProgramGenre>
+                <ProgramGenre ProgramGenreID="68907298" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <Genre>remake</Genre>
+                  <GenreSequence>4</GenreSequence>
+                  <Delta>Ins</Delta>
+                  <GenreID>2873</GenreID>
+                  <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+                </ProgramGenre>
+                <ProgramGenre ProgramGenreID="73232081" ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <Genre>crime drama</Genre>
+                  <GenreSequence>1</GenreSequence>
+                  <Delta>Ins</Delta>
+                  <GenreID>2698</GenreID>
+                  <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+                </ProgramGenre>
+              </Genres>
+              <Descriptions>
+                <ProgramDescription ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <SourceID>0</SourceID>
+                  <DescriptionCulture>English - NA</DescriptionCulture>
+                  <ProgramDescriptionType>Generic Description</ProgramDescriptionType>
+                  <ProgramDescription>McGarrett helps his visiting sister, Mary, spy on her shady neighbors, while Five-0 investigates the murders of a ride-share driver and his passenger. Also, the team teases the youngest members of Five-0 when Junior escorts Tani to a wedding.</ProgramDescription>
+                  <MovieReviewCredit />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+                </ProgramDescription>
+                <ProgramDescription ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <SourceID>0</SourceID>
+                  <DescriptionCulture>English - UK</DescriptionCulture>
+                  <ProgramDescriptionType>Generic Description</ProgramDescriptionType>
+                  <ProgramDescription>McGarrett helps his visiting sister, Mary, spy on her shady neighbours, while Five-0 investigates the murders of a ride-share driver and his passenger. Also, the team teases the youngest members of Five-0 when Junior escorts Tani to a wedding.</ProgramDescription>
+                  <MovieReviewCredit />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>9/5/2019 12:00:00 AM</RecordDateTime>
+                </ProgramDescription>
+              </Descriptions>
+              <MovieRatings />
+              <TVRatings>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720247" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>US TV</TVRatingType>
+                  <TVRating>TV14</TVRating>
+                  <TVAdvisory>V</TVAdvisory>
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720248" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Spain TV</TVRatingType>
+                  <TVRating>12</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720249" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Switzerland TV</TVRatingType>
+                  <TVRating />
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720250" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>FCTV</TVRatingType>
+                  <TVRating>13+</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720251" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Ireland TV</TVRatingType>
+                  <TVRating />
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720253" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>United Kingdom TV</TVRatingType>
+                  <TVRating />
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720254" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>France TV</TVRatingType>
+                  <TVRating>10</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720256" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Russia TV</TVRatingType>
+                  <TVRating>16+</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720257" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Portugal TV</TVRatingType>
+                  <TVRating>12</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720258" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Norway TV</TVRatingType>
+                  <TVRating />
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720261" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Sweden TV</TVRatingType>
+                  <TVRating />
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720262" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>CTV</TVRatingType>
+                  <TVRating>14+</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720263" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>SBS (Belgium TV)</TVRatingType>
+                  <TVRating>12</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720265" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Italy TV</TVRatingType>
+                  <TVRating>10</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720267" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>RTL (Belgium TV)</TVRatingType>
+                  <TVRating>10</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="133720268" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Poland TV</TVRatingType>
+                  <TVRating>16</TVRating>
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+                <ProgramTVRating ProgramID="37802679" ProgramRatingID="147771111" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                  <TVRatingType>Germany TV</TVRatingType>
+                  <TVRating />
+                  <TVAdvisory />
+                  <Delta>Ins</Delta>
+                  <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+                </ProgramTVRating>
+              </TVRatings>
+              <ProgramOriginalCountry ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                <OriginCountry>US</OriginCountry>
+                <Delta>Ins</Delta>
+                <ProgramCountryOriginID>32349773</ProgramCountryOriginID>
+                <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+              </ProgramOriginalCountry>
+              <ProgramOriginalLanguage ProgramID="37802679" RoviRemotePath="RV1-1_Bnd_Infrm_US">
+                <OriginalLanguage>en</OriginalLanguage>
+                <Delta>Ins</Delta>
+                <ProgramLanguageID>38305087</ProgramLanguageID>
+                <RecordDateTime>8/31/2019 12:00:00 AM</RecordDateTime>
+              </ProgramOriginalLanguage>
+            </Program>
+            <SourceID>11751</SourceID>
+            <StartDate>20190907</StartDate>
+            <StartTime>00:00</StartTime>
+            <IsTimeApproximate>N         </IsTimeApproximate>
+            <Duration>3600</Duration>
+            <ProgramID>37802679</ProgramID>
+            <SeriesID>15956802</SeriesID>
+            <TVRating>TV14</TVRating>
+            <TVAdvisory>V</TVAdvisory>
+            <ProgramShowingType />
+            <CaptionType>CC</CaptionType>
+            <AudioLevel>Dolby 5.1</AudioLevel>
+            <ThreeDLevel>None</ThreeDLevel>
+            <SAP>N</SAP>
+            <ColorType>Color</ColorType>
+            <AiringType>Repeat</AiringType>
+            <Subtitled>N</Subtitled>
+            <JoinedInProgress>N</JoinedInProgress>
+            <SubjectToBlackout>N</SubjectToBlackout>
+            <AspectRatio>4:3 Fullscreen</AspectRatio>
+            <DescriptiveVideoService>Y         </DescriptiveVideoService>
+            <PartNumber>0</PartNumber>
+            <TotalNumberOfParts>0</TotalNumberOfParts>
+            <HDTVLevel>1080i</HDTVLevel>
+            <Syndicated>N</Syndicated>
+            <Delta>Ins</Delta>
+            <UTCDateTime>9/7/2019 12:00:00 AM</UTCDateTime>
+            <LocalDateTime>9/6/2019 7:00:00 PM</LocalDateTime>
+            <RecordDateTime>8/29/2019 12:00:00 AM</RecordDateTime>
+          </Schedule>
+        </ExtendedProgramInfo>
+        <TranscriptUrl>http://mms.tveyes.com/transcript.asp?StationID=680&amp;DateTime=09%2f06%2f2019+19%3a38%3a15&amp;Dur=300&amp;PlayClip=true</TranscriptUrl>
+        <StanfordNamedEntityData Model="english.conll.4class.caseless.distsim.crf.ser.gz">
+          <Entity Type="Person">Kira</Entity>
+          <Entity Type="Person">Eddie</Entity>
+          <Entity Type="Person">Mary</Entity>
+          <Entity Type="Person">Steve</Entity>
+          <Entity Type="Location">Hi</Entity>
+          <Entity Type="Person">Ben</Entity>
+          <Entity Type="Misc">Internet</Entity>
+          <Entity Type="Organization">Cmu</Entity>
+        </StanfordNamedEntityData>
+      </BroadcastMetadata>
+      <Lines>
+        <Line LineDateTime="2019-09-06 19:38:15.511" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:15.511">(barking)</Line>
+        <Line LineDateTime="2019-09-06 19:38:19.762" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:19.762">Come on.</Line>
+        <Line LineDateTime="2019-09-06 19:38:24.090" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:24.090">JUNIOR:</Line>
+        <Line LineDateTime="2019-09-06 19:38:24.325" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:24.325">Over here.</Line>
+        <Line LineDateTime="2019-09-06 19:38:25.997" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:25.997">(dog barking)</Line>
+        <Line LineDateTime="2019-09-06 19:38:28.653" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:28.653">That's got to be Kira's shoe.</Line>
+        <Line LineDateTime="2019-09-06 19:38:30.091" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:30.091">She made it a long way.</Line>
+        <Line LineDateTime="2019-09-06 19:38:31.466" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:31.466">JUNIOR:</Line>
+        <Line LineDateTime="2019-09-06 19:38:31.685" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:31.685">Come on. Eddie's got something.</Line>
+        <Line LineDateTime="2019-09-06 19:38:33.122" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:33.122">(barking continues)</Line>
+        <Line LineDateTime="2019-09-06 19:38:36.388" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:36.388">There she is.</Line>
+        <Line LineDateTime="2019-09-06 19:38:36.857" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:36.857">She's down there.</Line>
+        <Line LineDateTime="2019-09-06 19:38:38.638" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:38.638">l for a medevac.</Line>
+        <Line LineDateTime="2019-09-06 19:38:40.326" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:40.326">Hey, Kira! I need</Line>
+        <Line LineDateTime="2019-09-06 19:38:40.904" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:40.904">you to hold on!</Line>
+        <Line LineDateTime="2019-09-06 19:38:42.904" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:42.904">Okay?</Line>
+        <Line LineDateTime="2019-09-06 19:38:43.123" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:43.123">Please help me.</Line>
+        <Line LineDateTime="2019-09-06 19:38:45.623" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:45.623">(sobbing):</Line>
+        <Line LineDateTime="2019-09-06 19:38:46.045" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:46.045">Please help me.</Line>
+        <Line LineDateTime="2019-09-06 19:38:56.218" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:56.218">Mary?</Line>
+        <Line LineDateTime="2019-09-06 19:38:57.405" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:38:57.405">Lunch is here.</Line>
+        <Line LineDateTime="2019-09-06 19:39:02.343" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:02.343">Where are you? Mary?</Line>
+        <Line LineDateTime="2019-09-06 19:39:07.969" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:07.969">(line ringing)</Line>
+        <Line LineDateTime="2019-09-06 19:39:11.250" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:11.250">MARY:</Line>
+        <Line LineDateTime="2019-09-06 19:39:11.407" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:11.407">Steve.</Line>
+        <Line LineDateTime="2019-09-06 19:39:12.000" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:12.000">Hi. Please tell me you</Line>
+        <Line LineDateTime="2019-09-06 19:39:12.453" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:12.453">haven't done something stupid.</Line>
+        <Line LineDateTime="2019-09-06 19:39:15.391" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:15.391">Steve, I was right about Ben.</Line>
+        <Line LineDateTime="2019-09-06 19:39:17.391" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:17.391">(clears throat)</Line>
+        <Line LineDateTime="2019-09-06 19:39:17.720" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:17.720">Where are you?</Line>
+        <Line LineDateTime="2019-09-06 19:39:20.251" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:20.251">I'm in his basement.</Line>
+        <Line LineDateTime="2019-09-06 19:39:21.923" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:21.923">They went out</Line>
+        <Line LineDateTime="2019-09-06 19:39:22.142" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:22.142">and left the back door unlocked.</Line>
+        <Line LineDateTime="2019-09-06 19:39:24.298" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:24.298">Mary, did you</Line>
+        <Line LineDateTime="2019-09-06 19:39:24.611" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:24.611">break into their house?</Line>
+        <Line LineDateTime="2019-09-06 19:39:27.127" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:27.127">Have you...</Line>
+        <Line LineDateTime="2019-09-06 19:39:27.330" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:27.330">have you lost your mind?</Line>
+        <Line LineDateTime="2019-09-06 19:39:29.845" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:29.845">Listen, this is really serious.</Line>
+        <Line LineDateTime="2019-09-06 19:39:32.377" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:32.377">(voice cutting out)</Line>
+        <Line LineDateTime="2019-09-06 19:39:34.830" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:34.830">What?</Line>
+        <Line LineDateTime="2019-09-06 19:39:35.893" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:35.893">(line beeping)</Line>
+        <Line LineDateTime="2019-09-06 19:39:36.893" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:36.893">Mary, Mary, what'd you find?</Line>
+        <Line LineDateTime="2019-09-06 19:39:51.253" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:39:51.253">(door creaks)</Line>
+        <Line LineDateTime="2019-09-06 19:40:00.082" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:00.082">(rhythmic clicking)</Line>
+        <Line LineDateTime="2019-09-06 19:40:04.708" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:04.708">Mary. What are you doing here?</Line>
+        <Line LineDateTime="2019-09-06 19:40:08.270" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:08.270">I don't know.</Line>
+        <Line LineDateTime="2019-09-06 19:40:08.817" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:08.817">I actually cared about finding</Line>
+        <Line LineDateTime="2019-09-06 19:40:09.521" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:09.521">that kid's toy, so...</Line>
+        <Line LineDateTime="2019-09-06 19:40:12.130" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:12.130">Okay.</Line>
+        <Line LineDateTime="2019-09-06 19:40:12.427" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:12.427">And then I found those.</Line>
+        <Line LineDateTime="2019-09-06 19:40:13.490" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:13.490">These? What, you call me</Line>
+        <Line LineDateTime="2019-09-06 19:40:14.005" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:14.005">in a panic 'cause you found</Line>
+        <Line LineDateTime="2019-09-06 19:40:14.490" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:14.490">a pair of rain boots?</Line>
+        <Line LineDateTime="2019-09-06 19:40:18.021" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:18.021">Yeah. Rain boots,</Line>
+        <Line LineDateTime="2019-09-06 19:40:18.443" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:18.443">cat litter with no cat,</Line>
+        <Line LineDateTime="2019-09-06 19:40:21.803" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:21.803">smoking outside...</Line>
+        <Line LineDateTime="2019-09-06 19:40:23.834" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:23.834">Thought they were</Line>
+        <Line LineDateTime="2019-09-06 19:40:24.225" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:24.225">running a meth lab.</Line>
+        <Line LineDateTime="2019-09-06 19:40:25.834" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:25.834">Meth lab.</Line>
+        <Line LineDateTime="2019-09-06 19:40:26.194" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:26.194">Yeah.</Line>
+        <Line LineDateTime="2019-09-06 19:40:26.772" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:26.772">Meth cooks use litter to</Line>
+        <Line LineDateTime="2019-09-06 19:40:27.272" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:27.272">absorb the spilled chemicals.</Line>
+        <Line LineDateTime="2019-09-06 19:40:30.428" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:30.428">Everyone knows if you light</Line>
+        <Line LineDateTime="2019-09-06 19:40:31.007" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:31.007">a cigarette in a meth lab</Line>
+        <Line LineDateTime="2019-09-06 19:40:33.335" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:33.335">you're gonna blow up.</Line>
+        <Line LineDateTime="2019-09-06 19:40:33.726" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:33.726">So yeah.</Line>
+        <Line LineDateTime="2019-09-06 19:40:33.897" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:33.897">And working at night</Line>
+        <Line LineDateTime="2019-09-06 19:40:35.601" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:35.601">would prevent the neighbors</Line>
+        <Line LineDateTime="2019-09-06 19:40:36.195" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:36.195">from seeing what you're doing.</Line>
+        <Line LineDateTime="2019-09-06 19:40:38.538" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:38.538">for a meth lab.</Line>
+        <Line LineDateTime="2019-09-06 19:40:40.132" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:40.132">It's actually</Line>
+        <Line LineDateTime="2019-09-06 19:40:40.523" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:40.523">a good theory, Mary.</Line>
+        <Line LineDateTime="2019-09-06 19:40:41.632" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:41.632">Yeah, but it's not,</Line>
+        <Line LineDateTime="2019-09-06 19:40:42.101" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:42.101">'cause I've looked everywhere,</Line>
+        <Line LineDateTime="2019-09-06 19:40:44.226" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:44.226">and there's nothing here.</Line>
+        <Line LineDateTime="2019-09-06 19:40:44.617" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:44.617">The guy's just a jerk.</Line>
+        <Line LineDateTime="2019-09-06 19:40:46.461" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:46.461">Okay, you were right.</Line>
+        <Line LineDateTime="2019-09-06 19:40:47.164" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:47.164">I'm just a really bad</Line>
+        <Line LineDateTime="2019-09-06 19:40:47.695" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:47.695">judge of character.</Line>
+        <Line LineDateTime="2019-09-06 19:40:48.102" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:48.102">Hey.</Line>
+        <Line LineDateTime="2019-09-06 19:40:50.086" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:50.086">I didn't say that.</Line>
+        <Line LineDateTime="2019-09-06 19:40:50.571" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:50.571">But it's true.</Line>
+        <Line LineDateTime="2019-09-06 19:40:51.805" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:51.805">Why?</Line>
+        <Line LineDateTime="2019-09-06 19:40:51.961" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:51.961">Wrong about Ben, wrong</Line>
+        <Line LineDateTime="2019-09-06 19:40:52.493" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:52.493">about what I thought</Line>
+        <Line LineDateTime="2019-09-06 19:40:54.602" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:54.602">was going on in this house,</Line>
+        <Line LineDateTime="2019-09-06 19:40:55.196" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:55.196">wrong about...</Line>
+        <Line LineDateTime="2019-09-06 19:40:56.399" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:56.399">my last three boyfriends,</Line>
+        <Line LineDateTime="2019-09-06 19:40:57.040" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:57.040">wrong about</Line>
+        <Line LineDateTime="2019-09-06 19:40:58.384" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:58.384">what I did to you.</Line>
+        <Line LineDateTime="2019-09-06 19:40:58.821" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:58.821">I lied.</Line>
+        <Line LineDateTime="2019-09-06 19:40:59.806" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:40:59.806">I lied about Airbnb,</Line>
+        <Line LineDateTime="2019-09-06 19:41:00.228" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:00.228">but you knew.</Line>
+        <Line LineDateTime="2019-09-06 19:41:02.025" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:02.025">I lied because I had</Line>
+        <Line LineDateTime="2019-09-06 19:41:02.462" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:02.462">plans to hang out</Line>
+        <Line LineDateTime="2019-09-06 19:41:04.587" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:04.587">with my ex-boyfriend</Line>
+        <Line LineDateTime="2019-09-06 19:41:05.087" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:05.087">from middle school</Line>
+        <Line LineDateTime="2019-09-06 19:41:06.525" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:06.525">that I reconnected with</Line>
+        <Line LineDateTime="2019-09-06 19:41:07.181" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:07.181">on the Internet.</Line>
+        <Line LineDateTime="2019-09-06 19:41:07.541" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:07.541">He asked me out</Line>
+        <Line LineDateTime="2019-09-06 19:41:07.963" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:07.963">for a drink.</Line>
+        <Line LineDateTime="2019-09-06 19:41:09.307" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:09.307">I said yes, I was so excited,</Line>
+        <Line LineDateTime="2019-09-06 19:41:10.041" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:10.041">then he ghosted me.</Line>
+        <Line LineDateTime="2019-09-06 19:41:11.854" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:11.854">He ghosted you?</Line>
+        <Line LineDateTime="2019-09-06 19:41:12.260" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:12.260">Yeah, he never</Line>
+        <Line LineDateTime="2019-09-06 19:41:12.666" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:12.666">showed up,</Line>
+        <Line LineDateTime="2019-09-06 19:41:14.276" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:14.276">'cause I was a really</Line>
+        <Line LineDateTime="2019-09-06 19:41:14.791" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:14.791">bad judge of character.</Line>
+        <Line LineDateTime="2019-09-06 19:41:17.838" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:17.838">Stop... saying that.</Line>
+        <Line LineDateTime="2019-09-06 19:41:19.542" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:19.542">Okay? I don't want</Line>
+        <Line LineDateTime="2019-09-06 19:41:19.948" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:19.948">to hear it again.</Line>
+        <Line LineDateTime="2019-09-06 19:41:20.229" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:20.229">You're wrong</Line>
+        <Line LineDateTime="2019-09-06 19:41:22.073" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:22.073">about yourself.</Line>
+        <Line LineDateTime="2019-09-06 19:41:22.433" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:22.433">Look at me.</Line>
+        <Line LineDateTime="2019-09-06 19:41:23.370" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:23.370">You're in the fight,</Line>
+        <Line LineDateTime="2019-09-06 19:41:23.745" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:23.745">you're having a go, okay?</Line>
+        <Line LineDateTime="2019-09-06 19:41:25.292" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:25.292">It's more than</Line>
+        <Line LineDateTime="2019-09-06 19:41:25.542" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:25.542">I could say for myself.</Line>
+        <Line LineDateTime="2019-09-06 19:41:27.074" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:27.074">But what happens</Line>
+        <Line LineDateTime="2019-09-06 19:41:27.449" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:27.449">if you find somebody</Line>
+        <Line LineDateTime="2019-09-06 19:41:28.949" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:28.949">who's actually good for you</Line>
+        <Line LineDateTime="2019-09-06 19:41:30.605" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:30.605">and it works out?</Line>
+        <Line LineDateTime="2019-09-06 19:41:32.011" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:32.011">Then what?</Line>
+        <Line LineDateTime="2019-09-06 19:41:32.777" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:32.777">It's all worth it, right?</Line>
+        <Line LineDateTime="2019-09-06 19:41:34.621" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:34.621">So I'm proud of you, sis.</Line>
+        <Line LineDateTime="2019-09-06 19:41:36.215" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:36.215">I'm proud of you.</Line>
+        <Line LineDateTime="2019-09-06 19:41:36.684" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:36.684">Thank you.</Line>
+        <Line LineDateTime="2019-09-06 19:41:39.028" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:39.028">Okay?</Line>
+        <Line LineDateTime="2019-09-06 19:41:40.559" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:40.559">Should we go?</Line>
+        <Line LineDateTime="2019-09-06 19:41:41.762" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:41.762">We can't go.</Line>
+        <Line LineDateTime="2019-09-06 19:41:42.122" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:42.122">I need to ask you a question.</Line>
+        <Line LineDateTime="2019-09-06 19:41:43.856" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:43.856">The living room upstairs,</Line>
+        <Line LineDateTime="2019-09-06 19:41:44.856" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:44.856">it's right above</Line>
+        <Line LineDateTime="2019-09-06 19:41:45.184" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:45.184">this room, right?</Line>
+        <Line LineDateTime="2019-09-06 19:41:46.575" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:46.575">Think so. Why?</Line>
+        <Line LineDateTime="2019-09-06 19:41:48.247" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:48.247">Well, because it's</Line>
+        <Line LineDateTime="2019-09-06 19:41:48.544" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:48.544">a larger space upstairs.</Line>
+        <Line LineDateTime="2019-09-06 19:41:49.919" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:49.919">I don't understand this wall</Line>
+        <Line LineDateTime="2019-09-06 19:41:50.513" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:50.513">right here.</Line>
+        <Line LineDateTime="2019-09-06 19:41:51.701" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:51.701">This wall</Line>
+        <Line LineDateTime="2019-09-06 19:41:52.029" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:52.029">doesn't make sense to me.</Line>
+        <Line LineDateTime="2019-09-06 19:41:53.154" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:53.154">And it's a CMU wall,</Line>
+        <Line LineDateTime="2019-09-06 19:41:53.591" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:53.591">which means it should</Line>
+        <Line LineDateTime="2019-09-06 19:41:53.982" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:53.982">be structural.</Line>
+        <Line LineDateTime="2019-09-06 19:41:57.467" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:57.467">(knocking)</Line>
+        <Line LineDateTime="2019-09-06 19:41:57.982" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:57.982">Why doesn't it go</Line>
+        <Line LineDateTime="2019-09-06 19:41:58.373" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:41:58.373">all the way up?</Line>
+        <Line LineDateTime="2019-09-06 19:42:01.186" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:01.186">(knocking)</Line>
+        <Line LineDateTime="2019-09-06 19:42:02.201" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:02.201">What are you doing?</Line>
+        <Line LineDateTime="2019-09-06 19:42:03.639" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:03.639">(knocking)</Line>
+        <Line LineDateTime="2019-09-06 19:42:06.483" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:06.483">Wait. Don't go</Line>
+        <Line LineDateTime="2019-09-06 19:42:06.717" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:06.717">in there.</Line>
+        <Line LineDateTime="2019-09-06 19:42:08.374" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:08.374">Hold on.</Line>
+        <Line LineDateTime="2019-09-06 19:42:14.937" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:14.937">(quietly):</Line>
+        <Line LineDateTime="2019-09-06 19:42:15.234" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:15.234">Oh, wow.</Line>
+        <Line LineDateTime="2019-09-06 19:42:19.359" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:19.359">Whoa. Okay, uh, Mary...</Line>
+        <Line LineDateTime="2019-09-06 19:42:21.609" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:21.609">tell me again how you're</Line>
+        <Line LineDateTime="2019-09-06 19:42:22.187" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:22.187">a bad judge of character.</Line>
+        <Line LineDateTime="2019-09-06 19:42:27.563" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:27.563">(exhales sharply)</Line>
+        <Line LineDateTime="2019-09-06 19:42:29.078" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:29.078">Steve?</Line>
+        <Line LineDateTime="2019-09-06 19:42:29.188" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:29.188">Huh?</Line>
+        <Line LineDateTime="2019-09-06 19:42:30.438" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:30.438">Look.</Line>
+        <Line LineDateTime="2019-09-06 19:42:30.579" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:30.579">What?</Line>
+        <Line LineDateTime="2019-09-06 19:42:34.579" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:34.579">BEN:</Line>
+        <Line LineDateTime="2019-09-06 19:42:34.751" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:34.751">Did you remove the tape?</Line>
+        <Line LineDateTime="2019-09-06 19:42:36.782" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:36.782">AUBREY:</Line>
+        <Line LineDateTime="2019-09-06 19:42:37.017" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:37.017">No. Why?</Line>
+        <Line LineDateTime="2019-09-06 19:42:38.189" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:38.189">I think someone's in the house.</Line>
+        <Line LineDateTime="2019-09-06 19:42:40.408" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:40.408">That's not good.</Line>
+        <Line LineDateTime="2019-09-06 19:42:43.455" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:43.455">Okay. That's worse.</Line>
+        <Line LineDateTime="2019-09-06 19:42:51.127" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:51.127">Managing type 2 diabetes?</Line>
+        <Line LineDateTime="2019-09-06 19:42:51.580" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:51.580">Audrey's on it.</Line>
+        <Line LineDateTime="2019-09-06 19:42:52.502" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:52.502">Eating right and staying active?</Line>
+        <Line LineDateTime="2019-09-06 19:42:53.596" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:53.596">On it!</Line>
+        <Line LineDateTime="2019-09-06 19:42:55.831" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:55.831">Audrey thinks she's</Line>
+        <Line LineDateTime="2019-09-06 19:42:56.237" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:56.237">doing all she can</Line>
+        <Line LineDateTime="2019-09-06 19:42:56.768" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:56.768">to manage her type 2 diabetes</Line>
+        <Line LineDateTime="2019-09-06 19:42:57.362" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:57.362">and heart disease,</Line>
+        <Line LineDateTime="2019-09-06 19:42:58.721" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:58.721">but is her treatment doing</Line>
+        <Line LineDateTime="2019-09-06 19:42:59.222" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:42:59.222">enough to lower her heart risk?</Line>
+        <Line LineDateTime="2019-09-06 19:43:01.175" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:01.175">Maybe not.</Line>
+        <Line LineDateTime="2019-09-06 19:43:04.597" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:04.597">JARDIANCE can reduce the</Line>
+        <Line LineDateTime="2019-09-06 19:43:05.175" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:05.175">risk of cardiovascular death</Line>
+        <Line LineDateTime="2019-09-06 19:43:06.003" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:06.003">for adults who also have</Line>
+        <Line LineDateTime="2019-09-06 19:43:06.378" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:06.378">known heart disease.</Line>
+        <Line LineDateTime="2019-09-06 19:43:08.300" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:08.300">So it could help save your life</Line>
+        <Line LineDateTime="2019-09-06 19:43:08.832" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:08.832">from a heart attack or stroke.</Line>
+        <Line LineDateTime="2019-09-06 19:43:10.535" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:10.535">And it lowers A1C.</Line>
+        <Line LineDateTime="2019-09-06 19:43:13.723" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:13.723">JARDIANCE can cause serious</Line>
+        <Line LineDateTime="2019-09-06 19:43:14.332" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:14.332">side effects</Line>
+        <Line LineDateTime="2019-09-06 19:43:15.457" StationGUID="WBBM" StationID="680" UTCDelta="-18000" UTCLineDateTime="09/07/2019 00:43:15.457">including dehydration,</Line>
+      </Lines>
+    </Page>
+  </Body>
+</Message>

@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
@@ -131,35 +132,96 @@ router.get('/', async (req, res) => {
 //@descript Test
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
-  console.log('hello');
   var xhr = new XMLHttpRequest();
   var PORT = process.env.PORT || 5000;
   xhr.open(
     'POST',
     'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
       req.params.query_string +
-      '&destination=https://' +
-      PORT +
-      '/api/transcripts/receiver',
+      '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver',
     true
   );
 
   xhr.onload = function() {
     if (this.status == 200) {
-      var list = this.responseText;
-      res.send(list);
+      var SSXML = this.responseText;
+      var SSJSON = convert.xml2json(SSXML, { compact: true, spaces: 4 });
+      SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
+      res.json(SSJSON);
     }
   };
   xhr.send();
 });
 
 //@router  api/transcripts/reciever
-//@descript recieve data and put into db once query has been searched
+//@descript reciever data and put into db once query has been searched
 //@access Public
 
+function XML2JSON(text) {}
+
 router.post('/receiver', async (req, res) => {
-  console.log('yo');
-  console.log(req.body);
+  try {
+    var XMLRes = req.body;
+    JSONRes = XMLRes.message;
+
+    //Extract data needed
+    const transcriptFields = {};
+
+    if (
+      JSONRes.body[0].page[0].broadcastmetadata[0].viewershipdata[0]
+        .nationalviewershipdata[0].programname[0]
+    ) {
+      transcriptFields.programName =
+        JSONRes.body[0].page[0].broadcastmetadata[0].viewershipdata[0].nationalviewershipdata[0].programname[0];
+    } else transcriptFields.programName = 'not given';
+
+    if (
+      JSONRes.body[0].page[0].broadcastmetadata[0].programinfo[0].$
+        .ProgramDateTime
+    ) {
+      transcriptFields.date =
+        JSONRes.body[0].page[0].broadcastmetadata[0].programinfo[0].$.ProgramDateTime;
+    } else transcriptFields.date = 'not given';
+
+    if (JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0]) {
+      transcriptFields.city = JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0].split(
+        ','
+      )[0];
+    } else transcriptFields.city = 'not given';
+
+    if (JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0]) {
+      transcriptFields.state = JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0].split(
+        ','
+      )[1];
+    } else transcriptFields.state = 'not given';
+
+    if (
+      JSONRes.body[0].page[0].broadcastmetadata[0].station[0].stationname[0]
+    ) {
+      transcriptFields.station =
+        JSONRes.body[0].page[0].broadcastmetadata[0].station[0].stationname[0];
+    } else transcriptFields.station = 'not given';
+
+    if (JSONRes.body[0].excerpts[0].transcriptexcerpt[0]._) {
+      transcriptFields.fullText =
+        JSONRes.body[0].excerpts[0].transcriptexcerpt[0]._;
+    } else transcriptFields.fullText = 'not given';
+
+    if (JSONRes.body[0].page[0].broadcastmetadata[0].transcripturl[0]) {
+      transcriptFields.videoLink =
+        JSONRes.body[0].page[0].broadcastmetadata[0].transcripturl[0];
+    } else transcriptFields.videoLink = 'not given';
+
+    //must add up duplicates later
+    transcriptFields.viewership = 'n/a';
+    transcriptFields.totalViewership = 'n/a';
+    transcript = new Transcript(transcriptFields);
+    await transcript.save();
+    //res.json(transcriptFields);
+  } catch (err) {
+    console.error(err.msg);
+    res.status(500).send('Server Error');
+  }
 });
 
 module.exports = router;

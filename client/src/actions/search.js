@@ -12,7 +12,7 @@ import {
 export const searchTranscripts = searchString => async dispatch => {
   try {
     const res2 = await axios.post(`api/transcripts/query/${searchString}`);
-    console.log(res2.data);
+
     const res = await axios.get('api/transcripts');
 
     dispatch({

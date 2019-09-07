@@ -1,4 +1,5 @@
 const express = require('express');
+const xmlparser = require('express-xml-bodyparser');
 const connectDB = require('./config/db');
 const path = require('path');
 
@@ -9,6 +10,9 @@ connectDB();
 
 //Init middle ware
 app.use(express.json({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
+app.use(xmlparser());
+// app.use(express.xml({ extended: false }));
 
 //Define routes
 app.use('/api/users', require('./routes/api/users'));
