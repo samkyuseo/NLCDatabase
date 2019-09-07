@@ -13,13 +13,13 @@ export const searchTranscripts = searchString => async dispatch => {
   try {
     const res2 = await axios.post(`api/transcripts/query/${searchString}`);
 
-    const res = await axios.get('api/transcripts');
+    //const res = await axios.get('api/transcripts');
 
-    dispatch({
-      type: SEARCH_TRANSCRIPTS,
-      extra: searchString,
-      payload: res.data
-    });
+    // dispatch({
+    //   type: SEARCH_TRANSCRIPTS,
+    //   extra: searchString,
+    //   payload: res.data
+    // });
   } catch (err) {
     dispatch({
       type: SEARCH_ERROR,
