@@ -140,7 +140,8 @@ router.post('/query/:query_string', async (req, res) => {
         req.params.query_string +
         '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
     );
-
+    console.log('SSXML');
+    console.log(SSXML);
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
     console.log('ONE');
     console.log(SSJSON);
