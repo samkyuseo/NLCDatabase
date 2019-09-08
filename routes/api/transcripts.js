@@ -142,8 +142,14 @@ router.post('/query/:query_string', async (req, res) => {
     );
 
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
+    console.log('ONE');
+    console.log(SSJSON);
     SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
+    console.log('TWO');
+    console.log(SSJSON);
+
     SavedSearchFields = {};
+
     if (SSJSON.SavedSearch._attributes.SearchGUID) {
       SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
     }
