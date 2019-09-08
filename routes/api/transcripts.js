@@ -6,6 +6,7 @@ const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 const convert = require('xml-js');
 const { check, validationResult } = require('express-validator');
 const requestbin = require('requestbin');
+const axios = require('axios');
 
 const Transcript = require('../../models/Transcript');
 const SavedSearch = require('../../models/SavedSearch');
@@ -133,46 +134,78 @@ router.get('/', async (req, res) => {
 //@descript Test
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
-  console.log('coming into /query');
-  var xhr = new XMLHttpRequest();
-  var PORT = process.env.PORT || 5000;
-  xhr.open(
-    'POST',
-    'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
-      req.params.query_string +
-      '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver',
-    true
-  );
+  try {
+    var SSXML = await axios.post(
+      'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
+        req.params.query_string +
+        '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
+    );
 
-  xhr.onload = function() {
-    if (this.status == 200) {
-      var SSXML = this.responseText;
-      var SSJSON = convert.xml2json(SSXML, { compact: true, spaces: 4 });
-      SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
-
-      SavedSearchFields = {};
-      if (SSJSON.SavedSearch._attributes.SearchGUID) {
-        SavedSearchFields.SearchGUID =
-          SSJSON.SavedSearch._attributes.SearchGUID;
-      }
-      if (SSJSON.SavedSearch.SearchQuery._text) {
-        SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
-      }
-      var date = new Date();
-      SavedSearchFields.SearchDate =
-        date.getFullYear() +
-        ', ' +
-        Number(Number(date.getMonth()) + 1) +
-        ', ' +
-        date.getDate();
-
-      //Save saved search object
-      savedSearch = new SavedSearch(SavedSearchFields);
-      savedSearch.save();
-      res.json(savedSearch);
+    var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
+    SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
+    SavedSearchFields = {};
+    if (SSJSON.SavedSearch._attributes.SearchGUID) {
+      SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
     }
-  };
-  xhr.send();
+    if (SSJSON.SavedSearch.SearchQuery._text) {
+      SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
+    }
+    var date = new Date();
+    SavedSearchFields.SearchDate =
+      date.getFullYear() +
+      ', ' +
+      Number(Number(date.getMonth()) + 1) +
+      ', ' +
+      date.getDate();
+
+    //Save saved search object
+    savedSearch = new SavedSearch(SavedSearchFields);
+    savedSearch.save();
+    res.json(savedSearch);
+  } catch (err) {
+    console.error(err.msg);
+    res.status(500).send('Server Error');
+  }
+
+  // var xhr = new XMLHttpRequest();
+  // var PORT = process.env.PORT || 5000;
+  // xhr.open(
+  //   'POST',
+  //   'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
+  //     req.params.query_string +
+  //     '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver',
+  //   true
+  // );
+
+  // xhr.onload = function() {
+  //   if (this.status == 200) {
+  //     var SSXML = this.responseText;
+  //     var SSJSON = convert.xml2json(SSXML, { compact: true, spaces: 4 });
+  //     SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
+
+  //     SavedSearchFields = {};
+  //     if (SSJSON.SavedSearch._attributes.SearchGUID) {
+  //       SavedSearchFields.SearchGUID =
+  //         SSJSON.SavedSearch._attributes.SearchGUID;
+  //     }
+  //     if (SSJSON.SavedSearch.SearchQuery._text) {
+  //       SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
+  //     }
+  //     var date = new Date();
+  //     SavedSearchFields.SearchDate =
+  //       date.getFullYear() +
+  //       ', ' +
+  //       Number(Number(date.getMonth()) + 1) +
+  //       ', ' +
+  //       date.getDate();
+
+  //     //Save saved search object
+  //     savedSearch = new SavedSearch(SavedSearchFields);
+  //     savedSearch.save();
+  //     res.json(savedSearch);
+  //   }
+  // };
+  // xhr.send();
 });
 
 //@router  api/transcripts/reciever
