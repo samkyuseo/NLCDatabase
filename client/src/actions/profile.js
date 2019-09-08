@@ -120,6 +120,7 @@ export const createProfile = (
 //Add searchHistory --> use this for adding to search history after someone uses the search bar
 export const addSearchHistory = formData => async dispatch => {
   try {
+    console.log(formData);
     const config = {
       headers: {
         'Content-Type': 'application/json'

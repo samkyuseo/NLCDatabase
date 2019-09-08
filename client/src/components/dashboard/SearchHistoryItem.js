@@ -7,26 +7,22 @@ import { connect } from 'react-redux';
 
 const SearchHistoryItem = ({
   deleteSearchHistory,
-  searchHistory: { _id, searchDate, searchString, searchResults }
+  searchHistory: { SearchQuery, SearchDate, SearchGUID, _id }
 }) => {
   return (
     <div className='profile bg-light'>
       <ul>
         <p>
-          <strong>"{searchString}"</strong>
+          <strong>"{SearchQuery}"</strong>
         </p>
         <li class='text-primary'>
           <i class='far fa-clock' /> Search Date:{' '}
-          <Moment format='YYYY/MM/DD'>{searchDate}</Moment>
-        </li>
-        <li class='text-primary'>
-          <i class='far fa-check-circle' /> Transcripts that Matched:{' '}
-          {searchResults.length}
+          <Moment format='YYYY/MM/DD'>{SearchDate}</Moment>
         </li>
       </ul>
       <ul>
         <Link to={`/profile/searchHistory/${_id}`} className='btn btn-primary'>
-          More Details
+          Export
         </Link>
         <button
           onClick={() => deleteSearchHistory(_id)}

@@ -5,21 +5,39 @@ import {
   SEARCH_TRANSCRIPTS,
   SEARCH_ERROR,
   CLEAR_SEARCH,
-  GET_TRANSCRIPT
+  GET_TRANSCRIPT,
+  CREATE_SAVEDSEARCH
 } from './types';
 
+//Create saved search object
+export const createSavedSearch = searchString => async dispatch => {
+  try {
+    const res = await axios.post(`api/transcripts/query/${searchString}`);
+    dispatch({
+      type: CREATE_SAVEDSEARCH,
+      payload: res.data,
+      extra: searchString
+    });
+  } catch (err) {
+    dispatch({
+      type: SEARCH_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status
+      }
+    });
+  }
+};
 //search transcripts
 export const searchTranscripts = searchString => async dispatch => {
   try {
-    const res2 = await axios.post(`api/transcripts/query/${searchString}`);
+    const res = await axios.get('api/transcripts');
 
-    //const res = await axios.get('api/transcripts');
-
-    // dispatch({
-    //   type: SEARCH_TRANSCRIPTS,
-    //   extra: searchString,
-    //   payload: res.data
-    // });
+    dispatch({
+      type: SEARCH_TRANSCRIPTS,
+      extra: searchString,
+      payload: res.data
+    });
   } catch (err) {
     dispatch({
       type: SEARCH_ERROR,

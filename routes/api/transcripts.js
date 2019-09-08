@@ -8,6 +8,7 @@ const { check, validationResult } = require('express-validator');
 const requestbin = require('requestbin');
 
 const Transcript = require('../../models/Transcript');
+const SavedSearch = require('../../models/SavedSearch');
 
 //credentials
 const config = require('config');
@@ -148,7 +149,27 @@ router.post('/query/:query_string', async (req, res) => {
       var SSXML = this.responseText;
       var SSJSON = convert.xml2json(SSXML, { compact: true, spaces: 4 });
       SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
-      res.json(SSJSON);
+
+      SavedSearchFields = {};
+      if (SSJSON.SavedSearch._attributes.SearchGUID) {
+        SavedSearchFields.SearchGUID =
+          SSJSON.SavedSearch._attributes.SearchGUID;
+      }
+      if (SSJSON.SavedSearch.SearchQuery._text) {
+        SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
+      }
+      var date = new Date();
+      SavedSearchFields.SearchDate =
+        date.getFullYear() +
+        ', ' +
+        Number(Number(date.getMonth()) + 1) +
+        ', ' +
+        date.getDate();
+
+      //Save saved search object
+      savedSearch = new SavedSearch(SavedSearchFields);
+      savedSearch.save();
+      res.json(savedSearch);
     }
   };
   xhr.send();
@@ -157,8 +178,6 @@ router.post('/query/:query_string', async (req, res) => {
 //@router  api/transcripts/reciever
 //@descript reciever data and put into db once query has been searched
 //@access Public
-
-function XML2JSON(text) {}
 
 router.post('/receiver', async (req, res) => {
   try {
@@ -218,7 +237,7 @@ router.post('/receiver', async (req, res) => {
     transcriptFields.totalViewership = 'n/a';
     transcript = new Transcript(transcriptFields);
     await transcript.save();
-    //res.json(transcriptFields);
+    res.json(transcriptFields);
   } catch (err) {
     console.error(err.msg);
     res.status(500).send('Server Error');

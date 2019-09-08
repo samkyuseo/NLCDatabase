@@ -3,15 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addSearchHistory } from '../../actions/profile';
 
-const SaveSearch = ({ addSearchHistory, searchString, transcripts }) => {
+const SaveSearch = ({
+  addSearchHistory,
+  savedSearch: { SearchGUID, SearchQuery, SearchDate }
+}) => {
   return (
     <div>
       <button
         className='btn btn-danger'
         onClick={() => {
+          console.log(SearchGUID);
           addSearchHistory({
-            searchString: searchString,
-            searchResults: transcripts
+            SearchQuery: SearchQuery,
+            SearchDate: SearchDate,
+            SearchGUID: SearchGUID
           });
         }}
       >
@@ -24,12 +29,14 @@ const SaveSearch = ({ addSearchHistory, searchString, transcripts }) => {
 SaveSearch.propTypes = {
   addSearchHistory: PropTypes.func.isRequired,
   searchString: PropTypes.object.isRequired,
-  transcripts: PropTypes.array.isRequired
+  transcripts: PropTypes.array.isRequired,
+  savedSearch: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   searchString: state.search.searchString,
-  transcripts: state.search.transcripts
+  transcripts: state.search.transcripts,
+  savedSearch: state.search.savedSearch
 });
 
 export default connect(

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import TranscriptItem from './TranscriptItem';
+import SavedSearchItem from './SavedSearchItem';
 import { getCurrentProfile, addSearchHistory } from '../../actions/profile'; //this checks if user has made a profile yet.
 import { clearSearch } from '../../actions/search'; //this checks if user has made a profile yet.
 import SearchBar from './SearchBar';
@@ -13,10 +14,9 @@ const Search = ({
   clearSearch,
   profile: { profile, loading },
   search,
-  search: { searchString, transcripts }
+  search: { searchString, transcripts, savedSearch }
 }) => {
   useEffect(() => {
-    // clearSearch();
     getCurrentProfile();
   }, [getCurrentProfile, clearSearch]);
 
@@ -24,7 +24,7 @@ const Search = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Search</h1>
+      <h1 className='large text-primary'>Create Saved Search</h1>
 
       {profile !== null ? (
         <Fragment>
@@ -38,14 +38,9 @@ const Search = ({
             <Spinner />
           ) : (
             <Fragment>
-              <SaveSearch />
+              <SaveSearch savedSearch={savedSearch} />
               <div className='posts'>
-                {transcripts.map(transcript => (
-                  <TranscriptItem
-                    key={transcript._id}
-                    transcript={transcript}
-                  />
-                ))}
+                <SavedSearchItem savedSearch={savedSearch} />
               </div>
             </Fragment>
           )}

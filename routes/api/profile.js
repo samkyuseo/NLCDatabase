@@ -224,13 +224,12 @@ router.get('/searchHistory/:entry_id', auth, async (req, res) => {
 //@access Private
 
 router.put('/searchHistory', auth, async (req, res) => {
-  const { searchString, searchResults } = req.body;
-  const searchDate = Date.now();
-
+  const { SearchQuery, SearchGUID, SearchDate } = req.body;
+  console.log(SearchQuery + SearchGUID + SearchDate);
   const newHistory = {
-    searchDate,
-    searchString,
-    searchResults
+    SearchQuery,
+    SearchGUID,
+    SearchDate
   };
   try {
     const profile = await Profile.findOne({ user: req.user.id });

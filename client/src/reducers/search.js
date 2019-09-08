@@ -2,13 +2,15 @@ import {
   SEARCH_TRANSCRIPTS,
   SEARCH_ERROR,
   CLEAR_SEARCH,
-  GET_TRANSCRIPT
+  GET_TRANSCRIPT,
+  CREATE_SAVEDSEARCH
 } from '../actions/types';
 
 const initialState = {
   searchString: null,
   transcripts: [],
   transcript: null,
+  savedSearch: null,
   loading: true,
   error: {}
 };
@@ -17,6 +19,13 @@ export default function(state = initialState, action) {
   const { type, payload, extra } = action;
 
   switch (type) {
+    case CREATE_SAVEDSEARCH:
+      return {
+        ...state,
+        searchString: extra,
+        savedSearch: payload,
+        loading: false
+      };
     case CLEAR_SEARCH:
       return {
         ...state,
