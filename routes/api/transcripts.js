@@ -163,7 +163,8 @@ router.post('/query/:query_string', async (req, res) => {
     savedSearch.save();
     res.json(savedSearch);
   } catch (err) {
-    console.error(err.msg);
+    console.error('ERROR MESSAGE: ' + err.msg);
+    // console.error(err.msg);
     res.status(500).send('Server Error');
   }
 
