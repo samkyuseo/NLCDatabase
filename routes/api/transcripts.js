@@ -8,6 +8,8 @@ const { check, validationResult } = require('express-validator');
 const requestbin = require('requestbin');
 const axios = require('axios');
 const os = require('os');
+const http = require('http');
+const url = require('url');
 
 const Transcript = require('../../models/Transcript');
 const SavedSearch = require('../../models/SavedSearch');
@@ -136,58 +138,70 @@ router.get('/', async (req, res) => {
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
   try {
-    var SSXML = await axios.post(
-      'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
-        req.params.query_string +
-        '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
-    );
-    var ifaces = os.networkInterfaces();
-    console.log(ifaces);
-    // Object.keys(ifaces).forEach(function(ifname) {
-    //   var alias = 0;
-    //   ifaces[ifname].forEach(function(iface) {
-    //     if ('IPV4' !== iface.family) {
-    //       // console.log('internal ips');
-    //       return;
-    //     }
-    //     if (alias >= 1) {
-    //       console.log(ifname + ':' + alias, iface.address);
-    //     } else {
-    //       console.log(ifname, iface.address);
-    //     }
-    //     ++alias;
-    //   });
-    // });
+    (function() {
+      var http, options, proxy, url;
 
-    console.log('SSXML');
-    console.log(SSXML.data);
-    var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
-    console.log('ONE');
-    console.log(SSJSON);
-    SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
-    console.log('TWO');
-    console.log(SSJSON);
+      http = require('http');
 
-    SavedSearchFields = {};
+      url = require('url');
+      var lele = process.env.PROXIMO_URL;
+      console.log('PROXIMO URL=' + lele);
+      proxy = url.parse(process.env.PROXIMO_URL);
 
-    if (SSJSON.SavedSearch._attributes.SearchGUID) {
-      SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
-    }
-    if (SSJSON.SavedSearch.SearchQuery._text) {
-      SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
-    }
-    var date = new Date();
-    SavedSearchFields.SearchDate =
-      date.getFullYear() +
-      ', ' +
-      Number(Number(date.getMonth()) + 1) +
-      ', ' +
-      date.getDate();
+      options = {
+        hostname: proxy.hostname,
+        port: proxy.port || 80,
+        path:
+          'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
+          req.params.query_string +
+          '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver',
+        headers: {
+          'Proxy-Authorization':
+            'Basic ' + new Buffer(proxy.auth).toString('base64')
+        }
+      };
 
-    //Save saved search object
-    savedSearch = new SavedSearch(SavedSearchFields);
-    savedSearch.save();
-    res.json(savedSearch);
+      http.get(options, function(res) {
+        console.log('status code', res.statusCode);
+        return console.log('headers', res.headers);
+      });
+    }.call(this));
+
+    // var SSXML = await axios.post(
+    //   'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
+    //     req.params.query_string +
+    //     '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
+    // );
+
+    // console.log('SSXML');
+    // console.log(SSXML.data);
+    // var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
+    // console.log('ONE');
+    // console.log(SSJSON);
+    // SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
+    // console.log('TWO');
+    // console.log(SSJSON);
+
+    // SavedSearchFields = {};
+
+    // if (SSJSON.SavedSearch._attributes.SearchGUID) {
+    //   SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
+    // }
+    // if (SSJSON.SavedSearch.SearchQuery._text) {
+    //   SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
+    // }
+    // var date = new Date();
+    // SavedSearchFields.SearchDate =
+    //   date.getFullYear() +
+    //   ', ' +
+    //   Number(Number(date.getMonth()) + 1) +
+    //   ', ' +
+    //   date.getDate();
+
+    // //Save saved search object
+    // savedSearch = new SavedSearch(SavedSearchFields);
+    // savedSearch.save();
+    // res.json(savedSearch);
   } catch (err) {
     console.error('ERROR MESSAGE: ' + err);
     // console.error(err.msg);
