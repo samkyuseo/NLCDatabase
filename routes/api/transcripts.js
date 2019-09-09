@@ -142,16 +142,22 @@ router.post('/query/:query_string', async (req, res) => {
         '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
     );
     var ifaces = os.networkInterfaces();
-    Object.keys(ifaces).forEach(function(iface) {
-      if ('IPV4' !== iface.family || iface.internal == false) {
-        return;
-      }
-      if (alias >= 1) {
-        console.log(ifname + ':' + alias, iface.address);
-      } else {
-        console.log(ifname, iface.address);
-      }
-    });
+    console.log(ifaces);
+    // Object.keys(ifaces).forEach(function(ifname) {
+    //   var alias = 0;
+    //   ifaces[ifname].forEach(function(iface) {
+    //     if ('IPV4' !== iface.family) {
+    //       // console.log('internal ips');
+    //       return;
+    //     }
+    //     if (alias >= 1) {
+    //       console.log(ifname + ':' + alias, iface.address);
+    //     } else {
+    //       console.log(ifname, iface.address);
+    //     }
+    //     ++alias;
+    //   });
+    // });
 
     console.log('SSXML');
     console.log(SSXML.data);
