@@ -7,6 +7,7 @@ const convert = require('xml-js');
 const { check, validationResult } = require('express-validator');
 const requestbin = require('requestbin');
 const axios = require('axios');
+const os = require('os');
 
 const Transcript = require('../../models/Transcript');
 const SavedSearch = require('../../models/SavedSearch');
@@ -140,8 +141,20 @@ router.post('/query/:query_string', async (req, res) => {
         req.params.query_string +
         '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
     );
+    var ifaces = os.networkInterfaces();
+    Object.keys(ifaces).forEach(function(iface) {
+      if ('IPV4' !== iface.family || iface.internal == false) {
+        return;
+      }
+      if (alias >= 1) {
+        console.log(ifname + ':' + alias, iface.address);
+      } else {
+        console.log(ifname, iface.address);
+      }
+    });
+
     console.log('SSXML');
-    console.log(SSXML);
+    console.log(SSXML.data);
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
     console.log('ONE');
     console.log(SSJSON);
