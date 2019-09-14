@@ -137,71 +137,79 @@ router.get('/', async (req, res) => {
 //@descript Test
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
+  // var query =
+  //   'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
+  //   req.params.query_string +
+  //   '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver';
+  // try {
+  //   (function() {
+  //     var http, options, proxy, url;
+
+  //     http = require('http');
+
+  //     url = require('url');
+  //     console.log('hello');
+  //     var lele =
+  //       'http://proxy:26bd89ce065440b4891fe49b9a07c4bc@proxy-54-204-30-225.proximo.io';
+  //     console.log('PROXIMO URL=' + lele);
+  //     console.log(query);
+  //     proxy = url.parse(process.env.PROXIMO_URL || lele);
+  //     console.log(proxy);
+  //     options = {
+  //       hostname: proxy.hostname,
+  //       port: proxy.port || 80,
+  //       path: query,
+  //       method: 'POST',
+  //       headers: {
+  //         'Proxy-Authorization':
+  //           'Basic ' + new Buffer(proxy.auth).toString('base64')
+  //       }
+  //     };
+
+  //     http.get(options, function(res) {
+  //       res.on('data', function(chunk) {
+  //         console.log('BODY: ' + chunk);
+  //       });
+  //       console.log('status code', res.statusCode);
+  //       return console.log('headers', res);
+  //     });
+  //   }.call(this));
   try {
-    (function() {
-      var http, options, proxy, url;
+    var SSXML = await axios.post(
+      'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
+        req.params.query_string +
+        '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
+    );
 
-      http = require('http');
+    console.log('SSXML');
+    console.log(SSXML.data);
+    var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
+    console.log('ONE');
+    console.log(SSJSON);
+    SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
+    console.log('TWO');
+    console.log(SSJSON);
 
-      url = require('url');
-      var lele = process.env.PROXIMO_URL;
-      console.log('PROXIMO URL=' + lele);
-      proxy = url.parse(process.env.PROXIMO_URL);
+    SavedSearchFields = {};
 
-      options = {
-        hostname: proxy.hostname,
-        port: proxy.port || 80,
-        path:
-          'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
-          req.params.query_string +
-          '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver',
-        headers: {
-          'Proxy-Authorization':
-            'Basic ' + new Buffer(proxy.auth).toString('base64')
-        }
-      };
+    if (SSJSON.SavedSearch._attributes.SearchGUID) {
+      SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
+    }
+    if (SSJSON.SavedSearch.SearchQuery._text) {
+      SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
+    }
+    var date = new Date();
+    SavedSearchFields.SearchDate =
+      date.getFullYear() +
+      ', ' +
+      Number(Number(date.getMonth()) + 1) +
+      ', ' +
+      date.getDate();
 
-      http.get(options, function(res) {
-        console.log('status code', res.statusCode);
-        return console.log('headers', res.headers);
-      });
-    }.call(this));
-
-    // var SSXML = await axios.post(
-    //   'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
-    //     req.params.query_string +
-    //     '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
-    // );
-
-    // console.log('SSXML');
-    // console.log(SSXML.data);
-    // var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
-    // console.log('ONE');
-    // console.log(SSJSON);
-    // SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
-    // console.log('TWO');
-    // console.log(SSJSON);
-
-    // SavedSearchFields = {};
-
-    // if (SSJSON.SavedSearch._attributes.SearchGUID) {
-    //   SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
-    // }
-    // if (SSJSON.SavedSearch.SearchQuery._text) {
-    //   SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
-    // }
-    // var date = new Date();
-    // SavedSearchFields.SearchDate =
-    //   date.getFullYear() +
-    //   ', ' +
-    //   Number(Number(date.getMonth()) + 1) +
-    //   ', ' +
-    //   date.getDate();
-
-    // //Save saved search object
-    // savedSearch = new SavedSearch(SavedSearchFields);
-    // savedSearch.save();
-    // res.json(savedSearch);
+    //Save saved search object
+    savedSearch = new SavedSearch(SavedSearchFields);
+    savedSearch.save();
+    res.json(savedSearch);
   } catch (err) {
     console.error('ERROR MESSAGE: ' + err);
     // console.error(err.msg);
@@ -255,6 +263,7 @@ router.post('/query/:query_string', async (req, res) => {
 
 router.post('/receiver', async (req, res) => {
   try {
+    console.log('coming in here');
     var XMLRes = req.body;
     JSONRes = XMLRes.message;
 
