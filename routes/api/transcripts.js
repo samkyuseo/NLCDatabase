@@ -264,9 +264,9 @@ router.post('/query/:query_string', async (req, res) => {
 router.post('/receiver', async (req, res) => {
   try {
     console.log('***COMING INTO RECEIVER***');
-    console.log('===req.body===');
+    console.log('===req===');
     var XMLRes = req.body;
-    console.log(XMLRes);
+    console.log(req);
 
     JSONRes = XMLRes.message;
 
