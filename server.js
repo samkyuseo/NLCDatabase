@@ -11,8 +11,8 @@ connectDB();
 //Init middle ware
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
-app.use(xmlparser());
-// app.use(express.xml({ extended: false }));
+//app.use(xmlparser());
+app.use(express.xml({ extended: false }));
 
 //Define routes
 app.use('/api/users', require('./routes/api/users'));
