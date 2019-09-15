@@ -178,7 +178,7 @@ router.post('/query/:query_string', async (req, res) => {
     var SSXML = await axios.post(
       'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
         req.params.query_string +
-        '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver'
+        '&destination=13.56.143.45:5000/api/transcripts/receiver'
     );
 
     console.log('SSXML');
