@@ -263,8 +263,11 @@ router.post('/query/:query_string', async (req, res) => {
 
 router.post('/receiver', async (req, res) => {
   try {
-    console.log('coming in here');
+    console.log('***COMING INTO RECEIVER***');
+    console.log('===req.body===');
     var XMLRes = req.body;
+    console.log(XMLRes);
+
     JSONRes = XMLRes.message;
 
     //Extract data needed
