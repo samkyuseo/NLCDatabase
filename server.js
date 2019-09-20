@@ -2,17 +2,31 @@ const express = require('express');
 const xmlparser = require('express-xml-bodyparser');
 const connectDB = require('./config/db');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 // Connect Database
 connectDB();
 
-//Init middle ware
+// //Init middle ware
+// app.configure(function() {
+//   app.use(express.json({ extended: false }));
+//   app.use(express.urlencoded({ extended: false }));
+//   app.use(xmlparser());
+// });
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
-//app.use(xmlparser());
-app.use(express.xml({ extended: false }));
+// app.use(function(req, res, next) {
+//   var body = req.body.toString();
+//   var body = body.replace('\ufeff', '');
+//   req.body = Buffer.from(body);
+//   next();
+// });
+var options = {
+  type: ['text/xml', 'application/xml']
+};
+app.use(bodyParser.text(options));
 
 //Define routes
 app.use('/api/users', require('./routes/api/users'));

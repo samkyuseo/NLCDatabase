@@ -10,6 +10,7 @@ const axios = require('axios');
 const os = require('os');
 const http = require('http');
 const url = require('url');
+const fastXMLParser = require('fast-xml-parser');
 
 const Transcript = require('../../models/Transcript');
 const SavedSearch = require('../../models/SavedSearch');
@@ -19,6 +20,9 @@ const config = require('config');
 const username = config.get('TVEyesUsername');
 const password = config.get('TVEyesPassword');
 const feedPartnerId = config.get('FeedPartnerId');
+
+//bodyparser
+const xmlparser = require('express-xml-bodyparser');
 
 //@route POST api/transcripts
 //@descript Post individual transcript
@@ -181,14 +185,14 @@ router.post('/query/:query_string', async (req, res) => {
         '&destination=http://13.56.143.45:5000/api/transcripts/receiver'
     );
 
-    console.log('SSXML');
+    //console.log('SSXML');
     console.log(SSXML.data);
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
-    console.log('ONE');
-    console.log(SSJSON);
+    // console.log('ONE');
+    // console.log(SSJSON);
     SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
-    console.log('TWO');
-    console.log(SSJSON);
+    // console.log('TWO');
+    // console.log(SSJSON);
 
     SavedSearchFields = {};
 
@@ -265,10 +269,24 @@ router.post('/receiver', async (req, res) => {
   try {
     console.log('***COMING INTO RECEIVER***');
     console.log('===req===');
-    var XMLRes = req.body;
-    console.log(req);
+    var XMLRes = req.body
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
 
-    JSONRes = XMLRes.message;
+    fs.writeFile('Output2.txt', XMLRes, err => {
+      // In case of a error throw err.
+      if (err) throw err;
+    });
+
+    //var parser = new DOMParser();
+    JSONRes = fastXMLParser.parse(XMLRes);
+    //parser.parseFromString(XMLRes, 'text/xml');
+    //console.log(XMLRes);
+    console.log(JSONRes);
+    return res.json();
+    //res.json(JSONRes);
+    // JSONRes = XMLRes.message;
 
     //Extract data needed
     const transcriptFields = {};
