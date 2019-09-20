@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 //   next();
 // });
 var options = {
-  type: ['text/xml', 'application/xml']
+  type: [null, 'text/xml', 'application/xml']
 };
 app.use(bodyParser.text(options));
 
