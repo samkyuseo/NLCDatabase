@@ -279,7 +279,7 @@ router.post('/receiver', async (req, res) => {
       .replace('ï»¿', '')
       .replace('\n', '')
       .replace('\r', '');
-
+    //console.log(req.body);
     // fs.writeFile('Output2.txt', XMLRes, err => {
     //   // In case of a error throw err.
     //   if (err) throw err;

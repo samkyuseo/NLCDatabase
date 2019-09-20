@@ -5,26 +5,21 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
-
 // Connect Database
 connectDB();
+//Set default content type
 
-// //Init middle ware
-// app.configure(function() {
-//   app.use(express.json({ extended: false }));
-//   app.use(express.urlencoded({ extended: false }));
-//   app.use(xmlparser());
-// });
+function defaultContentTypeMiddleware(req, res, next) {
+  req.headers['content-type'] = req.headers['content-type'] || 'text/xml';
+  console.log('hello');
+  next();
+}
+app.use(defaultContentTypeMiddleware);
+app.use(bodyParser());
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
-// app.use(function(req, res, next) {
-//   var body = req.body.toString();
-//   var body = body.replace('\ufeff', '');
-//   req.body = Buffer.from(body);
-//   next();
-// });
 var options = {
-  type: [null, 'text/xml', 'application/xml']
+  type: ['text/xml', 'application/xml']
 };
 app.use(bodyParser.text(options));
 
