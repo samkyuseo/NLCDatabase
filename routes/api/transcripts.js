@@ -203,7 +203,6 @@ router.post('/receiver', async (req, res) => {
 
     //Extract data needed
     const transcriptFields = {};
-    console.log('hello');
     if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
       transcriptFields.queryString =
         JSONRes.Message.Header.Source.SavedSearch.SearchQuery;
