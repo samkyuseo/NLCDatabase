@@ -270,29 +270,17 @@ router.post('/receiver', async (req, res) => {
     console.log('***COMING INTO RECEIVER***');
     console.log('===req===');
     console.log('HEADERS: ' + JSON.stringify(req.headers));
-    // fs.writeFile('reqBody.txt', req.rawBody, err => {
-    //   // In case of a error throw err.
-    //   if (err) throw err;
-    // });
+
     var XMLRes = req.body
       .toString()
       .replace('ï»¿', '')
       .replace('\n', '')
       .replace('\r', '');
-    //console.log(req.body);
-    // fs.writeFile('Output2.txt', XMLRes, err => {
-    //   // In case of a error throw err.
-    //   if (err) throw err;
-    // });
 
-    //var parser = new DOMParser();
     JSONRes = fastXMLParser.parse(XMLRes);
-    //parser.parseFromString(XMLRes, 'text/xml');
-    //console.log(XMLRes);
-    console.log(JSONRes);
+
+    console.log(JSON.stringify(JSONRes));
     return res.json();
-    //res.json(JSONRes);
-    // JSONRes = XMLRes.message;
 
     //Extract data needed
     const transcriptFields = {};
