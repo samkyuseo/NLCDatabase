@@ -11,7 +11,6 @@ connectDB();
 
 function defaultContentTypeMiddleware(req, res, next) {
   req.headers['content-type'] = req.headers['content-type'] || 'text/xml';
-  console.log('hello');
   next();
 }
 app.use(defaultContentTypeMiddleware);

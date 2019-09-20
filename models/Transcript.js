@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const TranscriptSchema = new mongoose.Schema({
+  queryString: {
+    type: String,
+    required: true
+  },
   programName: {
     type: String,
     required: true

@@ -141,43 +141,6 @@ router.get('/', async (req, res) => {
 //@descript Test
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
-  // var query =
-  //   'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
-  //   req.params.query_string +
-  //   '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver';
-  // try {
-  //   (function() {
-  //     var http, options, proxy, url;
-
-  //     http = require('http');
-
-  //     url = require('url');
-  //     console.log('hello');
-  //     var lele =
-  //       'http://proxy:26bd89ce065440b4891fe49b9a07c4bc@proxy-54-204-30-225.proximo.io';
-  //     console.log('PROXIMO URL=' + lele);
-  //     console.log(query);
-  //     proxy = url.parse(process.env.PROXIMO_URL || lele);
-  //     console.log(proxy);
-  //     options = {
-  //       hostname: proxy.hostname,
-  //       port: proxy.port || 80,
-  //       path: query,
-  //       method: 'POST',
-  //       headers: {
-  //         'Proxy-Authorization':
-  //           'Basic ' + new Buffer(proxy.auth).toString('base64')
-  //       }
-  //     };
-
-  //     http.get(options, function(res) {
-  //       res.on('data', function(chunk) {
-  //         console.log('BODY: ' + chunk);
-  //       });
-  //       console.log('status code', res.statusCode);
-  //       return console.log('headers', res);
-  //     });
-  //   }.call(this));
   try {
     var SSXML = await axios.post(
       'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
@@ -185,14 +148,10 @@ router.post('/query/:query_string', async (req, res) => {
         '&destination=http://13.56.143.45:5000/api/transcripts/receiver'
     );
 
-    //console.log('SSXML');
     console.log(SSXML.data);
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
-    // console.log('ONE');
-    // console.log(SSJSON);
+
     SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
-    // console.log('TWO');
-    // console.log(SSJSON);
 
     SavedSearchFields = {};
 
@@ -219,46 +178,6 @@ router.post('/query/:query_string', async (req, res) => {
     // console.error(err.msg);
     res.status(500).send('Server Error');
   }
-
-  // var xhr = new XMLHttpRequest();
-  // var PORT = process.env.PORT || 5000;
-  // xhr.open(
-  //   'POST',
-  //   'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
-  //     req.params.query_string +
-  //     '&destination=https://calm-atoll-70051.herokuapp.com/api/transcripts/receiver',
-  //   true
-  // );
-
-  // xhr.onload = function() {
-  //   if (this.status == 200) {
-  //     var SSXML = this.responseText;
-  //     var SSJSON = convert.xml2json(SSXML, { compact: true, spaces: 4 });
-  //     SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
-
-  //     SavedSearchFields = {};
-  //     if (SSJSON.SavedSearch._attributes.SearchGUID) {
-  //       SavedSearchFields.SearchGUID =
-  //         SSJSON.SavedSearch._attributes.SearchGUID;
-  //     }
-  //     if (SSJSON.SavedSearch.SearchQuery._text) {
-  //       SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
-  //     }
-  //     var date = new Date();
-  //     SavedSearchFields.SearchDate =
-  //       date.getFullYear() +
-  //       ', ' +
-  //       Number(Number(date.getMonth()) + 1) +
-  //       ', ' +
-  //       date.getDate();
-
-  //     //Save saved search object
-  //     savedSearch = new SavedSearch(SavedSearchFields);
-  //     savedSearch.save();
-  //     res.json(savedSearch);
-  //   }
-  // };
-  // xhr.send();
 });
 
 //@router  api/transcripts/reciever
@@ -279,62 +198,51 @@ router.post('/receiver', async (req, res) => {
 
     JSONRes = fastXMLParser.parse(XMLRes);
 
-    console.log(JSON.stringify(JSONRes));
-    return res.json();
+    // console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
 
     //Extract data needed
     const transcriptFields = {};
-
-    if (
-      JSONRes.body[0].page[0].broadcastmetadata[0].viewershipdata[0]
-        .nationalviewershipdata[0].programname[0]
-    ) {
+    console.log('hello');
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString =
+        JSONRes.Message.Header.Source.SavedSearch.SearchQuery;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
       transcriptFields.programName =
-        JSONRes.body[0].page[0].broadcastmetadata[0].viewershipdata[0].nationalviewershipdata[0].programname[0];
-    } else transcriptFields.programName = 'not given';
-
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+    }
     if (
-      JSONRes.body[0].page[0].broadcastmetadata[0].programinfo[0].$
-        .ProgramDateTime
+      JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
     ) {
       transcriptFields.date =
-        JSONRes.body[0].page[0].broadcastmetadata[0].programinfo[0].$.ProgramDateTime;
-    } else transcriptFields.date = 'not given';
-
-    if (JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0]) {
-      transcriptFields.city = JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0].split(
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
         ','
       )[0];
-    } else transcriptFields.city = 'not given';
-
-    if (JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0]) {
-      transcriptFields.state = JSONRes.body[0].page[0].broadcastmetadata[0].station[0].location[0].split(
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
         ','
       )[1];
-    } else transcriptFields.state = 'not given';
-
-    if (
-      JSONRes.body[0].page[0].broadcastmetadata[0].station[0].stationname[0]
-    ) {
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
       transcriptFields.station =
-        JSONRes.body[0].page[0].broadcastmetadata[0].station[0].stationname[0];
-    } else transcriptFields.station = 'not given';
-
-    if (JSONRes.body[0].excerpts[0].transcriptexcerpt[0]._) {
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
       transcriptFields.fullText =
-        JSONRes.body[0].excerpts[0].transcriptexcerpt[0]._;
-    } else transcriptFields.fullText = 'not given';
-
-    if (JSONRes.body[0].page[0].broadcastmetadata[0].transcripturl[0]) {
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
       transcriptFields.videoLink =
-        JSONRes.body[0].page[0].broadcastmetadata[0].transcripturl[0];
-    } else transcriptFields.videoLink = 'not given';
-
-    //must add up duplicates later
-    transcriptFields.viewership = 'n/a';
-    transcriptFields.totalViewership = 'n/a';
-    transcript = new Transcript(transcriptFields);
-    await transcript.save();
+        JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl;
+    }
+    transcriptFields.totalViewership = '';
+    transcriptFields.viewership = '';
+    console.log(transcriptFields);
+    // var transcript = new Transcript(transcriptFields);
+    // await transcript.save();
     res.json(transcriptFields);
   } catch (err) {
     console.error(err.msg);
