@@ -269,20 +269,21 @@ router.post('/receiver', async (req, res) => {
   try {
     console.log('***COMING INTO RECEIVER***');
     console.log('===req===');
-    fs.writeFile('reqBody.txt', req.body.toString(), err => {
-      // In case of a error throw err.
-      if (err) throw err;
-    });
+    console.log('HEADERS: ' + JSON.stringify(req.headers));
+    // fs.writeFile('reqBody.txt', req.rawBody, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
     var XMLRes = req.body
       .toString()
       .replace('ï»¿', '')
       .replace('\n', '')
       .replace('\r', '');
 
-    fs.writeFile('Output2.txt', XMLRes, err => {
-      // In case of a error throw err.
-      if (err) throw err;
-    });
+    // fs.writeFile('Output2.txt', XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
 
     //var parser = new DOMParser();
     JSONRes = fastXMLParser.parse(XMLRes);
