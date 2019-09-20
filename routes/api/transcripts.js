@@ -269,6 +269,10 @@ router.post('/receiver', async (req, res) => {
   try {
     console.log('***COMING INTO RECEIVER***');
     console.log('===req===');
+    fs.writeFile('reqBody.txt', req.body, err => {
+      // In case of a error throw err.
+      if (err) throw err;
+    });
     var XMLRes = req.body
       .replace('ï»¿', '')
       .replace('\n', '')
