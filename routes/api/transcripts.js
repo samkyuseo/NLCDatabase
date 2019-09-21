@@ -171,7 +171,7 @@ router.post('/query/:query_string', async (req, res) => {
 
     //Save saved search object
     savedSearch = new SavedSearch(SavedSearchFields);
-    savedSearch.save();
+    await savedSearch.save();
     res.json(savedSearch);
   } catch (err) {
     console.error('ERROR MESSAGE: ' + err);
@@ -237,14 +237,14 @@ router.post('/receiver', async (req, res) => {
       transcriptFields.videoLink =
         JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl;
     }
-    transcriptFields.totalViewership = '';
-    transcriptFields.viewership = '';
+    transcriptFields.totalViewership = 'n/a';
+    transcriptFields.viewership = 'n/a';
     console.log(transcriptFields);
-    // var transcript = new Transcript(transcriptFields);
-    // await transcript.save();
-    res.json(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save();
+    res.json(transcript);
   } catch (err) {
-    console.error(err.msg);
+    console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
