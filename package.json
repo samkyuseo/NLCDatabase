@@ -37,6 +37,7 @@
     "request": "^2.88.0",
     "requestbin": "^1.5.1",
     "strip-bom": "^4.0.0",
+    "uuid": "^3.3.3",
     "xlsx": "^0.15.0",
     "xml-js": "^1.6.11",
     "xmlhttprequest": "^1.8.0"

@@ -11,6 +11,7 @@ const os = require('os');
 const http = require('http');
 const url = require('url');
 const fastXMLParser = require('fast-xml-parser');
+const uuid = require('uuid/v1');
 
 const Transcript = require('../../models/Transcript');
 const SavedSearch = require('../../models/SavedSearch');
@@ -188,6 +189,8 @@ router.post('/receiver', async (req, res) => {
   try {
     console.log('***COMING INTO RECEIVER***');
     console.log('===req===');
+    const UUID = uuid();
+    console.log('UUID: ' + UUID);
     console.log('HEADERS: ' + JSON.stringify(req.headers));
 
     var XMLRes = req.body
@@ -197,6 +200,11 @@ router.post('/receiver', async (req, res) => {
       .replace('\r', '');
 
     JSONRes = fastXMLParser.parse(XMLRes);
+
+    fs.writeFile(`Output${UUID}.txt`, req.body, err => {
+      // In case of a error throw err.
+      if (err) throw err;
+    });
 
     // console.log(JSON.stringify(JSONRes));
     // return res.json(JSONRes);
