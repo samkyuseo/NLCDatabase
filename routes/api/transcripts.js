@@ -215,15 +215,18 @@ router.post('/receiver', async (req, res) => {
       transcriptFields.queryString =
         JSONRes.Message.Header.Source.SavedSearch.SearchQuery;
     }
-    if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+    if (
+      JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.LongTitle
+    ) {
       transcriptFields.programName =
-        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.LongTitle;
     }
     if (
-      JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo
+        .RecordDateTime
     ) {
       transcriptFields.date =
-        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.RecordDateTime;
     }
     if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
       transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
