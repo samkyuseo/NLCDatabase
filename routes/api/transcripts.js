@@ -146,6 +146,7 @@ router.post('/query/:query_string', async (req, res) => {
     var SSXML = await axios.post(
       'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
         req.params.query_string +
+        '+Page.BroadcastMetadata.Market.Country:US' +
         '&destination=http://13.56.143.45:5000/api/transcripts/receiver'
     );
 
@@ -201,7 +202,7 @@ router.post('/receiver', async (req, res) => {
 
     JSONRes = fastXMLParser.parse(XMLRes);
 
-    fs.writeFile(`Output${UUID}.txt`, req.body, err => {
+    fs.writeFile(`Output${UUID}.txt`, JSONRes, err => {
       // In case of a error throw err.
       if (err) throw err;
     });
