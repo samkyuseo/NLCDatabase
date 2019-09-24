@@ -215,19 +215,37 @@ router.post('/receiver', async (req, res) => {
       transcriptFields.queryString =
         JSONRes.Message.Header.Source.SavedSearch.SearchQuery;
     }
-    if (
-      JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.LongTitle
-    ) {
-      transcriptFields.programName =
-        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.LongTitle;
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
     }
-    if (
-      JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo
-        .RecordDateTime
-    ) {
-      transcriptFields.date =
-        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.RecordDateTime;
-    }
+
     if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
       transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
         ','
@@ -252,7 +270,11 @@ router.post('/receiver', async (req, res) => {
     transcriptFields.viewership = 'n/a';
     console.log(transcriptFields);
     transcript = new Transcript(transcriptFields);
-    await transcript.save();
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      console.log('MONGO save success');
+      //console.log(book.name + " saved to bookstore collection.");
+    });
     res.json(transcript);
   } catch (err) {
     console.error(err.message);
