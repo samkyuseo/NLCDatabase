@@ -121,13 +121,15 @@ router.get('/:transcript_id', async (req, res) => {
   }
 });
 
-//@route GET api/transcripts
-//@descript Get all transcripts
+//@route GET api/transcripts/:query_string
+//@descript Get transcripts
 //@access Public
 
-router.get('/', async (req, res) => {
+router.get('/:query_string', async (req, res) => {
   try {
-    const transcripts = await Transcript.find().populate();
+    const transcripts = await Transcript.find({
+      queryString: req.params.query_string
+    }).populate();
     res.json(transcripts);
   } catch (err) {
     console.error(err.message);
@@ -213,8 +215,10 @@ router.post('/receiver', async (req, res) => {
     //Extract data needed
     const transcriptFields = {};
     if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
-      transcriptFields.queryString =
-        JSONRes.Message.Header.Source.SavedSearch.SearchQuery;
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
     }
     if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
       if (

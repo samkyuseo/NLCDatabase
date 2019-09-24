@@ -14,9 +14,13 @@ function defaultContentTypeMiddleware(req, res, next) {
   next();
 }
 app.use(defaultContentTypeMiddleware);
-app.use(bodyParser());
+
+app.use(bodyParser({ limit: '50mb' }));
+
 app.use(express.json({ extended: false }));
+
 app.use(express.urlencoded({ extended: false }));
+
 var options = {
   type: ['text/xml', 'application/xml']
 };
