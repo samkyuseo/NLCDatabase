@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Message>
+  <Header>
+    <Source>
+      <SavedSearch FeedPartnerID="20581" SearchGUID="3c29eb89-bec8-439d-aadd-04e9996f2dd0">
+        <SearchQuery>donation Page.BroadcastMetadata.Market.Country:US</SearchQuery>
+        <ParsedSearchQuery>+content:donation +Page.BroadcastMetadata.Market.Country:us</ParsedSearchQuery>
+        <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+        <MatchRateMuteThreshold>0.5</MatchRateMuteThreshold>
+        <CurrentMatchRate>0.004</CurrentMatchRate>
+        <AnalyzerDescriptor>default</AnalyzerDescriptor>
+        <ParserDescriptor>default</ParserDescriptor>
+        <HighlighterDescriptor>default</HighlighterDescriptor>
+        <CurrentAnalyzer>org.apache.lucene.analysis.miscellaneous.PatternAnalyzer@536f23f9</CurrentAnalyzer>
+      </SavedSearch>
+      <SearchAgentHost>pouvmwsswatcher02</SearchAgentHost>
+    </Source>
+    <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+  </Header>
+  <Body>
+    <Excerpts>
+      <TranscriptExcerpt LineDateTime="2019-10-06 14:13:46.005" Playerlette="/playerlette.aspx?PartnerID=20581&amp;StationID=17725&amp;StartDateTime=2019-10-06+14%3A13%3A32.005&amp;Duration=300" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:46.005"><![CDATA[hear from 25 donors and Worley now Chris we have 22 left to go I have something to sweeten the deal right now today when you make a <B>donation</B> in]]></TranscriptExcerpt>
+    </Excerpts>
+    <Page BreakType="LongPage" Duration="299.710" PageID="e024286b-5ef6-4113-bc3e-8901030fc9fc" StationGUID="RADKERA" StationID="17725">
+      <BroadcastMetadata>
+        <Station StationID="17725" UniqueIdentifier="RADKERA">
+          <CallSign>KERA</CallSign>
+          <StationName>KERA (90.1)</StationName>
+          <MarketID>118</MarketID>
+          <Location>Dallas, TX</Location>
+          <GMTOffset>-6</GMTOffset>
+          <GMTOffsetMinutes>0</GMTOffsetMinutes>
+          <TextType>2</TextType>
+          <RightToLeft>0</RightToLeft>
+          <PhoneticType>0</PhoneticType>
+          <MediaType>2</MediaType>
+          <Active>1</Active>
+          <SortOrder>5</SortOrder>
+          <IsUnicode>0</IsUnicode>
+          <Website />
+          <MediaProcessType>0</MediaProcessType>
+          <MediaPurchase>0</MediaPurchase>
+          <NationalNetwork />
+          <PrimaryLanguage>en-us</PrimaryLanguage>
+          <MediaStationID>17725</MediaStationID>
+          <TimeZoneIdentifier>Central Standard Time</TimeZoneIdentifier>
+          <SiteID>0</SiteID>
+          <RoviTVDataSourceID />
+          <RoviFTPRemoteDir />
+          <CaptureLocation>Shelton, CT</CaptureLocation>
+          <AlterTextCase>True</AlterTextCase>
+          <AllowMediaDownload>1</AllowMediaDownload>
+          <CaptureSiteCode>USSHL     </CaptureSiteCode>
+          <BackupStationID />
+          <DateAdded>8/2/2019 11:03:48 AM</DateAdded>
+          <AudioFingerprintingEnabled>True</AudioFingerprintingEnabled>
+          <BroadcastOwnerID />
+          <CaptureServer>sr-radcap32.tveyes.com</CaptureServer>
+          <ForSummariesUseBACK>0</ForSummariesUseBACK>
+          <MarketName>Dallas, TX</MarketName>
+        </Station>
+        <ViewershipData>
+          <!--No Local Viewership Data Found-->
+          <!--No National Viewership Data Found-->
+          <!--No Cable Viewership Data Found-->
+          <!--No Reach Value Data Found-->
+          <!--No Station Daypart Reach Data Found-->
+        </ViewershipData>
+        <Market xmlns:json="http://james.newtonking.com/projects/json" MarketID="118" MarketName="Dallas, TX" json:Array="true">
+          <Country>US</Country>
+          <Active>True</Active>
+          <FilterOrder>100</FilterOrder>
+          <State>TX</State>
+          <Latitude>32.781078</Latitude>
+          <Longitude>-96.797111</Longitude>
+          <DMARank>5</DMARank>
+        </Market>
+        <TranscriptUrl>http://mms.tveyes.com/transcript.asp?StationID=17725&amp;DateTime=10%2f06%2f2019+14%3a09%3a20&amp;Dur=300&amp;PlayClip=true</TranscriptUrl>
+        <StanfordNamedEntityData Model="english.conll.4class.caseless.distsim.crf.ser.gz">
+          <Entity Type="Person">Jonathan</Entity>
+          <Entity Type="Person">Terry Crews</Entity>
+          <Entity Type="Person">Berger</Entity>
+          <Entity Type="Location">Flint Michigan</Entity>
+          <Entity Type="Location">Chicago</Entity>
+          <Entity Type="Misc">French</Entity>
+          <Entity Type="Person">Ted Cruz</Entity>
+          <Entity Type="Person">Inslee</Entity>
+          <Entity Type="Person">Jack</Entity>
+          <Entity Type="Person">Kerry</Entity>
+          <Entity Type="Person">Heren</Entity>
+          <Entity Type="Person">Kate</Entity>
+          <Entity Type="Person">Sturm</Entity>
+          <Entity Type="Person">Uri</Entity>
+          <Entity Type="Person">Worley</Entity>
+          <Entity Type="Person">Chris</Entity>
+        </StanfordNamedEntityData>
+      </BroadcastMetadata>
+      <Lines>
+        <Line LineDateTime="2019-10-06 14:09:20.555" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:20.555">trap door I hope not okay here we go</Line>
+        <Line LineDateTime="2019-10-06 14:09:25.950" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:25.950">Jonathan it can Terry crews that played the flute</Line>
+        <Line LineDateTime="2019-10-06 14:09:30.345" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:30.345">Yes obviously</Line>
+        <Line LineDateTime="2019-10-06 14:09:36.900" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:36.900">please explain your flight just</Line>
+        <Line LineDateTime="2019-10-06 14:09:39.170" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:39.170">for other than I love the food this is why my great</Line>
+        <Line LineDateTime="2019-10-06 14:09:41.825" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:41.825">great and she was a major part of our family</Line>
+        <Line LineDateTime="2019-10-06 14:09:44.325" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:44.325">she said what instrument do you Whoa baby and I</Line>
+        <Line LineDateTime="2019-10-06 14:09:47.705" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:47.705">remember trying to go outside and play issues I see</Line>
+        <Line LineDateTime="2019-10-06 14:09:49.915" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:49.915">in my way the</Line>
+        <Line LineDateTime="2019-10-06 14:09:53.035" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:53.035">okay I really am passer</Line>
+        <Line LineDateTime="2019-10-06 14:09:55.360" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:09:55.360">my brother is a good I've turned around on holiday</Line>
+        <Line LineDateTime="2019-10-06 14:10:00.165" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:00.165">there anything you see any of that</Line>
+        <Line LineDateTime="2019-10-06 14:10:07.525" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:07.525">my mother said none of the sheep watch that you</Line>
+        <Line LineDateTime="2019-10-06 14:10:09.835" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:09.835">don't play that Lou you don't like it and I played</Line>
+        <Line LineDateTime="2019-10-06 14:10:12.995" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:12.995">the Blue</Line>
+        <Line LineDateTime="2019-10-06 14:10:13.870" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:13.870">for probably 7 8 years and I did for me it is my</Line>
+        <Line LineDateTime="2019-10-06 14:10:19.015" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:19.015">old blaxploitation believe</Line>
+        <Line LineDateTime="2019-10-06 14:10:24.165" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:24.165">anything else Jonathan was Terry crews at one point</Line>
+        <Line LineDateTime="2019-10-06 14:10:28.125" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:28.125">a court room with</Line>
+        <Line LineDateTime="2019-10-06 14:10:29.490" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:29.490">can change our guests</Line>
+        <Line LineDateTime="2019-10-06 14:10:31.765" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:31.765">whom I guess because of his studying art is</Line>
+        <Line LineDateTime="2019-10-06 14:10:35.085" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:35.085">artistic background might be I think he would do at</Line>
+        <Line LineDateTime="2019-10-06 14:10:38.305" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:38.305">least once</Line>
+        <Line LineDateTime="2019-10-06 14:10:40.215" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:40.215">Yes things</Line>
+        <Line LineDateTime="2019-10-06 14:10:44.750" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:44.750">would hold for college about Berger up up up up as</Line>
+        <Line LineDateTime="2019-10-06 14:10:47.655" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:47.655">we hear about this if you do the job you can draw</Line>
+        <Line LineDateTime="2019-10-06 14:10:50.535" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:50.535">taking down a TV Twitter</Line>
+        <Line LineDateTime="2019-10-06 14:10:55.325" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:10:55.325">beating up on me and</Line>
+        <Line LineDateTime="2019-10-06 14:11:00.735" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:00.735">I just want to get out of there right Yeah</Line>
+        <Line LineDateTime="2019-10-06 14:11:02.665" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:02.665">the art director comes up from the basement no you</Line>
+        <Line LineDateTime="2019-10-06 14:11:05.325" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:05.325">know I guess we'll keep our director's dog Wow look</Line>
+        <Line LineDateTime="2019-10-06 14:11:10.095" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:10.095">at that any light</Line>
+        <Line LineDateTime="2019-10-06 14:11:12.355" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:12.355">of</Line>
+        <Line LineDateTime="2019-10-06 14:11:14.310" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:14.310">and what happened this though the biggest court</Line>
+        <Line LineDateTime="2019-10-06 14:11:16.635" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:16.635">case in Flint Michigan history and</Line>
+        <Line LineDateTime="2019-10-06 14:11:19.665" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:19.665">a Chicago court sketch artist could not make it so</Line>
+        <Line LineDateTime="2019-10-06 14:11:22.665" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:22.665">they ran downstairs where we were in the basement</Line>
+        <Line LineDateTime="2019-10-06 14:11:25.795" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:25.795">and they think they can do both on the court right</Line>
+        <Line LineDateTime="2019-10-06 14:11:28.075" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:28.075">now and can you catch me tonight Yeah</Line>
+        <Line LineDateTime="2019-10-06 14:11:32.345" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:32.345">I didn't never done before there was sketching out</Line>
+        <Line LineDateTime="2019-10-06 14:11:35.545" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:35.545">everything and put it on TV the</Line>
+        <Line LineDateTime="2019-10-06 14:11:38.330" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:38.330">that night my mother was like she was so Wow it was</Line>
+        <Line LineDateTime="2019-10-06 14:11:41.945" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:41.945">my first job in the same</Line>
+        <Line LineDateTime="2019-10-06 14:11:50.210" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:50.210">and Jonathan did Terry crews study the arts of a</Line>
+        <Line LineDateTime="2019-10-06 14:11:54.375" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:54.375">French pastry</Line>
+        <Line LineDateTime="2019-10-06 14:11:56.855" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:11:56.855">you know I'm starting to feel like</Line>
+        <Line LineDateTime="2019-10-06 14:12:01.905" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:01.905">are any of these will be no you tell me it just</Line>
+        <Line LineDateTime="2019-10-06 14:12:06.195" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:06.195">seems like Ted cruz</Line>
+        <Line LineDateTime="2019-10-06 14:12:07.650" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:07.650">so far I can do anything and I would say as</Line>
+        <Line LineDateTime="2019-10-06 14:12:12.455" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:12.455">unlikely as that 1000 would be able to fit in some</Line>
+        <Line LineDateTime="2019-10-06 14:12:14.605" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:14.605">study of French pastry into this very busy I was</Line>
+        <Line LineDateTime="2019-10-06 14:12:17.495" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:17.495">Yeah sure that's</Line>
+        <Line LineDateTime="2019-10-06 14:12:22.690" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:22.690">way it did dominate and Inslee have they have grown</Line>
+        <Line LineDateTime="2019-10-06 14:12:22.940" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:22.940">Wow that guy can do everything in public radio we</Line>
+        <Line LineDateTime="2019-10-06 14:12:26.585" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:26.585">also like to consider ourselves Jack of all trades</Line>
+        <Line LineDateTime="2019-10-06 14:12:29.045" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:29.045">our show has a small team we all take a lot of</Line>
+        <Line LineDateTime="2019-10-06 14:12:31.715" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:31.715">different roles</Line>
+        <Line LineDateTime="2019-10-06 14:12:32.450" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:32.450">yet during the interview one thing that really</Line>
+        <Line LineDateTime="2019-10-06 14:12:34.555" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:34.555">stuck out to me was that Kerry painted portraits of</Line>
+        <Line LineDateTime="2019-10-06 14:12:38.635" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:38.635">his fellow football teammates</Line>
+        <Line LineDateTime="2019-10-06 14:12:40.330" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:40.330">to make extra cash while he was playing in the nfl</Line>
+        <Line LineDateTime="2019-10-06 14:12:43.325" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:43.325">I mean it's amazing it's too bad none of us not to</Line>
+        <Line LineDateTime="2019-10-06 14:12:45.805" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:45.805">paint</Line>
+        <Line LineDateTime="2019-10-06 14:12:46.340" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:46.340">Yeah but in a way we do even better we paint</Line>
+        <Line LineDateTime="2019-10-06 14:12:49.305" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:49.305">pictures</Line>
+        <Line LineDateTime="2019-10-06 14:12:50.120" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:50.120">with our words</Line>
+        <Line LineDateTime="2019-10-06 14:12:51.400" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:51.400">and we rely on your donations to make these word</Line>
+        <Line LineDateTime="2019-10-06 14:12:54.175" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:54.175">paintings possible Here's how you can support your</Line>
+        <Line LineDateTime="2019-10-06 14:12:56.765" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:56.765">public radio station to</Line>
+        <Line LineDateTime="2019-10-06 14:12:58.990" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:12:58.990">you can support K heren by calling 8 it 8.9 for 6.3</Line>
+        <Line LineDateTime="2019-10-06 14:13:03.515" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:03.515">one</Line>
+        <Line LineDateTime="2019-10-06 14:13:04.060" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:04.060">or by heading over to kate E.R.A. dot org amazing</Line>
+        <Line LineDateTime="2019-10-06 14:13:07.905" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:07.905">conversation so far with Terry crews will get back</Line>
+        <Line LineDateTime="2019-10-06 14:13:10.395" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:10.395">to that I hear and just a minute that Sturm minder</Line>
+        <Line LineDateTime="2019-10-06 14:13:13.395" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:13.395">the kind of unique programs you find</Line>
+        <Line LineDateTime="2019-10-06 14:13:15.670" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:15.670">on K Uri the weekends are certainly a great time to</Line>
+        <Line LineDateTime="2019-10-06 14:13:18.085" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:18.085">check in with</Line>
+        <Line LineDateTime="2019-10-06 14:13:19.000" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:19.000">great programs like ask me another nowhere else you</Line>
+        <Line LineDateTime="2019-10-06 14:13:21.955" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:21.955">hear this mix of fun entertaining programs and of</Line>
+        <Line LineDateTime="2019-10-06 14:13:25.175" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:25.175">course the news an in-depth interviews you count on</Line>
+        <Line LineDateTime="2019-10-06 14:13:27.825" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:27.825">from catering</Line>
+        <Line LineDateTime="2019-10-06 14:13:28.880" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:28.880">all week-long a only possible how this kind of mix</Line>
+        <Line LineDateTime="2019-10-06 14:13:31.985" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:31.985">of programming with a public radio station and you</Line>
+        <Line LineDateTime="2019-10-06 14:13:35.155" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:35.155">make that possible when you call 8</Line>
+        <Line LineDateTime="2019-10-06 14:13:37.550" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:37.550">6 9 4s 6.3 one</Line>
+        <Line LineDateTime="2019-10-06 14:13:40.030" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:40.030">or head over to katy array of dot or can make a</Line>
+        <Line LineDateTime="2019-10-06 14:13:43.025" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:43.025">contribution we set a goal during ask me another to</Line>
+        <Line LineDateTime="2019-10-06 14:13:46.005" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:46.005">hear from 25 donors and Worley now Chris</Line>
+        <Line LineDateTime="2019-10-06 14:13:48.580" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:48.580">we have 22 left to go I have something to sweeten</Line>
+        <Line LineDateTime="2019-10-06 14:13:52.015" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:52.015">the deal right now today</Line>
+        <Line LineDateTime="2019-10-06 14:13:53.800" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:53.800">when you make a donation in support of the mission</Line>
+        <Line LineDateTime="2019-10-06 14:13:55.975" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:55.975">left E.R.A.</Line>
+        <Line LineDateTime="2019-10-06 14:13:57.260" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:13:57.260">in addition to any thank you gift you might choose</Line>
+        <Line LineDateTime="2019-10-06 14:14:00.005" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:00.005">a Tote bag or socks 0 water bottle or whatever else</Line>
+        <Line LineDateTime="2019-10-06 14:14:03.475" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:03.475">you want more we will zero researcher named for to</Line>
+        <Line LineDateTime="2019-10-06 14:14:06.865" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:06.865">free passes to the urban artist market next weekend</Line>
+        <Line LineDateTime="2019-10-06 14:14:09.945" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:09.945">that is Saturday October 12 we do ask you</Line>
+        <Line LineDateTime="2019-10-06 14:14:12.670" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:12.670">let us know you request those passes in the</Line>
+        <Line LineDateTime="2019-10-06 14:14:14.865" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:14.865">comments when you donate online or ask the person</Line>
+        <Line LineDateTime="2019-10-06 14:14:17.475" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:17.475">over the phone we don't give much passes people who</Line>
+        <Line LineDateTime="2019-10-06 14:14:20.265" StationGUID="RADKERA" StationID="17725" UTCDelta="-18000000" UTCLineDateTime="10/06/2019 19:14:20.265">can make it but this is a really good deal you get</Line>
+      </Lines>
+    </Page>
+  </Body>
+</Message>

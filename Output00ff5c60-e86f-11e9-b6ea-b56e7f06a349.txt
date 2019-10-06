@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Message>
+  <Header>
+    <Source>
+      <SavedSearch FeedPartnerID="20581" SearchGUID="3c29eb89-bec8-439d-aadd-04e9996f2dd0">
+        <SearchQuery>donation Page.BroadcastMetadata.Market.Country:US</SearchQuery>
+        <ParsedSearchQuery>+content:donation +Page.BroadcastMetadata.Market.Country:us</ParsedSearchQuery>
+        <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+        <MatchRateMuteThreshold>0.5</MatchRateMuteThreshold>
+        <CurrentMatchRate>0.002</CurrentMatchRate>
+        <AnalyzerDescriptor>default</AnalyzerDescriptor>
+        <ParserDescriptor>default</ParserDescriptor>
+        <HighlighterDescriptor>default</HighlighterDescriptor>
+        <CurrentAnalyzer>org.apache.lucene.analysis.miscellaneous.PatternAnalyzer@536f23f9</CurrentAnalyzer>
+      </SavedSearch>
+      <SearchAgentHost>pouvmwsswatcher01</SearchAgentHost>
+    </Source>
+    <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+  </Header>
+  <Body>
+    <Excerpts>
+      <TranscriptExcerpt LineDateTime="2019-10-06 12:12:54.421" Playerlette="/playerlette.aspx?PartnerID=20581&amp;StationID=7015&amp;StartDateTime=2019-10-06+12%3A12%3A40.421&amp;Duration=300" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:54.421"><![CDATA[instead have an there being like people didn't have to bring anything to the barbecue that Post just asked that everybody make a <B>donation</B> to the guest]]></TranscriptExcerpt>
+    </Excerpts>
+    <Page BreakType="LongWait" Duration="233.805" PageID="0ba51dc9-12c0-49b6-8dd8-689144a7cc2b" StationGUID="RADKOH" StationID="7015">
+      <BroadcastMetadata>
+        <Station StationID="7015" UniqueIdentifier="RADKOH">
+          <CallSign>KOH</CallSign>
+          <StationName>KOH-AM (Radio)</StationName>
+          <MarketID>964</MarketID>
+          <Location>Reno, NV</Location>
+          <GMTOffset>-8</GMTOffset>
+          <GMTOffsetMinutes>0</GMTOffsetMinutes>
+          <TextType>2</TextType>
+          <RightToLeft>0</RightToLeft>
+          <PhoneticType>0</PhoneticType>
+          <MediaType>2</MediaType>
+          <Active>1</Active>
+          <SortOrder>5</SortOrder>
+          <IsUnicode>0</IsUnicode>
+          <Website />
+          <MediaProcessType>0</MediaProcessType>
+          <MediaPurchase>0</MediaPurchase>
+          <NationalNetwork />
+          <PrimaryLanguage>en-us</PrimaryLanguage>
+          <MediaStationID>7015</MediaStationID>
+          <TimeZoneIdentifier>Pacific Standard Time</TimeZoneIdentifier>
+          <SiteID>0</SiteID>
+          <RoviTVDataSourceID />
+          <RoviFTPRemoteDir />
+          <CaptureLocation />
+          <AlterTextCase>False</AlterTextCase>
+          <AllowMediaDownload>1</AllowMediaDownload>
+          <CaptureSiteCode>usshl     </CaptureSiteCode>
+          <BackupStationID />
+          <DateAdded>10/5/2016 10:58:36 AM</DateAdded>
+          <AudioFingerprintingEnabled>True</AudioFingerprintingEnabled>
+          <BroadcastOwnerID />
+          <CaptureServer />
+          <ForSummariesUseBACK>0</ForSummariesUseBACK>
+          <MarketName>Reno, NV</MarketName>
+        </Station>
+        <ViewershipData>
+          <!--No Local Viewership Data Found-->
+          <!--No National Viewership Data Found-->
+          <!--No Cable Viewership Data Found-->
+          <!--No Reach Value Data Found-->
+          <!--No Station Daypart Reach Data Found-->
+        </ViewershipData>
+        <Market xmlns:json="http://james.newtonking.com/projects/json" MarketID="964" MarketName="Reno, NV" json:Array="true">
+          <Country>US</Country>
+          <Active>True</Active>
+          <FilterOrder>314</FilterOrder>
+          <State>NV</State>
+          <Latitude>39.530556</Latitude>
+          <Longitude>-119.813666</Longitude>
+          <DMARank>106</DMARank>
+        </Market>
+        <TranscriptUrl>http://mms.tveyes.com/transcript.asp?StationID=7015&amp;DateTime=10%2f06%2f2019+12%3a11%3a06&amp;Dur=234&amp;PlayClip=true</TranscriptUrl>
+        <StanfordNamedEntityData Model="english.conll.4class.caseless.distsim.crf.ser.gz">
+          <Entity Type="Person">Reno</Entity>
+          <Entity Type="Location">Nevada</Entity>
+          <Entity Type="Person">Ali</Entity>
+          <Entity Type="Person">Hendy</Entity>
+          <Entity Type="Person">Calvin</Entity>
+          <Entity Type="Person">Melissa</Entity>
+          <Entity Type="Person">John Strop</Entity>
+        </StanfordNamedEntityData>
+      </BroadcastMetadata>
+      <Lines>
+        <Line LineDateTime="2019-10-06 12:11:06.846" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:06.846">What about those veterans that don't receive</Line>
+        <Line LineDateTime="2019-10-06 12:11:10.091" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:10.091">medical care maybe they don't have a home</Line>
+        <Line LineDateTime="2019-10-06 12:11:13.221" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:13.221">we provide temporary lodging</Line>
+        <Line LineDateTime="2019-10-06 12:11:15.216" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:15.216">for people who live at least 30 mile away</Line>
+        <Line LineDateTime="2019-10-06 12:11:18.366" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:18.366">and who have homes to go home and win and in the</Line>
+        <Line LineDateTime="2019-10-06 12:11:22.471" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:22.471">South we don't have a heart for homeless that</Line>
+        <Line LineDateTime="2019-10-06 12:11:24.871" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:24.871">transition that bring needs</Line>
+        <Line LineDateTime="2019-10-06 12:11:26.746" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:26.746">a totally different kind of requirement and to be</Line>
+        <Line LineDateTime="2019-10-06 12:11:30.871" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:30.871">able to handle and yards</Line>
+        <Line LineDateTime="2019-10-06 12:11:32.641" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:32.641">and and again where here</Line>
+        <Line LineDateTime="2019-10-06 12:11:34.801" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:34.801">to cover that temporary lodging me when someone</Line>
+        <Line LineDateTime="2019-10-06 12:11:38.351" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:38.351">travels to reno for their medal match for their</Line>
+        <Line LineDateTime="2019-10-06 12:11:41.621" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:41.621">medical care</Line>
+        <Line LineDateTime="2019-10-06 12:11:43.481" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:43.481">so what can the rest of us do to help the House we</Line>
+        <Line LineDateTime="2019-10-06 12:11:47.251" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:47.251">are all in the reno northern Nevada area we have a</Line>
+        <Line LineDateTime="2019-10-06 12:11:50.021" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:50.021">very active community here and that's one thing</Line>
+        <Line LineDateTime="2019-10-06 12:11:52.431" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:52.431">I've learned from doing this show is how caring of</Line>
+        <Line LineDateTime="2019-10-06 12:11:55.701" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:55.701">the community we have how can the average listener</Line>
+        <Line LineDateTime="2019-10-06 12:11:58.491" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:11:58.491">help out the guest House and your mission</Line>
+        <Line LineDateTime="2019-10-06 12:12:00.906" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:00.906">so for us we aren't completely privately funded we</Line>
+        <Line LineDateTime="2019-10-06 12:12:05.521" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:05.521">don't receive any government funding all of this</Line>
+        <Line LineDateTime="2019-10-06 12:12:08.261" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:08.261">community is an incredibly generous towards us and</Line>
+        <Line LineDateTime="2019-10-06 12:12:11.591" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:11.591">they've helped us build expansions and they helped</Line>
+        <Line LineDateTime="2019-10-06 12:12:13.781" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:13.781">us keep the lights on and they've helped us feed</Line>
+        <Line LineDateTime="2019-10-06 12:12:16.971" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:16.971">our guests</Line>
+        <Line LineDateTime="2019-10-06 12:12:17.836" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:17.836">so I think for us the number one is always</Line>
+        <Line LineDateTime="2019-10-06 12:12:20.761" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:20.761">donations week earlier Ali is in need of donations</Line>
+        <Line LineDateTime="2019-10-06 12:12:24.231" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:24.231">to help the daily operations of the House</Line>
+        <Line LineDateTime="2019-10-06 12:12:27.066" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:27.066">we also have a wish-list on our website so that is</Line>
+        <Line LineDateTime="2019-10-06 12:12:30.551" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:30.551">just like your House we go through</Line>
+        <Line LineDateTime="2019-10-06 12:12:32.776" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:32.776">toilet paper and paper tiles and trash bags but</Line>
+        <Line LineDateTime="2019-10-06 12:12:35.831" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:35.831">unless you have _thirty_ _three_ kids we'd probably</Line>
+        <Line LineDateTime="2019-10-06 12:12:38.131" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:38.131">go through much faster than you do it so I am</Line>
+        <Line LineDateTime="2019-10-06 12:12:41.956" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:41.956">whatever's on our website as far as our wish list</Line>
+        <Line LineDateTime="2019-10-06 12:12:45.321" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:45.321">that is always a critical need for us and I think</Line>
+        <Line LineDateTime="2019-10-06 12:12:48.371" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:48.371">Thirdly we have a lot of groups who put on</Line>
+        <Line LineDateTime="2019-10-06 12:12:51.241" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:51.241">their own fundraisers we had a group out in red hot</Line>
+        <Line LineDateTime="2019-10-06 12:12:54.421" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:54.421">recently who hosted a barbecue and instead have an</Line>
+        <Line LineDateTime="2019-10-06 12:12:59.256" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:12:59.256">there being like people didn't have to bring</Line>
+        <Line LineDateTime="2019-10-06 12:13:02.361" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:02.361">anything to the barbecue</Line>
+        <Line LineDateTime="2019-10-06 12:13:04.101" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:04.101">that Post just asked that everybody make a donation</Line>
+        <Line LineDateTime="2019-10-06 12:13:07.811" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:07.811">to the guest House and that was so generous and</Line>
+        <Line LineDateTime="2019-10-06 12:13:10.591" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:10.591">such a cool ideas for things like that are always</Line>
+        <Line LineDateTime="2019-10-06 12:13:12.881" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:12.881">Super helpful tale had been a lot of people showed</Line>
+        <Line LineDateTime="2019-10-06 12:13:15.081" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:15.081">up because that is enticing mission a lot of people</Line>
+        <Line LineDateTime="2019-10-06 12:13:18.181" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:18.181">know the name veterans guesthouse and are always</Line>
+        <Line LineDateTime="2019-10-06 12:13:21.591" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:21.591">very eager to help</Line>
+        <Line LineDateTime="2019-10-06 12:13:23.271" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:23.271">that if my check the other thing we need volunteers</Line>
+        <Line LineDateTime="2019-10-06 12:13:26.251" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:26.251">okay not only on not on a day-to-day basis</Line>
+        <Line LineDateTime="2019-10-06 12:13:30.216" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:30.216">in fact right now if anybody out there that's a</Line>
+        <Line LineDateTime="2019-10-06 12:13:32.241" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:32.241">really good handy man or Hendy woman had a person</Line>
+        <Line LineDateTime="2019-10-06 12:13:36.111" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:36.111">come up we would love to hear from you we</Line>
+        <Line LineDateTime="2019-10-06 12:13:39.546" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:39.546">it's it's the little things the toilet seats it's a</Line>
+        <Line LineDateTime="2019-10-06 12:13:42.481" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:42.481">broken one lose swords light bulbs around somebody</Line>
+        <Line LineDateTime="2019-10-06 12:13:45.611" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:45.611">help us and keep on top of those things because you</Line>
+        <Line LineDateTime="2019-10-06 12:13:48.451" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:48.451">can imagine</Line>
+        <Line LineDateTime="2019-10-06 12:13:49.831" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:49.831">we have 16000 square feet of</Line>
+        <Line LineDateTime="2019-10-06 12:13:52.261" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:52.261">House right now that needs to be maintained and and</Line>
+        <Line LineDateTime="2019-10-06 12:13:56.081" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:56.081">there are things we're going to take care we will</Line>
+        <Line LineDateTime="2019-10-06 12:13:58.421" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:13:58.421">hire someone and take care of</Line>
+        <Line LineDateTime="2019-10-06 12:14:00.226" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:00.226">by other things where if we could just have</Line>
+        <Line LineDateTime="2019-10-06 12:14:02.651" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:02.651">somebody help us out we love the little things here</Line>
+        <Line LineDateTime="2019-10-06 12:14:05.301" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:05.301">and they're right to be kept up and obviously that</Line>
+        <Line LineDateTime="2019-10-06 12:14:08.831" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:08.831">requires maintenance when you're taking care of so</Line>
+        <Line LineDateTime="2019-10-06 12:14:10.771" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:10.771">many people I know calvin maintenance that requires</Line>
+        <Line LineDateTime="2019-10-06 12:14:13.311" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:13.311">my House just with two people in it but you've got</Line>
+        <Line LineDateTime="2019-10-06 12:14:17.261" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:17.261">a lot more of them that's all right everybody sit</Line>
+        <Line LineDateTime="2019-10-06 12:14:20.161" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:20.161">tight because we are going to take a break we will</Line>
+        <Line LineDateTime="2019-10-06 12:14:22.411" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:22.411">return shortly with more from Marine</Line>
+        <Line LineDateTime="2019-10-06 12:14:24.456" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:24.456">am Melissa of the veterans guest House in the</Line>
+        <Line LineDateTime="2019-10-06 12:14:26.671" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:26.671">meantime if you like to check out the website</Line>
+        <Line LineDateTime="2019-10-06 12:14:28.491" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:28.491">veterans guest House Doc forward we'll be right</Line>
+        <Line LineDateTime="2019-10-06 12:14:31.111" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:31.111">back on Nevada outlook</Line>
+        <Line LineDateTime="2019-10-06 12:14:34.921" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:34.921">stories nonprofit volunteer based organization that</Line>
+        <Line LineDateTime="2019-10-06 12:14:37.621" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:37.621">helps local businesses grow and thrive and they're</Line>
+        <Line LineDateTime="2019-10-06 12:14:39.961" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:39.961">looking for mentors that could help local</Line>
+        <Line LineDateTime="2019-10-06 12:14:41.891" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:41.891">businesses mentors like John Strop well I would</Line>
+        <Line LineDateTime="2019-10-06 12:14:44.861" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:44.861">urge any successful business person who has little</Line>
+        <Line LineDateTime="2019-10-06 12:14:48.171" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:48.171">time to consider score being a mentor volunteers</Line>
+        <Line LineDateTime="2019-10-06 12:14:51.361" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:51.361">anybody who's been in business run a business has</Line>
+        <Line LineDateTime="2019-10-06 12:14:53.681" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:53.681">great knowledge could really benefit people in the</Line>
+        <Line LineDateTime="2019-10-06 12:14:55.971" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:14:55.971">community called today 8.4 two 3 to 17 27 or log on</Line>
+        <Line LineDateTime="2019-10-06 12:15:00.651" StationGUID="RADKOH" StationID="7015" UTCDelta="-25200000" UTCLineDateTime="10/06/2019 19:15:00.651">to northern Nevada dot scored dot org to learn more</Line>
+      </Lines>
+    </Page>
+  </Body>
+</Message>

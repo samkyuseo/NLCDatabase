@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Message>
+  <Header>
+    <Source>
+      <SavedSearch FeedPartnerID="20581" SearchGUID="3c29eb89-bec8-439d-aadd-04e9996f2dd0">
+        <SearchQuery>donation Page.BroadcastMetadata.Market.Country:US</SearchQuery>
+        <ParsedSearchQuery>+content:donation +Page.BroadcastMetadata.Market.Country:us</ParsedSearchQuery>
+        <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+        <MatchRateMuteThreshold>0.5</MatchRateMuteThreshold>
+        <CurrentMatchRate>0.006</CurrentMatchRate>
+        <AnalyzerDescriptor>default</AnalyzerDescriptor>
+        <ParserDescriptor>default</ParserDescriptor>
+        <HighlighterDescriptor>default</HighlighterDescriptor>
+        <CurrentAnalyzer>org.apache.lucene.analysis.miscellaneous.PatternAnalyzer@536f23f9</CurrentAnalyzer>
+      </SavedSearch>
+      <SearchAgentHost>pouvmwsswatcher02</SearchAgentHost>
+    </Source>
+    <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+  </Header>
+  <Body>
+    <Excerpts>
+      <TranscriptExcerpt LineDateTime="2019-10-06 15:18:24.915" Playerlette="/playerlette.aspx?PartnerID=20581&amp;StationID=13945&amp;StartDateTime=2019-10-06+15%3A18%3A10.915&amp;Duration=300" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:24.915"><![CDATA[Foundation needs your help and your <B>donation</B> could literally save women's lives helping them catch breast cancer early like they did with my mom donate]]></TranscriptExcerpt>
+    </Excerpts>
+    <Page BreakType="LongPage" Duration="298.010" PageID="caa2c4e3-8328-42b2-ad8e-650d29543c5d" StationGUID="RADWDEL" StationID="13945">
+      <BroadcastMetadata>
+        <Station StationID="13945" UniqueIdentifier="RADWDEL">
+          <CallSign>WDEL</CallSign>
+          <StationName>WDEL 101.7</StationName>
+          <MarketID>135</MarketID>
+          <Location>Wilmington, DE</Location>
+          <GMTOffset>-5</GMTOffset>
+          <GMTOffsetMinutes>0</GMTOffsetMinutes>
+          <TextType>2</TextType>
+          <RightToLeft>0</RightToLeft>
+          <PhoneticType>0</PhoneticType>
+          <MediaType>2</MediaType>
+          <Active>1</Active>
+          <SortOrder>5</SortOrder>
+          <IsUnicode>0</IsUnicode>
+          <Website />
+          <MediaProcessType>0</MediaProcessType>
+          <MediaPurchase>0</MediaPurchase>
+          <NationalNetwork />
+          <PrimaryLanguage>en-us</PrimaryLanguage>
+          <MediaStationID>13945</MediaStationID>
+          <TimeZoneIdentifier>Eastern Standard Time</TimeZoneIdentifier>
+          <SiteID>0</SiteID>
+          <RoviTVDataSourceID />
+          <RoviFTPRemoteDir />
+          <CaptureLocation>Shelton, CT</CaptureLocation>
+          <AlterTextCase>False</AlterTextCase>
+          <AllowMediaDownload>1</AllowMediaDownload>
+          <CaptureSiteCode>USSHL     </CaptureSiteCode>
+          <BackupStationID />
+          <DateAdded>10/5/2016 11:10:36 AM</DateAdded>
+          <AudioFingerprintingEnabled>True</AudioFingerprintingEnabled>
+          <BroadcastOwnerID />
+          <CaptureServer>SR-RADCAP42.tveyes.com</CaptureServer>
+          <ForSummariesUseBACK>0</ForSummariesUseBACK>
+          <MarketName>Philadelphia, PA</MarketName>
+        </Station>
+        <ViewershipData>
+          <!--No Local Viewership Data Found-->
+          <!--No National Viewership Data Found-->
+          <!--No Cable Viewership Data Found-->
+          <!--No Reach Value Data Found-->
+          <!--No Station Daypart Reach Data Found-->
+        </ViewershipData>
+        <Market xmlns:json="http://james.newtonking.com/projects/json" MarketID="135" MarketName="Philadelphia, PA" json:Array="true">
+          <Country>US</Country>
+          <Active>True</Active>
+          <FilterOrder>294</FilterOrder>
+          <State>PA</State>
+          <Latitude>39.951639</Latitude>
+          <Longitude>-75.163808</Longitude>
+          <DMARank>4</DMARank>
+        </Market>
+        <TranscriptUrl>http://mms.tveyes.com/transcript.asp?StationID=13945&amp;DateTime=10%2f06%2f2019+15%3a15%3a07&amp;Dur=299&amp;PlayClip=true</TranscriptUrl>
+        <StanfordNamedEntityData Model="english.conll.4class.caseless.distsim.crf.ser.gz">
+          <Entity Type="Organization">Apple</Entity>
+          <Entity Type="Location">Pinehurst North Carolina</Entity>
+          <Entity Type="Organization">News Radio</Entity>
+          <Entity Type="Organization">Vpn</Entity>
+          <Entity Type="Person">Stephen</Entity>
+          <Entity Type="Location">China</Entity>
+          <Entity Type="Location">U.S.</Entity>
+          <Entity Type="Organization">United Breast Cancer Foundation</Entity>
+          <Entity Type="Organization">Aldi</Entity>
+          <Entity Type="Organization">Dex</Entity>
+          <Entity Type="Organization">Exxon Sites Power Iex</Entity>
+        </StanfordNamedEntityData>
+      </BroadcastMetadata>
+      <Lines>
+        <Line LineDateTime="2019-10-06 15:15:07.435" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:07.435">that's a bright</Line>
+        <Line LineDateTime="2019-10-06 15:15:08.655" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:08.655">so they should be using dark mode not a fan of dark</Line>
+        <Line LineDateTime="2019-10-06 15:15:12.405" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:12.405">mode</Line>
+        <Line LineDateTime="2019-10-06 15:15:13.125" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:13.125">I've tried using a new Apple iOS 11 of their 13</Line>
+        <Line LineDateTime="2019-10-06 15:15:18.655" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:18.655">N.S.A. new 11 that</Line>
+        <Line LineDateTime="2019-10-06 15:15:21.015" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:21.015">you should be on Android which has dark Knight I</Line>
+        <Line LineDateTime="2019-10-06 15:15:23.385" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:23.385">said the first blaze had to talk about this with</Line>
+        <Line LineDateTime="2019-10-06 15:15:25.925" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:25.925">the dark low when it gets dark and</Line>
+        <Line LineDateTime="2019-10-06 15:15:27.795" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:27.795">I just want to touch lost now I just 4 of them the</Line>
+        <Line LineDateTime="2019-10-06 15:15:31.215" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:31.215">filters to come out at night</Line>
+        <Line LineDateTime="2019-10-06 15:15:32.980" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:32.980">Yeah the Blue light filters or something sort of</Line>
+        <Line LineDateTime="2019-10-06 15:15:35.155" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:35.155">dark into screen a little bit not to that extent of</Line>
+        <Line LineDateTime="2019-10-06 15:15:37.445" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:37.445">course but it's better</Line>
+        <Line LineDateTime="2019-10-06 15:15:39.595" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:39.595">Stephen in Pinehurst North Carolina listens on news</Line>
+        <Line LineDateTime="2019-10-06 15:15:43.165" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:43.165">radio 6 rating W pts for us steve</Line>
+        <Line LineDateTime="2019-10-06 15:15:45.940" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:45.940">I've been a question about a vpn or virtual private</Line>
+        <Line LineDateTime="2019-10-06 15:15:49.555" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:49.555">networks are they all the same why eat some yardage</Line>
+        <Line LineDateTime="2019-10-06 15:15:54.815" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:54.815">virtually nothing and others are close to a 100</Line>
+        <Line LineDateTime="2019-10-06 15:15:58.595" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:15:58.595">dollars is there a difference in the quality of the</Line>
+        <Line LineDateTime="2019-10-06 15:16:02.675" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:02.675">VPN services</Line>
+        <Line LineDateTime="2019-10-06 15:16:04.225" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:04.225">what he only over Stephen a I like how you did do</Line>
+        <Line LineDateTime="2019-10-06 15:16:07.585" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:07.585">virtual leave nothing</Line>
+        <Line LineDateTime="2019-10-06 15:16:09.460" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:09.460">a virtual private network but no they're not all</Line>
+        <Line LineDateTime="2019-10-06 15:16:12.255" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:12.255">the same VPN to vary depending on a lot of fact</Line>
+        <Line LineDateTime="2019-10-06 15:16:15.000" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:15.000">Actors including the target audience and the</Line>
+        <Line LineDateTime="2019-10-06 15:16:18.045" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:18.045">technical specs</Line>
+        <Line LineDateTime="2019-10-06 15:16:19.320" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:19.320">for example there are streaming VP and that are</Line>
+        <Line LineDateTime="2019-10-06 15:16:22.275" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:22.275">marketed people who want to access streaming</Line>
+        <Line LineDateTime="2019-10-06 15:16:24.905" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:24.905">services in other countries for example every time</Line>
+        <Line LineDateTime="2019-10-06 15:16:27.705" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:27.705">my man Diamond China</Line>
+        <Line LineDateTime="2019-10-06 15:16:29.220" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:29.220">I've used VPN just to get my anti-social media</Line>
+        <Line LineDateTime="2019-10-06 15:16:32.065" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:32.065">network stuff but you get around restrictions like</Line>
+        <Line LineDateTime="2019-10-06 15:16:35.175" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:35.175">China's famous fire wall</Line>
+        <Line LineDateTime="2019-10-06 15:16:36.990" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:36.990">VPN centered in privacy and a whole bunch of other</Line>
+        <Line LineDateTime="2019-10-06 15:16:41.085" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:41.085">vpn types differs afte privacy center VPN based in</Line>
+        <Line LineDateTime="2019-10-06 15:16:44.485" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:44.485">the U.S. are a lot less appealing to customers</Line>
+        <Line LineDateTime="2019-10-06 15:16:46.900" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:46.900">and may have to offer cheaper prices because the</Line>
+        <Line LineDateTime="2019-10-06 15:16:49.045" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:49.045">U.S. has far weaker privacy protections than other</Line>
+        <Line LineDateTime="2019-10-06 15:16:52.155" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:52.155">countries too long was the PM's more popular than</Line>
+        <Line LineDateTime="2019-10-06 15:16:55.435" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:55.435">those the keep logs</Line>
+        <Line LineDateTime="2019-10-06 15:16:56.800" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:56.800">and may turn more streaming centric VPN tend to</Line>
+        <Line LineDateTime="2019-10-06 15:16:59.875" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:16:59.875">cost more money because</Line>
+        <Line LineDateTime="2019-10-06 15:17:01.260" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:01.260">any to be high speed and hide data while many times</Line>
+        <Line LineDateTime="2019-10-06 15:17:03.865" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:03.865">needing to change that he addresses regularly to</Line>
+        <Line LineDateTime="2019-10-06 15:17:05.825" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:05.825">avoid falling into blacklists</Line>
+        <Line LineDateTime="2019-10-06 15:17:07.925" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:07.925">different VPN have different users and different</Line>
+        <Line LineDateTime="2019-10-06 15:17:10.265" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:10.265">advantages but they are not by any means the same</Line>
+        <Line LineDateTime="2019-10-06 15:17:13.415" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:13.415">and you're right Stephen a they can cost from</Line>
+        <Line LineDateTime="2019-10-06 15:17:15.385" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:15.385">virtually nothing up to a 100 Bucks and even then</Line>
+        <Line LineDateTime="2019-10-06 15:17:18.285" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:18.285">some more than that</Line>
+        <Line LineDateTime="2019-10-06 15:17:20.135" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:20.135">so you really have to do some digging and find out</Line>
+        <Line LineDateTime="2019-10-06 15:17:22.025" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:22.025">what exactly you need a VPN for and then go with</Line>
+        <Line LineDateTime="2019-10-06 15:17:25.905" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:25.905">that</Line>
+        <Line LineDateTime="2019-10-06 15:17:26.615" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:26.615">let us know if we can answer any additional</Line>
+        <Line LineDateTime="2019-10-06 15:17:28.845" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:28.845">questions or what you end up with them why because</Line>
+        <Line LineDateTime="2019-10-06 15:17:31.425" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:31.425">it will help other listeners all the way into</Line>
+        <Line LineDateTime="2019-10-06 15:17:34.415" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:34.415">tomorrow Dotcom</Line>
+        <Line LineDateTime="2019-10-06 15:17:40.665" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:40.665">line on Sept breast cancer survivor deny breast</Line>
+        <Line LineDateTime="2019-10-06 15:17:43.845" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:43.845">cancer Foundation full term life</Line>
+        <Line LineDateTime="2019-10-06 15:17:46.140" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:46.140">the Free breast cancer center com cancer early and</Line>
+        <Line LineDateTime="2019-10-06 15:17:49.035" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:49.035">it saved her life</Line>
+        <Line LineDateTime="2019-10-06 15:17:50.550" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:50.550">but now the Foundation needs your help so they can</Line>
+        <Line LineDateTime="2019-10-06 15:17:53.015" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:53.015">continue offering free or low-cost Press screening</Line>
+        <Line LineDateTime="2019-10-06 15:17:55.785" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:55.785">exams saving more women slides helped them by</Line>
+        <Line LineDateTime="2019-10-06 15:17:59.015" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:17:59.015">donating your power whether it's running or not</Line>
+        <Line LineDateTime="2019-10-06 15:18:01.715" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:01.715">they'll provide fast free 24 hour pickup and you</Line>
+        <Line LineDateTime="2019-10-06 15:18:04.735" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:04.735">receive a charitable tax deduction plus the great</Line>
+        <Line LineDateTime="2019-10-06 15:18:07.455" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:07.455">feeling again knowing your donated car is going to</Line>
+        <Line LineDateTime="2019-10-06 15:18:09.875" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:09.875">help save more lives just call 800 to 9 5 41</Line>
+        <Line LineDateTime="2019-10-06 15:18:14.355" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:14.355">_eighty_ _three_ to set the wheels in motion</Line>
+        <Line LineDateTime="2019-10-06 15:18:17.220" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:17.220">they take cars trucks vans and S.U.V. is running or</Line>
+        <Line LineDateTime="2019-10-06 15:18:20.855" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:20.855">not call 818.5 41 _eighty_ _three_ the United</Line>
+        <Line LineDateTime="2019-10-06 15:18:24.915" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:24.915">breast cancer Foundation needs your help and your</Line>
+        <Line LineDateTime="2019-10-06 15:18:27.505" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:27.505">donation could literally save women's lives helping</Line>
+        <Line LineDateTime="2019-10-06 15:18:30.705" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:30.705">them catch breast cancer early like they did with</Line>
+        <Line LineDateTime="2019-10-06 15:18:33.285" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:33.285">my mom donate today 800 to 9 5 41 _eighty_ _three_</Line>
+        <Line LineDateTime="2019-10-06 15:18:37.815" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:37.815">800 to earn 5 41 83</Line>
+        <Line LineDateTime="2019-10-06 15:18:40.975" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:40.975">what if people with type one diabetes have the</Line>
+        <Line LineDateTime="2019-10-06 15:18:43.245" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:43.245">power to manage their condition without finger</Line>
+        <Line LineDateTime="2019-10-06 15:18:45.815" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:45.815">sticks to always know their glucose levels and</Line>
+        <Line LineDateTime="2019-10-06 15:18:48.285" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:48.285">where they're heading with just a glance at a smart</Line>
+        <Line LineDateTime="2019-10-06 15:18:50.315" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:50.315">device to customize the alerts alarms to help keep</Line>
+        <Line LineDateTime="2019-10-06 15:18:53.285" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:53.285">them in range Aldi's knowledge powered by a small</Line>
+        <Line LineDateTime="2019-10-06 15:18:56.295" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:18:56.295">wearable introducing a dex com G6 make knowledge</Line>
+        <Line LineDateTime="2019-10-06 15:19:00.075" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:00.075">your Super power for a list of compatible</Line>
+        <Line LineDateTime="2019-10-06 15:19:02.220" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:02.220">heart devices is next com.com /compatibility if</Line>
+        <Line LineDateTime="2019-10-06 15:19:05.055" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:05.055">you're a hustler and readings from the G6 did not</Line>
+        <Line LineDateTime="2019-10-06 15:19:06.915" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:06.915">match symptoms expectations is blood glucose meter</Line>
+        <Line LineDateTime="2019-10-06 15:19:09.185" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:09.185">make diabetes treatment decisions</Line>
+        <Line LineDateTime="2019-10-06 15:19:11.640" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:11.640">I can get my computer worm that need help with that</Line>
+        <Line LineDateTime="2019-10-06 15:19:16.405" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:16.405">how much do that just got a technical exxon sites</Line>
+        <Line LineDateTime="2019-10-06 15:19:19.685" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:19.685">power iex literally come on site no need to stop</Line>
+        <Line LineDateTime="2019-10-06 15:19:22.795" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:22.795">what you're doing or block of time we come to your</Line>
+        <Line LineDateTime="2019-10-06 15:19:25.445" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:25.445">home office or wherever you are and we don't just</Line>
+        <Line LineDateTime="2019-10-06 15:19:28.285" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:28.285">fix whatever computer issues you might be having we</Line>
+        <Line LineDateTime="2019-10-06 15:19:30.805" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:30.805">explained in teach you along the way so you can</Line>
+        <Line LineDateTime="2019-10-06 15:19:33.325" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:33.325">feel empowered and then help others at home or in</Line>
+        <Line LineDateTime="2019-10-06 15:19:35.805" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:35.805">your office better yet I don't have time protect</Line>
+        <Line LineDateTime="2019-10-06 15:19:38.465" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:38.465">support come to you let us promoting your desktop</Line>
+        <Line LineDateTime="2019-10-06 15:19:41.165" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:41.165">or laptop and one heart beats will instantly</Line>
+        <Line LineDateTime="2019-10-06 15:19:43.375" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:43.375">walking through we offer affordable prices on a</Line>
+        <Line LineDateTime="2019-10-06 15:19:46.105" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:46.105">remote services in I.T. support you in those in</Line>
+        <Line LineDateTime="2019-10-06 15:19:49.125" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:49.125">your office will never have to wait hours to have</Line>
+        <Line LineDateTime="2019-10-06 15:19:51.415" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:51.415">your technical questions answered to get your free</Line>
+        <Line LineDateTime="2019-10-06 15:19:54.205" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:54.205">computer diagnosis today</Line>
+        <Line LineDateTime="2019-10-06 15:19:56.065" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:56.065">we do fear real easy to get started now and will</Line>
+        <Line LineDateTime="2019-10-06 15:19:59.115" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:19:59.115">help you instantly call 875 75 12 875</Line>
+        <Line LineDateTime="2019-10-06 15:20:05.445" StationGUID="RADWDEL" StationID="13945" UTCDelta="-14400000" UTCLineDateTime="10/06/2019 19:20:05.445">75 12 that's 875 75 12</Line>
+      </Lines>
+    </Page>
+  </Body>
+</Message>

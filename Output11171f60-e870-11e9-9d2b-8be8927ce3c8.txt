@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Message>
+  <Header>
+    <Source>
+      <SavedSearch FeedPartnerID="20581" SearchGUID="3c29eb89-bec8-439d-aadd-04e9996f2dd0">
+        <SearchQuery>donation Page.BroadcastMetadata.Market.Country:US</SearchQuery>
+        <ParsedSearchQuery>+content:donation +Page.BroadcastMetadata.Market.Country:us</ParsedSearchQuery>
+        <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+        <MatchRateMuteThreshold>0.5</MatchRateMuteThreshold>
+        <CurrentMatchRate>0.002</CurrentMatchRate>
+        <AnalyzerDescriptor>default</AnalyzerDescriptor>
+        <ParserDescriptor>default</ParserDescriptor>
+        <HighlighterDescriptor>default</HighlighterDescriptor>
+        <CurrentAnalyzer>org.apache.lucene.analysis.miscellaneous.PatternAnalyzer@536f23f9</CurrentAnalyzer>
+      </SavedSearch>
+      <SearchAgentHost>VMWPAGER02</SearchAgentHost>
+    </Source>
+    <Destination>http://13.56.143.45:5000/api/transcripts/receiver</Destination>
+  </Header>
+  <Body>
+    <Excerpts>
+      <TranscriptExcerpt LineDateTime="2019-10-06 13:21:11.125" Playerlette="/playerlette.aspx?PartnerID=20581&amp;StationID=6550&amp;StartDateTime=2019-10-06+13%3A20%3A57.125&amp;Duration=300" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:11.125"><![CDATA[plus what they will give you additional discount with canned food <B>donation</B> great furniture on sale and don't miss out on this one goes well please]]></TranscriptExcerpt>
+    </Excerpts>
+    <Page BreakType="LongPage" Duration="299.215" PageID="52c926d8-2858-46c5-9dad-49a72b4ccf3b" StationGUID="RADKOA" StationID="6550">
+      <BroadcastMetadata>
+        <Station StationID="6550" UniqueIdentifier="RADKOA">
+          <CallSign>KOA</CallSign>
+          <StationName>KOA-AM (Radio)</StationName>
+          <MarketID>139</MarketID>
+          <Location>Denver, CO</Location>
+          <GMTOffset>-7</GMTOffset>
+          <GMTOffsetMinutes>0</GMTOffsetMinutes>
+          <TextType>2</TextType>
+          <RightToLeft>0</RightToLeft>
+          <PhoneticType>0</PhoneticType>
+          <MediaType>2</MediaType>
+          <Active>1</Active>
+          <SortOrder>5</SortOrder>
+          <IsUnicode>0</IsUnicode>
+          <Website />
+          <MediaProcessType>0</MediaProcessType>
+          <MediaPurchase>0</MediaPurchase>
+          <NationalNetwork />
+          <PrimaryLanguage>en-us</PrimaryLanguage>
+          <MediaStationID>6550</MediaStationID>
+          <TimeZoneIdentifier>Mountain Standard Time</TimeZoneIdentifier>
+          <SiteID>0</SiteID>
+          <RoviTVDataSourceID />
+          <RoviFTPRemoteDir />
+          <CaptureLocation>Denver, CO</CaptureLocation>
+          <AlterTextCase>False</AlterTextCase>
+          <AllowMediaDownload>1</AllowMediaDownload>
+          <CaptureSiteCode>usshl     </CaptureSiteCode>
+          <BackupStationID />
+          <DateAdded>10/5/2016 10:58:36 AM</DateAdded>
+          <AudioFingerprintingEnabled>True</AudioFingerprintingEnabled>
+          <BroadcastOwnerID />
+          <CaptureServer>SR-RADCAP39.tveyes.com</CaptureServer>
+          <ForSummariesUseBACK>0</ForSummariesUseBACK>
+          <MarketName>Denver, CO</MarketName>
+        </Station>
+        <ViewershipData>
+          <!--No Local Viewership Data Found-->
+          <!--No National Viewership Data Found-->
+          <!--No Cable Viewership Data Found-->
+          <!--No Reach Value Data Found-->
+          <!--No Station Daypart Reach Data Found-->
+        </ViewershipData>
+        <Market xmlns:json="http://james.newtonking.com/projects/json" MarketID="139" MarketName="Denver, CO" json:Array="true">
+          <Country>US</Country>
+          <Active>True</Active>
+          <FilterOrder>106</FilterOrder>
+          <State>CO</State>
+          <Latitude>39.755092</Latitude>
+          <Longitude>-104.988123</Longitude>
+          <DMARank>17</DMARank>
+        </Market>
+        <TranscriptUrl>http://mms.tveyes.com/transcript.asp?StationID=6550&amp;DateTime=10%2f06%2f2019+13%3a18%3a57&amp;Dur=300&amp;PlayClip=true</TranscriptUrl>
+        <StanfordNamedEntityData Model="english.conll.4class.caseless.distsim.crf.ser.gz">
+          <Entity Type="Organization">Broncos</Entity>
+          <Entity Type="Person">Joe Flacco</Entity>
+          <Entity Type="Person">Kaley Rock</Entity>
+          <Entity Type="Person">Lewis</Entity>
+          <Entity Type="Location">France Franklin</Entity>
+          <Entity Type="Person">Wendy</Entity>
+          <Entity Type="Location">Aurora</Entity>
+          <Entity Type="Misc">Colorado-Based</Entity>
+          <Entity Type="Location">America</Entity>
+          <Entity Type="Person">Chao</Entity>
+          <Entity Type="Location">Carson California</Entity>
+          <Entity Type="Person">Melvin</Entity>
+          <Entity Type="Person">Joey Bosa</Entity>
+          <Entity Type="Person">Joey</Entity>
+          <Entity Type="Location">Mali</Entity>
+          <Entity Type="Person">Jeff</Entity>
+          <Entity Type="Person">Dan Caplin</Entity>
+          <Entity Type="Person">John Elway</Entity>
+          <Entity Type="Organization">Kaley Broncos</Entity>
+        </StanfordNamedEntityData>
+      </BroadcastMetadata>
+      <Lines>
+        <Line LineDateTime="2019-10-06 13:18:57.785" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:18:57.785">get back in the weight room as the first time you</Line>
+        <Line LineDateTime="2019-10-06 13:18:59.535" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:18:59.535">see guys really and after a tough loss like that</Line>
+        <Line LineDateTime="2019-10-06 13:19:03.480" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:03.480">so things like that really important</Line>
+        <Line LineDateTime="2019-10-06 13:19:05.540" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:05.540">and obviously when you're a new grouping off into</Line>
+        <Line LineDateTime="2019-10-06 13:19:07.975" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:07.975">meetings and things like that he would talk to the</Line>
+        <Line LineDateTime="2019-10-06 13:19:10.205" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:10.205">guys constantly talking to practice and reiterating</Line>
+        <Line LineDateTime="2019-10-06 13:19:13.425" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:13.425">the positive things and and just a 100% focused for</Line>
+        <Line LineDateTime="2019-10-06 13:19:16.665" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:16.665">60 minutes</Line>
+        <Line LineDateTime="2019-10-06 13:19:17.690" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:17.690">will come back and continue our conversation with</Line>
+        <Line LineDateTime="2019-10-06 13:19:19.525" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:19.525">the broncos quarterback Joe Flacco first these</Line>
+        <Line LineDateTime="2019-10-06 13:19:21.985" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:21.985">messages</Line>
+        <Line LineDateTime="2019-10-06 13:19:22.880" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:22.880">this's the Kaley rock those radio network I'm not a</Line>
+        <Line LineDateTime="2019-10-06 13:19:26.295" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:26.295">zero because station came away has logan lewis</Line>
+        <Line LineDateTime="2019-10-06 13:19:29.695" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:29.695">bringing you much more about the game tomorrow</Line>
+        <Line LineDateTime="2019-10-06 13:19:32.225" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:32.225">morning 9 the nude damage may be gone all talking</Line>
+        <Line LineDateTime="2019-10-06 13:19:35.755" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:35.755">about the local stories that matter from noon to 3</Line>
+        <Line LineDateTime="2019-10-06 13:19:38.695" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:38.695">one K away</Line>
+        <Line LineDateTime="2019-10-06 13:19:40.110" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:40.110">everybody that is a big out and if you read into</Line>
+        <Line LineDateTime="2019-10-06 13:19:42.515" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:42.515">that wrecked you need to call my France Franklin D</Line>
+        <Line LineDateTime="2019-10-06 13:19:45.195" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:45.195">es are S O arm at real 3</Line>
+        <Line LineDateTime="2019-10-06 13:19:47.720" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:47.720">7.7 these are all 1.5 billion dollar recovered and</Line>
+        <Line LineDateTime="2019-10-06 13:19:52.745" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:52.745">more than 50000 clients represented the strong arm</Line>
+        <Line LineDateTime="2019-10-06 13:19:56.125" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:56.125">will help</Line>
+        <Line LineDateTime="2019-10-06 13:19:57.000" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:57.000">You get every dollar you deserve</Line>
+        <Line LineDateTime="2019-10-06 13:19:58.990" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:19:58.990">if you're been injured in the wreck please call</Line>
+        <Line LineDateTime="2019-10-06 13:20:00.975" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:00.975">from Wendy is our today at real 3.7 7 days our</Line>
+        <Line LineDateTime="2019-10-06 13:20:04.905" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:04.905">that's real 3.7 7 and is our</Line>
+        <Line LineDateTime="2019-10-06 13:20:07.920" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:07.920">but when the A's Orange associates previous results</Line>
+        <Line LineDateTime="2019-10-06 13:20:10.165" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:10.165">are no guarantee of future performance I stay low</Line>
+        <Line LineDateTime="2019-10-06 13:20:12.975" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:12.975">energy she my friends a panacea life Sciences and</Line>
+        <Line LineDateTime="2019-10-06 13:20:15.895" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:15.895">they're lying of CBD products therefore the highest</Line>
+        <Line LineDateTime="2019-10-06 13:20:18.355" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:18.355">quality cbd available in Aurora Colorado-based</Line>
+        <Line LineDateTime="2019-10-06 13:20:21.115" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:21.115">company Ashley been used in products for a while</Line>
+        <Line LineDateTime="2019-10-06 13:20:23.775" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:23.775">and honestly I'm a true believer they do absolutely</Line>
+        <Line LineDateTime="2019-10-06 13:20:26.805" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:26.805">work for me trust me and try their products for</Line>
+        <Line LineDateTime="2019-10-06 13:20:29.205" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:29.205">yourself you too will see the difference right now</Line>
+        <Line LineDateTime="2019-10-06 13:20:31.705" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:31.705">is a panacea wife Dotcom you get 20% off your</Line>
+        <Line LineDateTime="2019-10-06 13:20:35.185" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:35.185">entire order using promo code came away again</Line>
+        <Line LineDateTime="2019-10-06 13:20:38.485" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:38.485">that's a panacea life</Line>
+        <Line LineDateTime="2019-10-06 13:20:39.910" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:39.910">Dotcom and promo code get away</Line>
+        <Line LineDateTime="2019-10-06 13:20:42.315" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:42.315">for first responders trust Rice America's most</Line>
+        <Line LineDateTime="2019-10-06 13:20:44.705" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:44.705">reliable network for coverage when it matters most</Line>
+        <Line LineDateTime="2019-10-06 13:20:46.935" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:46.935">and choose the network for first responders your</Line>
+        <Line LineDateTime="2019-10-06 13:20:49.185" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:49.185">team is rit visit rising.com /public safety most</Line>
+        <Line LineDateTime="2019-10-06 13:20:52.195" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:52.195">reliable network claimed his temperament I just</Line>
+        <Line LineDateTime="2019-10-06 13:20:54.105" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:54.105">works for tour pursued % meaning teams spent a</Line>
+        <Line LineDateTime="2019-10-06 13:20:56.485" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:56.485">night in which you are</Line>
+        <Line LineDateTime="2019-10-06 13:20:57.740" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:20:57.740">looking for the best furniture out there I've got a</Line>
+        <Line LineDateTime="2019-10-06 13:21:00.465" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:00.465">point I was pleased and it's all on sale it would</Line>
+        <Line LineDateTime="2019-10-06 13:21:03.875" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:03.875">please born in once sailed get for great offers one</Line>
+        <Line LineDateTime="2019-10-06 13:21:07.325" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:07.325">35% off savings on furniture free delivery and 24</Line>
+        <Line LineDateTime="2019-10-06 13:21:11.125" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:11.125">month special financing plus what they will give</Line>
+        <Line LineDateTime="2019-10-06 13:21:13.585" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:13.585">you additional discount with canned food donation</Line>
+        <Line LineDateTime="2019-10-06 13:21:16.815" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:16.815">great furniture on sale and don't miss out on this</Line>
+        <Line LineDateTime="2019-10-06 13:21:19.755" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:19.755">one goes well please dot-com today define the with</Line>
+        <Line LineDateTime="2019-10-06 13:21:22.775" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:22.775">these location near you when you get there</Line>
+        <Line LineDateTime="2019-10-06 13:21:24.910" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:24.910">brings some canned food and telling me because I</Line>
+        <Line LineDateTime="2019-10-06 13:21:27.155" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:27.155">don't think you</Line>
+        <Line LineDateTime="2019-10-06 13:21:28.140" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:28.140">every broncos did all season long it's only on Chao</Line>
+        <Line LineDateTime="2019-10-06 13:21:32.485" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:32.485">way</Line>
+        <Line LineDateTime="2019-10-06 13:21:36.630" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:36.630">back in carson california they've loaded with</Line>
+        <Line LineDateTime="2019-10-06 13:21:38.515" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:38.515">Broncos quarterback Joe Flacco saw Blue about</Line>
+        <Line LineDateTime="2019-10-06 13:21:41.555" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:41.555">today's opponent they are without</Line>
+        <Line LineDateTime="2019-10-06 13:21:43.570" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:43.570">Melvin ingrown who is one of the great edge pass</Line>
+        <Line LineDateTime="2019-10-06 13:21:47.005" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:47.005">rushers they still had Joey bosa who is one of the</Line>
+        <Line LineDateTime="2019-10-06 13:21:50.365" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:50.365">great games edge pass rushers somebody you guys</Line>
+        <Line LineDateTime="2019-10-06 13:21:53.530" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:53.530">will obviously have to be aware of today</Line>
+        <Line LineDateTime="2019-10-06 13:21:55.510" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:55.510">for sure they get guys over there than not play the</Line>
+        <Line LineDateTime="2019-10-06 13:21:58.125" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:21:58.125">defense they got guys obviously like Joey that you</Line>
+        <Line LineDateTime="2019-10-06 13:22:01.005" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:01.005">know if you let him</Line>
+        <Line LineDateTime="2019-10-06 13:22:02.310" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:02.310">foods you know it could be a bad day for years so</Line>
+        <Line LineDateTime="2019-10-06 13:22:05.395" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:05.395">we're definitely aware that in Mali mission control</Line>
+        <Line LineDateTime="2019-10-06 13:22:08.255" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:08.255">him and a couple other guys as much as we can what</Line>
+        <Line LineDateTime="2019-10-06 13:22:10.815" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:10.815">what's your sense of</Line>
+        <Line LineDateTime="2019-10-06 13:22:12.825" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:12.825">the confidence level others came I mean Hey I had</Line>
+        <Line LineDateTime="2019-10-06 13:22:16.465" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:16.465">been a lot of teams were you always expect to win</Line>
+        <Line LineDateTime="2019-10-06 13:22:19.545" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:19.545">them but that there's a certain sort of</Line>
+        <Line LineDateTime="2019-10-06 13:22:21.540" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:21.540">laps maybe in the ultimate confidence because you</Line>
+        <Line LineDateTime="2019-10-06 13:22:24.915" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:24.915">have that confidence rotor bit</Line>
+        <Line LineDateTime="2019-10-06 13:22:26.950" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:26.950">with a four-game losing streak special you can tell</Line>
+        <Line LineDateTime="2019-10-06 13:22:29.645" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:29.645">us the confidence level spot and</Line>
+        <Line LineDateTime="2019-10-06 13:22:31.660" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:31.660">I think no matter what when you're not winning</Line>
+        <Line LineDateTime="2019-10-06 13:22:33.255" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:33.255">football games it's not it's obviously not as easy</Line>
+        <Line LineDateTime="2019-10-06 13:22:36.485" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:36.485">to keep the confidence as high</Line>
+        <Line LineDateTime="2019-10-06 13:22:38.190" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:38.190">when you're winning football games because every</Line>
+        <Line LineDateTime="2019-10-06 13:22:39.615" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:39.615">time you win a football game you just proven</Line>
+        <Line LineDateTime="2019-10-06 13:22:41.745" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:41.745">yourself and everybody else that we did it we did</Line>
+        <Line LineDateTime="2019-10-06 13:22:44.195" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:44.195">it we did it again obviously that's missing but</Line>
+        <Line LineDateTime="2019-10-06 13:22:47.740" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:47.740">he knows as far as how we approach this week and</Line>
+        <Line LineDateTime="2019-10-06 13:22:50.475" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:50.475">how we approach every other week work keep our</Line>
+        <Line LineDateTime="2019-10-06 13:22:52.935" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:52.935">heads down we're grinding so you got to be happy</Line>
+        <Line LineDateTime="2019-10-06 13:22:55.155" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:55.155">with the way that</Line>
+        <Line LineDateTime="2019-10-06 13:22:56.395" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:56.395">were operating during the week we just gotta get</Line>
+        <Line LineDateTime="2019-10-06 13:22:59.885" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:22:59.885">the point on Sunday that we can play a full 60</Line>
+        <Line LineDateTime="2019-10-06 13:23:02.555" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:02.555">minutes away we know how to do and give ourselves</Line>
+        <Line LineDateTime="2019-10-06 13:23:05.485" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:05.485">that</Line>
+        <Line LineDateTime="2019-10-06 13:23:06.000" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:06.000">confirmation we can win an nfl football game which</Line>
+        <Line LineDateTime="2019-10-06 13:23:08.425" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:08.425">we haven't done yet and obviously that's going to</Line>
+        <Line LineDateTime="2019-10-06 13:23:11.005" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:11.005">leave a little bit of a missing piece in that blast</Line>
+        <Line LineDateTime="2019-10-06 13:23:13.355" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:13.355">thought so</Line>
+        <Line LineDateTime="2019-10-06 13:23:14.700" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:14.700">two or 3 things that are important today to get out</Line>
+        <Line LineDateTime="2019-10-06 13:23:16.835" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:16.835">of here with that much needed win</Line>
+        <Line LineDateTime="2019-10-06 13:23:19.305" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:19.305">wallace you know last week we kind of opened up</Line>
+        <Line LineDateTime="2019-10-06 13:23:22.045" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:22.045">going after little bit to throw the ball these guys</Line>
+        <Line LineDateTime="2019-10-06 13:23:24.265" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:24.265">play similar defense but maybe not quite the same</Line>
+        <Line LineDateTime="2019-10-06 13:23:27.025" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:27.025">style so I think that</Line>
+        <Line LineDateTime="2019-10-06 13:23:28.450" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:28.450">hillary went to be physical with the media after</Line>
+        <Line LineDateTime="2019-10-06 13:23:30.475" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:30.475">him early on the run game to open things up and</Line>
+        <Line LineDateTime="2019-10-06 13:23:33.275" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:33.275">take shots when they're available</Line>
+        <Line LineDateTime="2019-10-06 13:23:34.810" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:34.810">okay good luck today jeff thanks that's the Joe</Line>
+        <Line LineDateTime="2019-10-06 13:23:37.335" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:37.335">flacco show sponsored by the law offices of Dan</Line>
+        <Line LineDateTime="2019-10-06 13:23:39.675" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:39.675">Caplin serious law firm for serious cases will hear</Line>
+        <Line LineDateTime="2019-10-06 13:23:42.795" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:42.795">from John elway that's the way a replay</Line>
+        <Line LineDateTime="2019-10-06 13:23:45.240" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:45.240">and that is next on the Kaley broncos radio network</Line>
+        <Line LineDateTime="2019-10-06 13:23:49.065" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:49.065">break your next Cup of coffee this freshens it gets</Line>
+        <Line LineDateTime="2019-10-06 13:23:51.865" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:51.865">when you go into a circle K every cop is now</Line>
+        <Line LineDateTime="2019-10-06 13:23:54.535" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:54.535">freshly grown for you from quality whole</Line>
+        <Line LineDateTime="2019-10-06 13:23:57.000" StationGUID="RADKOA" StationID="6550" UTCDelta="-21600000" UTCLineDateTime="10/06/2019 19:23:57.000">The team's fortunes for a variety of plans to make</Line>
+      </Lines>
+    </Page>
+  </Body>
+</Message>
