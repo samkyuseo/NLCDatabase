@@ -206,7 +206,7 @@ router.post('/receiver', async (req, res) => {
 
     JSONRes = fastXMLParser.parse(XMLRes);
 
-    fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    fs.writeFile(`Output${UUID}.txt`, JSONRes, err => {
       // In case of a error throw err.
       if (err) throw err;
     });
@@ -264,6 +264,10 @@ router.post('/receiver', async (req, res) => {
     if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
       transcriptFields.station =
         JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (transcriptFields.station.includes('(Radio)')) {
+        //dont send if radio station
+        return res.json();
+      }
     }
     if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
       transcriptFields.fullText =
@@ -273,8 +277,10 @@ router.post('/receiver', async (req, res) => {
       transcriptFields.videoLink =
         JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl;
     }
-    transcriptFields.totalViewership = 'n/a';
     transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+
+    transcriptFields.totalViewership = 'n/a';
     console.log(transcriptFields);
     transcript = new Transcript(transcriptFields);
     await transcript.save(function(err, book) {
