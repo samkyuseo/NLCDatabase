@@ -279,7 +279,18 @@ router.post('/receiver', async (req, res) => {
     }
     transcriptFields.viewership = 'n/a';
     //figure out local viewership data
-
+    if (
+      JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+        .LocalViewershipData.DMADemos
+    ) {
+      var obj =
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos;
+      transcriptFields.viewership = 0;
+      Object.keys(obj).forEach(function(key) {
+        transcriptFields.viewership += obj[key];
+      });
+    }
     transcriptFields.totalViewership = 'n/a';
     console.log(transcriptFields);
     transcript = new Transcript(transcriptFields);
