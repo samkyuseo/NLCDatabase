@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
-
+const axios = require('axios');
 const Profile = require('../../models/Profile');
+const Transcript = require('../../models/Transcript');
 const User = require('../../models/User');
 
 //@route GET api/profile/me
@@ -165,7 +166,7 @@ router.delete('/', auth, async (req, res) => {
 // );
 
 //@route DEL api/profile/searchHistory/:hist_id
-//@descript Delete a search history
+//@descript Delete a search history and all relevant transcripts and the saved search object
 //@access Private
 
 router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
@@ -175,9 +176,23 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     const removeIndex = profile.searchHistory
       .map(item => item.id)
       .indexOf(req.params.hist_id);
+    //return res.json(profile);
+    //delete from tveyes
+    console.log('Remove index: ' + removeIndex);
+    var SearchGUID = profile.searchHistory[removeIndex].SearchGUID;
+    var deleteSavedSearchObj = await axios.post(
+      `http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=remove&searchguid=${SearchGUID}`
+    );
 
+    //database clean up
+    await Transcript.deleteMany({
+      queryString: profile.searchHistory[removeIndex].SearchQuery
+    });
+
+    //delete from search history
     profile.searchHistory.splice(removeIndex, 1);
     await profile.save();
+
     res.json(profile);
   } catch (err) {
     console.error(err.message);

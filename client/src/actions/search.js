@@ -6,7 +6,10 @@ import {
   SEARCH_ERROR,
   CLEAR_SEARCH,
   GET_TRANSCRIPT,
-  CREATE_SAVEDSEARCH
+  CREATE_SAVEDSEARCH,
+  GET_SEARCHENTRY,
+  TRANSCRIPTS_ERROR,
+  GET_MATCHED_TRANSCRIPTS
 } from './types';
 
 //Create saved search object
@@ -75,22 +78,32 @@ export const getTranscript = id => async dispatch => {
   }
 };
 
-// //get SearchEntry by id
+//get SearchEntry by id
 
-// export const getSearchEntryById = id => async dispatch => {
-//   try {
-//     const res = await axios.get(`api/profile/searchHistory/${id}`)
-//     dispatch ({
-//       type: GET_SEARCHENTRY,
-//       payload: res.data
-//     });
-//   } catch (err) {
-//     dispatch({
-//       type: TRANSCRIPTS_ERROR,
-//       payload: {
-//         msg: err.response.statusText,
-//         status: err.response.status
-//       }
-//     });
-//   }
-// }
+export const getSearchEntryById = id => async dispatch => {
+  try {
+    const res = await axios.get(`/api/profile/searchHistory/${id}`);
+    console.log(res.data);
+    const SearchQuery = res.data.SearchQuery;
+    const res2 = await axios.get(
+      `/api/transcripts/findmatches/${SearchQuery.replace(
+        'Page.BroadcastMetadata.Market.Country:US',
+        ''
+      )}`
+    );
+    console.log(res2.data);
+    dispatch({
+      type: GET_SEARCHENTRY,
+      payload: res.data,
+      payload2: res2.data
+    });
+  } catch (err) {
+    dispatch({
+      type: TRANSCRIPTS_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status
+      }
+    });
+  }
+};

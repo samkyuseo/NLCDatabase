@@ -121,11 +121,11 @@ router.get('/:transcript_id', async (req, res) => {
   }
 });
 
-//@route GET api/transcripts/:query_string
-//@descript Get transcripts
+//@route GET api/transcripts/findmatches/:query_string
+//@descript Get transcripts based on query string.
 //@access Public
 
-router.get('/:query_string', async (req, res) => {
+router.get('/findmatches/:query_string', async (req, res) => {
   try {
     const transcripts = await Transcript.find({
       queryString: req.params.query_string
@@ -152,7 +152,6 @@ router.post('/query/:query_string', async (req, res) => {
         '&destination=http://13.56.143.45:5000/api/transcripts/receiver'
     );
 
-    console.log(SSXML.data);
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
 
     SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
@@ -163,7 +162,10 @@ router.post('/query/:query_string', async (req, res) => {
       SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
     }
     if (SSJSON.SavedSearch.SearchQuery._text) {
-      SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text;
+      SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
     }
     var date = new Date();
     SavedSearchFields.SearchDate =

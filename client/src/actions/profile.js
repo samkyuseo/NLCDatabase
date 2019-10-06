@@ -149,6 +149,7 @@ export const addSearchHistory = formData => async dispatch => {
 
 export const getSearchEntryById = entry_id => async dispatch => {
   try {
+    console.log('hello');
     const res = await axios.get(`/api/profile/searchHistory/${entry_id}`);
     dispatch({
       type: GET_SEARCHENTRY,
@@ -198,15 +199,15 @@ export const deleteAccount = () => async dispatch => {
 };
 
 //export to excel
-export const exportToExcel = entry => async dispatch => {
+export const exportToExcel = (entry, matchedTranscripts) => async dispatch => {
   try {
     var wb = XLSX.utils.book_new();
     wb.props = {
-      Title: entry.searchString
+      Title: entry.SearchQuery
     };
-    wb.SheetNames.push(entry.searchString);
+    wb.SheetNames.push(entry.SearchQuery);
     var ws_data = [
-      [entry.searchString, entry.searchDate],
+      [entry.SearchQuery, entry.SearchDate],
       [
         'Unique ID',
         'Program Name',
@@ -221,7 +222,7 @@ export const exportToExcel = entry => async dispatch => {
       ]
     ];
 
-    entry.searchResults.forEach(function(x) {
+    matchedTranscripts.forEach(function(x) {
       ws_data.push([
         x._id,
         x.programName,
@@ -238,7 +239,7 @@ export const exportToExcel = entry => async dispatch => {
 
     var ws = XLSX.utils.aoa_to_sheet(ws_data);
 
-    wb.Sheets[entry.searchString] = ws;
+    wb.Sheets[entry.SearchQuery] = ws;
 
     var wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
     var buf = new ArrayBuffer(wbout.length); //convert s to arrayBuffer
@@ -246,11 +247,11 @@ export const exportToExcel = entry => async dispatch => {
     for (var i = 0; i < wbout.length; i++) view[i] = wbout.charCodeAt(i) & 0xff; //convert to octet
     saveAs(
       new Blob([buf], { type: 'application/octet-stream' }),
-      entry.searchString + '.xlsx'
+      entry.SearchQuery + '.xlsx'
     );
     dispatch(setAlert('Exported Successfully', 'success'));
   } catch (err) {
     dispatch(setAlert('Export Error', 'danger'));
-    console.log(err.msg());
+    console.log(err.message);
   }
 };

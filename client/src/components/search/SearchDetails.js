@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import SearchDetailsTop from './SearchDetailsTop';
 import SearchDetailsTranscript from './SearchDetailsTranscript';
-import { getSearchEntryById, exportToExcel } from '../../actions/profile';
+import { exportToExcel } from '../../actions/profile';
+import { getSearchEntryById } from '../../actions/search';
+//import { getMatchedTranscripts } from '../../actions/search';
 
 const SearchDetails = ({
   getSearchEntryById,
+  getMatchedTranscripts,
   exportToExcel,
-  profile: { searchEntry, loading },
+  profile: { searchEntry, loading, matchedTranscripts },
   match
 }) => {
   useEffect(() => {
@@ -27,7 +30,7 @@ const SearchDetails = ({
           </Link>
           <button
             className='btn btn-primary'
-            onClick={() => exportToExcel(searchEntry)}
+            onClick={() => exportToExcel(searchEntry, matchedTranscripts)}
           >
             <i className='fas fa-file-export' /> Export Data
           </button>
@@ -37,9 +40,9 @@ const SearchDetails = ({
               <h2 className='text-primary'>Transcript Matches</h2>
               <hr />
               <br />
-              {searchEntry.searchResults.length > 0 ? (
+              {matchedTranscripts.length > 0 ? (
                 <Fragment>
-                  {searchEntry.searchResults.map(transcript => (
+                  {matchedTranscripts.map(transcript => (
                     <SearchDetailsTranscript
                       key={transcript._id}
                       transcript={transcript}
@@ -49,6 +52,11 @@ const SearchDetails = ({
               ) : (
                 <h4>No transcripts matched for your search</h4>
               )}
+              <Fragment>
+                {/* <SearchDetailsTranscript
+                  SearchQuery={searchEntry.SearchQuery}
+                /> */}
+              </Fragment>
             </div>
           </div>
         </Fragment>
@@ -57,7 +65,14 @@ const SearchDetails = ({
   );
 };
 
-SearchDetails.propTypes = {};
+SearchDetails.propTypes = {
+  getSearchEntryById: PropTypes.func.isRequired,
+  //getMatchedTranscripts: PropTypes.func.isRequired,
+
+  searchEntry: PropTypes.object.isRequired,
+  matchedTranscripts: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => ({
   profile: state.profile

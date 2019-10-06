@@ -22,7 +22,7 @@ const SearchHistoryItem = ({
       </ul>
       <ul>
         <Link to={`/profile/searchHistory/${_id}`} className='btn btn-primary'>
-          Export
+          Details
         </Link>
         <button
           onClick={() => deleteSearchHistory(_id)}

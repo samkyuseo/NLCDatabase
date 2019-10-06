@@ -4,19 +4,21 @@ import {
   CLEAR_PROFILE,
   UPDATE_PROFILE,
   GET_PROFILES,
-  GET_SEARCHENTRY
+  GET_SEARCHENTRY,
+  GET_MATCHED_TRANSCRIPTS
 } from '../actions/types';
 
 const initialState = {
   profile: null,
   profiles: [],
   searchEntry: null,
+  matchedTranscripts: [],
   loading: true,
   error: {}
 };
 
 export default function(state = initialState, action) {
-  const { type, payload } = action;
+  const { type, payload, payload2 } = action;
 
   switch (type) {
     case GET_PROFILE:
@@ -49,6 +51,13 @@ export default function(state = initialState, action) {
       return {
         ...state,
         searchEntry: payload,
+        matchedTranscripts: payload2,
+        loading: false
+      };
+    case GET_MATCHED_TRANSCRIPTS:
+      return {
+        ...state,
+        matchedTranscripts: payload,
         loading: false
       };
     default:
