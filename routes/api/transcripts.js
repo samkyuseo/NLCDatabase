@@ -256,10 +256,10 @@ router.post('/receiver', async (req, res) => {
     if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
       transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
         ','
-      )[0];
+      )[1];
       transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
         ','
-      )[1];
+      )[0];
     }
     if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
       transcriptFields.station =
