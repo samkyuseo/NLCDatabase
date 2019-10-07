@@ -297,6 +297,27 @@ router.post('/receiver', async (req, res) => {
     }
 
     transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
     console.log(transcriptFields);
     transcript = new Transcript(transcriptFields);
     await transcript.save(function(err, book) {
