@@ -264,7 +264,10 @@ router.post('/receiver', async (req, res) => {
     if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
       transcriptFields.station =
         JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
-      if (transcriptFields.station.includes('(Radio)')) {
+      if (
+        transcriptFields.station.includes('(Radio)') ||
+        transcriptFields.station.includes('(radio)')
+      ) {
         //dont send if radio station
         return res.json();
       }
@@ -314,7 +317,7 @@ router.post('/receiver', async (req, res) => {
 
       await Transcript.updateMany(
         { programName: transcriptFields.programName },
-        { $set: { totalViewership: tViewerShip } }
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
       );
       transcriptFields.totalViewership = tViewerShip;
     }
