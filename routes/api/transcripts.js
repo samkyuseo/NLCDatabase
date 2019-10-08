@@ -206,10 +206,10 @@ router.post('/receiver', async (req, res) => {
 
     JSONRes = fastXMLParser.parse(XMLRes);
 
-    fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
-      // In case of a error throw err.
-      if (err) throw err;
-    });
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
 
     // console.log(JSON.stringify(JSONRes));
     // return res.json(JSONRes);
