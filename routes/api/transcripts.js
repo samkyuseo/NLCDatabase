@@ -25,7 +25,7 @@ const config = require('config');
 const xmlparser = require('express-xml-bodyparser');
 
 //Global variable keeping track of which public end points are open
-var openReceivers = { '1': true, '2': true };
+var openReceivers = { '1': false, '2': true };
 
 //@route POST api/transcripts
 //@descript Post individual transcript
@@ -346,7 +346,7 @@ router.post('/receiver1', async (req, res) => {
 });
 
 router.post('/receiver2', async (req, res) => {
-  openReceivers[1] = false;
+  openReceivers[2] = false;
   try {
     console.log('***COMING INTO RECEIVER2***');
     console.log('===req===');
