@@ -271,8 +271,8 @@ router.post('/receiver1', async (req, res) => {
       transcriptFields.station =
         JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
       if (
-        transcriptFields.station.includes('(Radio)') ||
-        transcriptFields.station.includes('(radio)')
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
       ) {
         //dont send if radio station
         return res.json();
@@ -421,8 +421,8 @@ router.post('/receiver2', async (req, res) => {
       transcriptFields.station =
         JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
       if (
-        transcriptFields.station.includes('(Radio)') ||
-        transcriptFields.station.includes('(radio)')
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
       ) {
         //dont send if radio station
         return res.json();
