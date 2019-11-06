@@ -154,7 +154,7 @@ router.post('/query/:query_string', async (req, res) => {
         req.params.query_string +
         '+Page.BroadcastMetadata.Market.Country:US' +
         '&destination=http://13.56.143.45:5000/api/transcripts/receiver' +
-        '1'
+        '2'
     );
 
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
