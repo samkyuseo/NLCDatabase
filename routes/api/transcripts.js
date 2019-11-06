@@ -147,14 +147,14 @@ router.get('/findmatches/:query_string', async (req, res) => {
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
   //Determine open receiver
-  var receiverNum = openReceivers[1] ? '1' : '2';
+  var receiverNum = openReceivers[1] === true ? '1' : '2';
   try {
     var SSXML = await axios.post(
       'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
         req.params.query_string +
         '+Page.BroadcastMetadata.Market.Country:US' +
         '&destination=http://13.56.143.45:5000/api/transcripts/receiver' +
-        receiverNum
+        '1'
     );
 
     var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
@@ -196,7 +196,7 @@ router.post('/query/:query_string', async (req, res) => {
 //@access Public
 
 router.post('/receiver1', async (req, res) => {
-  openReceivers[1] = false;
+  openReceivers['1'] = false;
   try {
     console.log('***COMING INTO RECEIVER1***');
     console.log('===req===');
@@ -346,7 +346,7 @@ router.post('/receiver1', async (req, res) => {
 });
 
 router.post('/receiver2', async (req, res) => {
-  openReceivers[2] = false;
+  openReceivers['2'] = false;
   try {
     console.log('***COMING INTO RECEIVER2***');
     console.log('===req===');
