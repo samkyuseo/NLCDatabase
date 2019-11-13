@@ -199,10 +199,10 @@ router.post('/receiver1', async (req, res) => {
   openReceivers['1'] = false;
   try {
     console.log('***COMING INTO RECEIVER1***');
-    console.log('===req===');
+    // console.log('===req===');
     const UUID = uuid();
-    console.log('UUID: ' + UUID);
-    console.log('HEADERS: ' + JSON.stringify(req.headers));
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
 
     var XMLRes = req.body
       .toString()
@@ -217,7 +217,7 @@ router.post('/receiver1', async (req, res) => {
     //   if (err) throw err;
     // });
 
-    // console.log(JSON.stringify(JSONRes));
+    console.log(JSON.stringify(JSONRes));
     // return res.json(JSONRes);
 
     //Extract data needed
@@ -289,6 +289,7 @@ router.post('/receiver1', async (req, res) => {
         'amp;',
         ''
       );
+      console.log(transcriptFields.videoLink);
     }
     transcriptFields.viewership = 'n/a';
     //figure out local viewership data
@@ -331,12 +332,12 @@ router.post('/receiver1', async (req, res) => {
       );
       transcriptFields.totalViewership = tViewerShip;
     }
-    console.log(transcriptFields);
+    // console.log(transcriptFields);
     transcript = new Transcript(transcriptFields);
     await transcript.save(function(err, book) {
       if (err) return console.error(err.message);
-      console.log('MONGO save success');
-      //console.log(book.name + " saved to bookstore collection.");
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
     });
     res.json(transcript);
   } catch (err) {
@@ -349,10 +350,10 @@ router.post('/receiver2', async (req, res) => {
   openReceivers['2'] = false;
   try {
     console.log('***COMING INTO RECEIVER2***');
-    console.log('===req===');
+    // console.log('===req===');
     const UUID = uuid();
-    console.log('UUID: ' + UUID);
-    console.log('HEADERS: ' + JSON.stringify(req.headers));
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
 
     var XMLRes = req.body
       .toString()
@@ -367,7 +368,7 @@ router.post('/receiver2', async (req, res) => {
     //   if (err) throw err;
     // });
 
-    // console.log(JSON.stringify(JSONRes));
+    console.log(JSON.stringify(JSONRes));
     // return res.json(JSONRes);
 
     //Extract data needed
@@ -439,6 +440,7 @@ router.post('/receiver2', async (req, res) => {
         'amp;',
         ''
       );
+      console.log(transcriptFields.videoLink);
     }
     transcriptFields.viewership = 'n/a';
     //figure out local viewership data
@@ -481,12 +483,12 @@ router.post('/receiver2', async (req, res) => {
       );
       transcriptFields.totalViewership = tViewerShip;
     }
-    console.log(transcriptFields);
+    // console.log(transcriptFields);
     transcript = new Transcript(transcriptFields);
     await transcript.save(function(err, book) {
       if (err) return console.error(err.message);
-      console.log('MONGO save success');
-      //console.log(book.name + " saved to bookstore collection.");
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
     });
     res.json(transcript);
   } catch (err) {
