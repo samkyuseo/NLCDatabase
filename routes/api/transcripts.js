@@ -283,10 +283,9 @@ router.post('/receiver1', async (req, res) => {
         JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
     }
     if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
-      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.replace(
-        'amp;',
-        ''
-      );
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
       // transcriptFields.videoLink = transcriptFields.videoLink.replace(
       //   'amp;',
       //   ''
