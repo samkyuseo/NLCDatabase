@@ -291,7 +291,10 @@ router.post('/receiver1', async (req, res) => {
       //   'amp;',
       //   ''
       // );
-      console.log(transcriptFields.videoLink);
+      console.log(
+        `Original ==> ${JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl}`
+      );
+      console.log(`Modified ==> ${transcriptFields.videoLink}`);
     }
     transcriptFields.viewership = 'n/a';
     //figure out local viewership data
