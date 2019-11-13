@@ -217,7 +217,7 @@ router.post('/receiver1', async (req, res) => {
     //   if (err) throw err;
     // });
 
-    console.log(JSON.stringify(JSONRes));
+    //console.log(JSON.stringify(JSONRes));
     // return res.json(JSONRes);
 
     //Extract data needed
@@ -370,7 +370,7 @@ router.post('/receiver2', async (req, res) => {
     //   if (err) throw err;
     // });
 
-    console.log(JSON.stringify(JSONRes));
+    //console.log(JSON.stringify(JSONRes));
     // return res.json(JSONRes);
 
     //Extract data needed
