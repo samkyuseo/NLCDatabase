@@ -283,12 +283,14 @@ router.post('/receiver1', async (req, res) => {
         JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
     }
     if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
-      transcriptFields.videoLink =
-        JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl;
-      transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.replace(
         'amp;',
         ''
       );
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
       console.log(transcriptFields.videoLink);
     }
     transcriptFields.viewership = 'n/a';
@@ -434,12 +436,14 @@ router.post('/receiver2', async (req, res) => {
         JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
     }
     if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
-      transcriptFields.videoLink =
-        JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl;
-      transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.replace(
         'amp;',
         ''
       );
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
       console.log(transcriptFields.videoLink);
     }
     transcriptFields.viewership = 'n/a';
