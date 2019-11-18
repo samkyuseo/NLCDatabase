@@ -6,6 +6,7 @@ const axios = require('axios');
 const Profile = require('../../models/Profile');
 const Transcript = require('../../models/Transcript');
 const User = require('../../models/User');
+const fs = require('fs');
 
 //@route GET api/profile/me
 //@descript Get current user's profile
@@ -13,10 +14,9 @@ const User = require('../../models/User');
 
 router.get('/me', auth, async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.user.id }).populate(
-      'user',
-      ['name', 'avatar']
-    );
+    const profile = await Profile.findOne({
+      user: req.user.id
+    }).populate('user', ['name', 'avatar']);
     if (!profile) {
       res.status(400).json({ msg: 'There is no profile for this user' });
     }
@@ -180,8 +180,42 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     //delete from tveyes
     console.log('Remove index: ' + removeIndex);
     var SearchGUID = profile.searchHistory[removeIndex].SearchGUID;
+    var SearchGUID = '5f39c702-96ec-42ab-82c6-5f23c1143e77';
+
     var deleteSavedSearchObj = await axios.post(
       `http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=remove&searchguid=${SearchGUID}`
+    );
+
+    //code for signaling that receivers are open again.
+    var receiverLog = JSON.parse(
+      fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+        if (err) {
+          console.log(err);
+          return res
+            .status(500)
+            .send('Server Error: Failed to read in receiver log file');
+        }
+        return data;
+      })
+    );
+    console.log(receiverLog);
+    for (var i = 1; i <= 5; i++) {
+      if (receiverLog[i].replace(' ', '') === SearchGUID) {
+        receiverLog[i] = '';
+      }
+    }
+    console.log(receiverLog);
+    fs.writeFileSync(
+      'routes/api/receiverlog.json',
+      JSON.stringify(receiverLog),
+      err => {
+        if (err) {
+          console.log(err);
+          return res
+            .status(500)
+            .send('Server Error: Failed to write to receiver log file');
+        }
+      }
     );
 
     //database clean up
