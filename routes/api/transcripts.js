@@ -161,7 +161,7 @@ var findOpenReceiver = function() {
   return -1;
 };
 
-var closeReceiver = function(receiverNum, SearchGUID) {
+var closeReceiver = async function(receiverNum, SearchGUID) {
   var receiverLog = JSON.parse(
     fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
       if (err) {
@@ -195,11 +195,12 @@ var closeReceiver = function(receiverNum, SearchGUID) {
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
   //Determine open receiver
-  var receiverNum = await findOpenReceiver();
-  if (receiverNum === -1) {
-    return res.status(500).send('Server at Max Search Capacity');
-  }
+
   try {
+    var receiverNum = await findOpenReceiver();
+    if (receiverNum === -1) {
+      return res.status(500).send('Server at Max Search Capacity');
+    }
     var SSXML = await axios.post(
       'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
         req.params.query_string +
