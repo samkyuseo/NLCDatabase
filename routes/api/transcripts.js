@@ -176,7 +176,7 @@ var closeReceiver = function(receiverNum, SearchGUID) {
   if (receiverLog[receiverNum] !== undefined) {
     receiverLog[receiverNum] = SearchGUID;
   }
-  fs.writeFileSync(
+  fs.writeFile(
     'routes/api/receiverlog.json',
     JSON.stringify(receiverLog),
     err => {
