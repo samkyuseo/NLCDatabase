@@ -234,7 +234,7 @@ router.post('/query/:query_string', async (req, res) => {
     //Save saved search object
     savedSearch = new SavedSearch(SavedSearchFields);
     await savedSearch.save();
-    res.json(savedSearch);
+    return res.json(savedSearch);
   } catch (err) {
     console.error('ERROR MESSAGE: ' + err);
     // console.error(err.msg);
