@@ -195,7 +195,7 @@ var closeReceiver = function(receiverNum, SearchGUID) {
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
   //Determine open receiver
-  var receiverNum = findOpenReceiver();
+  var receiverNum = await findOpenReceiver();
   if (receiverNum === -1) {
     return res.status(500).send('Server at Max Search Capacity');
   }
@@ -216,7 +216,7 @@ router.post('/query/:query_string', async (req, res) => {
     if (SSJSON.SavedSearch._attributes.SearchGUID) {
       SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
       //Close receiver
-      closeReceiver(receiverNum, SavedSearchFields.SearchGUID);
+      await closeReceiver(receiverNum, SavedSearchFields.SearchGUID);
     }
     if (SSJSON.SavedSearch.SearchQuery._text) {
       SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text.replace(
