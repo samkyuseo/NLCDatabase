@@ -851,7 +851,6 @@ router.post('/receiver4', async (req, res) => {
   }
 });
 router.post('/receiver5', async (req, res) => {
-  openReceivers['2'] = false;
   try {
     console.log('***COMING INTO RECEIVER5***');
     // console.log('===req===');
