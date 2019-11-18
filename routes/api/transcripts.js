@@ -140,7 +140,7 @@ router.get('/findmatches/:query_string', async (req, res) => {
 });
 
 //@descript Function for checking which receivers are currenlty open
-var findOpenReceiver = function() {
+var findOpenReceiver = async function() {
   var receiverLog = JSON.parse(
     fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
       if (err) {
