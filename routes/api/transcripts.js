@@ -201,7 +201,7 @@ router.post('/query/:query_string', async (req, res) => {
 
   try {
     var receiverLog = JSON.parse(
-      readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+      await readFile('routes/api/receiverlog.json', 'utf8', (err, data) => {
         if (err) {
           console.log(err);
           return res
