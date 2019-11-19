@@ -235,7 +235,7 @@ router.post('/query/:query_string', async (req, res) => {
       SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
       //Close receiver
       if (receiverLog[receiverNum] !== undefined) {
-        receiverLog[receiverNum] = SearchGUID;
+        receiverLog[receiverNum] = SavedSearchFields.SearchGUID;
       }
       fs.writeFile(
         'routes/api/receiverlog.json',
