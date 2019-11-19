@@ -139,56 +139,56 @@ router.get('/findmatches/:query_string', async (req, res) => {
   }
 });
 
-//@descript Function for checking which receivers are currenlty open
-var findOpenReceiver = async function() {
-  var receiverLog = JSON.parse(
-    fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-        return res
-          .status(500)
-          .send('Server Error: Failed to read in receiver log file');
-      }
-      return data;
-    })
-  );
-  for (var i = 1; i <= 5; i++) {
-    if (receiverLog[i] === '') {
-      return i;
-    }
-  }
-  //no open receivers
-  return -1;
-};
+// //@descript Function for checking which receivers are currenlty open
+// var findOpenReceiver = async function() {
+//   var receiverLog = JSON.parse(
+//     fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+//       if (err) {
+//         console.log(err);
+//         return res
+//           .status(500)
+//           .send('Server Error: Failed to read in receiver log file');
+//       }
+//       return data;
+//     })
+//   );
+//   for (var i = 1; i <= 5; i++) {
+//     if (receiverLog[i] === '') {
+//       return i;
+//     }
+//   }
+//   //no open receivers
+//   return -1;
+// };
 
-var closeReceiver = async function(receiverNum, SearchGUID) {
-  var receiverLog = JSON.parse(
-    fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-        return res
-          .status(500)
-          .send('Server Error: Failed to read in receiver log file');
-      }
-      return data;
-    })
-  );
-  if (receiverLog[receiverNum] !== undefined) {
-    receiverLog[receiverNum] = SearchGUID;
-  }
-  fs.writeFile(
-    'routes/api/receiverlog.json',
-    JSON.stringify(receiverLog),
-    err => {
-      if (err) {
-        console.log(err);
-        return res
-          .status(500)
-          .send('Server Error: Failed to write to receiver log file');
-      }
-    }
-  );
-};
+// var closeReceiver = async function(receiverNum, SearchGUID) {
+//   var receiverLog = JSON.parse(
+//     fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+//       if (err) {
+//         console.log(err);
+//         return res
+//           .status(500)
+//           .send('Server Error: Failed to read in receiver log file');
+//       }
+//       return data;
+//     })
+//   );
+//   if (receiverLog[receiverNum] !== undefined) {
+//     receiverLog[receiverNum] = SearchGUID;
+//   }
+//   fs.writeFile(
+//     'routes/api/receiverlog.json',
+//     JSON.stringify(receiverLog),
+//     err => {
+//       if (err) {
+//         console.log(err);
+//         return res
+//           .status(500)
+//           .send('Server Error: Failed to write to receiver log file');
+//       }
+//     }
+//   );
+// };
 
 //@route POST api/transcripts/:query_string
 //@descript Test
@@ -197,7 +197,24 @@ router.post('/query/:query_string', async (req, res) => {
   //Determine open receiver
 
   try {
-    var receiverNum = await findOpenReceiver();
+    var receiverLog = JSON.parse(
+      fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+        if (err) {
+          console.log(err);
+          return res
+            .status(500)
+            .send('Server Error: Failed to read in receiver log file');
+        }
+        return data;
+      })
+    );
+    var receiverNum = -1;
+    for (var i = 1; i <= 5; i++) {
+      if (receiverLog[i] === '') {
+        receiverNum = i;
+      }
+    }
+    //no open receivers
     if (receiverNum === -1) {
       return res.status(500).send('Server at Max Search Capacity');
     }
@@ -217,7 +234,21 @@ router.post('/query/:query_string', async (req, res) => {
     if (SSJSON.SavedSearch._attributes.SearchGUID) {
       SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
       //Close receiver
-      await closeReceiver(receiverNum, SavedSearchFields.SearchGUID);
+      if (receiverLog[receiverNum] !== undefined) {
+        receiverLog[receiverNum] = SearchGUID;
+      }
+      fs.writeFile(
+        'routes/api/receiverlog.json',
+        JSON.stringify(receiverLog),
+        err => {
+          if (err) {
+            console.log(err);
+            return res
+              .status(500)
+              .send('Server Error: Failed to write to receiver log file');
+          }
+        }
+      );
     }
     if (SSJSON.SavedSearch.SearchQuery._text) {
       SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text.replace(
