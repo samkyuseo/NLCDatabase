@@ -198,15 +198,19 @@ router.post('/query/:query_string', async (req, res) => {
 
   try {
     var receiverLog = JSON.parse(
-      fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
-        if (err) {
-          console.log(err);
-          return res
-            .status(500)
-            .send('Server Error: Failed to read in receiver log file');
+      await fs.readFileSync(
+        'routes/api/receiverlog.json',
+        'utf8',
+        (err, data) => {
+          if (err) {
+            console.log(err);
+            return res
+              .status(500)
+              .send('Server Error: Failed to read in receiver log file');
+          }
+          return data;
         }
-        return data;
-      })
+      )
     );
     var receiverNum = -1;
     for (var i = 1; i <= 5; i++) {
