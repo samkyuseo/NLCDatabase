@@ -185,39 +185,39 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     var deleteSavedSearchObj = await axios.post(
       `http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=remove&searchguid=${SearchGUID}`
     );
-    console.log('hello');
-    //code for signaling that receivers are open again.
-    var receiverLog = JSON.parse(
-      fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
-        if (err) {
-          //console.log(err);
-          return res
-            .status(500)
-            .send('Server Error: Failed to read in receiver log file');
-        }
-        return data;
-      })
-    );
 
-    console.log(receiverLog);
-    for (var i = 1; i <= 5; i++) {
-      if (receiverLog[i] === SearchGUID) {
-        receiverLog[i] = '';
-      }
-    }
-    console.log(receiverLog);
-    fs.writeFile(
-      'routes/api/receiverlog.json',
-      JSON.stringify(receiverLog),
-      err => {
-        if (err) {
-          //console.log(err);
-          return res
-            .status(500)
-            .send('Server Error: Failed to write to receiver log file');
-        }
-      }
-    );
+    // //code for signaling that receivers are open again.
+    // var receiverLog = JSON.parse(
+    //   fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+    //     if (err) {
+    //       //console.log(err);
+    //       return res
+    //         .status(500)
+    //         .send('Server Error: Failed to read in receiver log file');
+    //     }
+    //     return data;
+    //   })
+    // );
+
+    // console.log(receiverLog);
+    // for (var i = 1; i <= 5; i++) {
+    //   if (receiverLog[i] === SearchGUID) {
+    //     receiverLog[i] = '';
+    //   }
+    // }
+    // console.log(receiverLog);
+    // fs.writeFile(
+    //   'routes/api/receiverlog.json',
+    //   JSON.stringify(receiverLog),
+    //   err => {
+    //     if (err) {
+    //       //console.log(err);
+    //       return res
+    //         .status(500)
+    //         .send('Server Error: Failed to write to receiver log file');
+    //     }
+    //   }
+    // );
 
     //database clean up
     await Transcript.deleteMany({
