@@ -165,8 +165,11 @@ export const getSearchEntryById = entry_id => async dispatch => {
 
 //Delete search history
 export const deleteSearchHistory = id => async dispatch => {
+  console.log('hello');
   try {
+    console.log('hello1');
     const res = await axios.delete(`/api/profile/searchHistory/${id}`);
+    console.log('hello2');
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data

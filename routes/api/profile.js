@@ -181,7 +181,6 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     //delete from tveyes
     console.log('Remove index: ' + removeIndex);
     var SearchGUID = profile.searchHistory[removeIndex].SearchGUID;
-    //var SearchGUID = '5f39c702-96ec-42ab-82c6-5f23c1143e77';
 
     var deleteSavedSearchObj = await axios.post(
       `http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=remove&searchguid=${SearchGUID}`
@@ -192,7 +191,7 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     receivers = receivers[0];
     for (var i = 1; i <= 5; i++) {
       if (receivers[`${i}`] === SearchGUID) {
-        receivers[receiverNum] = '';
+        receivers[`${i}`] = '';
       }
     }
     await Receiver.replaceOne({ _id: '5dd77184940e95aa26335982' }, receivers);
@@ -206,7 +205,7 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     profile.searchHistory.splice(removeIndex, 1);
     await profile.save();
 
-    // res.json(profile);
+    res.json(profile);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
