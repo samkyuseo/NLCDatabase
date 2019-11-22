@@ -7,6 +7,7 @@ const Profile = require('../../models/Profile');
 const Transcript = require('../../models/Transcript');
 const User = require('../../models/User');
 const fs = require('fs');
+const Receiver = require('../../models/Receiver');
 
 //@route GET api/profile/me
 //@descript Get current user's profile
@@ -186,38 +187,15 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
       `http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=remove&searchguid=${SearchGUID}`
     );
 
-    // //code for signaling that receivers are open again.
-    // var receiverLog = JSON.parse(
-    //   fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
-    //     if (err) {
-    //       //console.log(err);
-    //       return res
-    //         .status(500)
-    //         .send('Server Error: Failed to read in receiver log file');
-    //     }
-    //     return data;
-    //   })
-    // );
-
-    // console.log(receiverLog);
-    // for (var i = 1; i <= 5; i++) {
-    //   if (receiverLog[i] === SearchGUID) {
-    //     receiverLog[i] = '';
-    //   }
-    // }
-    // console.log(receiverLog);
-    // fs.writeFile(
-    //   'routes/api/receiverlog.json',
-    //   JSON.stringify(receiverLog),
-    //   err => {
-    //     if (err) {
-    //       //console.log(err);
-    //       return res
-    //         .status(500)
-    //         .send('Server Error: Failed to write to receiver log file');
-    //     }
-    //   }
-    // );
+    //open up receiver again
+    var receivers = await Receiver.find();
+    receivers = receivers[0];
+    for (var i = 1; i <= 5; i++) {
+      if (receivers[`${i}`] === SearchGUID) {
+        receivers[receiverNum] = '';
+      }
+    }
+    await Receiver.replaceOne({ _id: '5dd77184940e95aa26335982' }, receivers);
 
     //database clean up
     await Transcript.deleteMany({
