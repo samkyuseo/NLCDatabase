@@ -17,6 +17,7 @@ const uuid = require('uuid/v1');
 
 const Transcript = require('../../models/Transcript');
 const SavedSearch = require('../../models/SavedSearch');
+const Receiver = require('../../models/Receiver');
 
 //credentials
 const config = require('config');
@@ -142,70 +143,81 @@ router.get('/findmatches/:query_string', async (req, res) => {
   }
 });
 
-//@descript Function for checking which receivers are currenlty open
-var findOpenReceiver = async function() {
-  var receiverLog = JSON.parse(
-    fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-        return res
-          .status(500)
-          .send('Server Error: Failed to read in receiver log file');
-      }
-      return data;
-    })
-  );
-  for (var i = 1; i <= 5; i++) {
-    if (receiverLog[i] === '') {
-      return i;
-    }
-  }
-  //no open receivers
-  return -1;
-};
+// //@descript Function for checking which receivers are currenlty open
+// var findOpenReceiver = async function() {
+//   var receiverLog = JSON.parse(
+//     fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+//       if (err) {
+//         console.log(err);
+//         return res
+//           .status(500)
+//           .send('Server Error: Failed to read in receiver log file');
+//       }
+//       return data;
+//     })
+//   );
+//   for (var i = 1; i <= 5; i++) {
+//     if (receiverLog[i] === '') {
+//       return i;
+//     }
+//   }
+//   //no open receivers
+//   return -1;
+// };
 
-//@descript Function for closing a receiver given a receiver number
-var closeReceiver = async function(receiverNum, SearchGUID) {
-  var receiverLog = JSON.parse(
-    fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-        return res
-          .status(500)
-          .send('Server Error: Failed to read in receiver log file');
-      }
-      return data;
-    })
-  );
-  if (receiverLog[receiverNum] !== undefined) {
-    receiverLog[receiverNum] = SearchGUID;
-  }
-  fs.writeFile(
-    'routes/api/receiverlog.json',
-    JSON.stringify(receiverLog),
-    err => {
-      if (err) {
-        console.log(err);
-        return res
-          .status(500)
-          .send('Server Error: Failed to write to receiver log file');
-      }
-    }
-  );
-};
+// //@descript Function for closing a receiver given a receiver number
+// var closeReceiver = async function(receiverNum, SearchGUID) {
+//   var receiverLog = JSON.parse(
+//     fs.readFileSync('routes/api/receiverlog.json', 'utf8', (err, data) => {
+//       if (err) {
+//         console.log(err);
+//         return res
+//           .status(500)
+//           .send('Server Error: Failed to read in receiver log file');
+//       }
+//       return data;
+//     })
+//   );
+//   if (receiverLog[receiverNum] !== undefined) {
+//     receiverLog[receiverNum] = SearchGUID;
+//   }
+//   fs.writeFile(
+//     'routes/api/receiverlog.json',
+//     JSON.stringify(receiverLog),
+//     err => {
+//       if (err) {
+//         console.log(err);
+//         return res
+//           .status(500)
+//           .send('Server Error: Failed to write to receiver log file');
+//       }
+//     }
+//   );
+// };
 
-//@route POST api/transcripts/:query_string
+//@route POST api/transcripts/query/:query_string
 //@descript Test
 //@access Public
 router.post('/query/:query_string', async (req, res) => {
   //Determine open receiver
   try {
-    //var receiverNum = findOpenReceiver();
-    var receiverNum = 1;
+    // var receiverNum = 1;
     //no open receivers
-    if (receiverNum === -1) {
+    //console.log('hi');
+    var receivers = await Receiver.find();
+    receivers = receivers[0];
+    var receiverFound = false;
+    for (var i = 1; i <= 5; i++) {
+      if (receivers[`${i}`] === '') {
+        receiverNum = i;
+        receiverFound = true;
+      }
+    }
+    if (!receiverFound) {
       return res.status(500).send('Server at Max Search Capacity');
     }
+    console.log(receiverNum);
+
     var SSXML = await axios.post(
       'http://mmsapi.tveyes.com/SavedSearch/savedsearchproxy.aspx?partnerID=20581&Action=add&searchquery=' +
         req.params.query_string +
@@ -213,16 +225,15 @@ router.post('/query/:query_string', async (req, res) => {
         '&destination=http://13.56.143.45:5000/api/transcripts/receiver' +
         receiverNum
     );
-    var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
 
+    //Parse XML results
+    var SSJSON = convert.xml2json(SSXML.data, { compact: true, spaces: 4 });
     SSJSON = JSON.parse(SSJSON).SavedSearchAPI;
 
+    //Created new saved search object
     SavedSearchFields = {};
-
     if (SSJSON.SavedSearch._attributes.SearchGUID) {
       SavedSearchFields.SearchGUID = SSJSON.SavedSearch._attributes.SearchGUID;
-      //Close receiver
-      //closeReceiver(receiverNum, SavedSearchFields.SearchGUID);
     }
     if (SSJSON.SavedSearch.SearchQuery._text) {
       SavedSearchFields.SearchQuery = SSJSON.SavedSearch.SearchQuery._text.replace(
@@ -230,6 +241,11 @@ router.post('/query/:query_string', async (req, res) => {
         ''
       );
     }
+    //Block receiver
+    receivers[`${receiverNum}`] = SavedSearchFields.SearchGUID;
+    await Receiver.replaceOne({ _id: '5dd77184940e95aa26335982' }, receivers);
+
+    //create date of search
     var date = new Date();
     SavedSearchFields.SearchDate =
       date.getFullYear() +
@@ -237,9 +253,12 @@ router.post('/query/:query_string', async (req, res) => {
       Number(Number(date.getMonth()) + 1) +
       ', ' +
       date.getDate();
+
     //Save saved search object
     savedSearch = new SavedSearch(SavedSearchFields);
     await savedSearch.save();
+
+    //return Saved Search Object
     return res.json(savedSearch);
   } catch (err) {
     console.error('ERROR MESSAGE: ' + err);
@@ -342,10 +361,6 @@ router.post('/receiver1', async (req, res) => {
       transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
         'amp;'
       ).join('');
-      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
-      //   'amp;',
-      //   ''
-      // );
       console.log(
         `Original ==> ${JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl}`
       );
