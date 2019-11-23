@@ -1024,7 +1024,7 @@ router.post('/receiver5', async (req, res) => {
 
 router.post('/receiver6', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER6***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -1175,7 +1175,7 @@ router.post('/receiver6', async (req, res) => {
 
 router.post('/receiver7', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER7***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -1325,7 +1325,7 @@ router.post('/receiver7', async (req, res) => {
 });
 router.post('/receiver8', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER8***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -1475,7 +1475,7 @@ router.post('/receiver8', async (req, res) => {
 });
 router.post('/receiver9', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER9***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -1625,7 +1625,7 @@ router.post('/receiver9', async (req, res) => {
 });
 router.post('/receiver10', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER10***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -1775,7 +1775,7 @@ router.post('/receiver10', async (req, res) => {
 });
 router.post('/receiver11', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER11***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -1925,7 +1925,7 @@ router.post('/receiver11', async (req, res) => {
 });
 router.post('/receiver12', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER12***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -2076,7 +2076,7 @@ router.post('/receiver12', async (req, res) => {
 
 router.post('/receiver13', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER13***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -2226,7 +2226,7 @@ router.post('/receiver13', async (req, res) => {
 });
 router.post('/receiver14', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER14***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
@@ -2376,7 +2376,7 @@ router.post('/receiver14', async (req, res) => {
 });
 router.post('/receiver15', async (req, res) => {
   try {
-    console.log('***COMING INTO RECEIVER5***');
+    console.log('***COMING INTO RECEIVER15***');
     // console.log('===req===');
     const UUID = uuid();
     // console.log('UUID: ' + UUID);
