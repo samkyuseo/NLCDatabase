@@ -207,7 +207,7 @@ router.post('/query/:query_string', async (req, res) => {
     var receivers = await Receiver.find();
     receivers = receivers[0];
     var receiverFound = false;
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= 15; i++) {
       if (receivers[`${i}`] === '') {
         receiverNum = i;
         receiverFound = true;
@@ -1021,4 +1021,1508 @@ router.post('/receiver5', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+router.post('/receiver6', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+router.post('/receiver7', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/receiver8', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/receiver9', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/receiver10', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/receiver11', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/receiver12', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+router.post('/receiver13', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/receiver14', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/receiver15', async (req, res) => {
+  try {
+    console.log('***COMING INTO RECEIVER5***');
+    // console.log('===req===');
+    const UUID = uuid();
+    // console.log('UUID: ' + UUID);
+    // console.log('HEADERS: ' + JSON.stringify(req.headers));
+
+    var XMLRes = req.body
+      .toString()
+      .replace('ï»¿', '')
+      .replace('\n', '')
+      .replace('\r', '');
+
+    JSONRes = fastXMLParser.parse(XMLRes);
+
+    // fs.writeFile(`Output${UUID}.txt`, XMLRes, err => {
+    //   // In case of a error throw err.
+    //   if (err) throw err;
+    // });
+
+    //console.log(JSON.stringify(JSONRes));
+    // return res.json(JSONRes);
+
+    //Extract data needed
+    const transcriptFields = {};
+    if (JSONRes.Message.Header.Source.SavedSearch.SearchQuery) {
+      transcriptFields.queryString = JSONRes.Message.Header.Source.SavedSearch.SearchQuery.replace(
+        ' Page.BroadcastMetadata.Market.Country:US',
+        ''
+      );
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo) {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .Program.LongTitle
+      ) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.Program.LongTitle;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule
+          .RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ExtendedProgramInfo.Schedule.RecordDateTime;
+      }
+    } else if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo) {
+      if (JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title) {
+        transcriptFields.programName =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.Title;
+      }
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime
+      ) {
+        transcriptFields.date =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ProgramInfo.RecordDateTime;
+      }
+    } else {
+      transcriptFields.programName = 'n/a';
+      transcriptFields.date = 'n/a';
+    }
+
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location) {
+      transcriptFields.state = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[1];
+      transcriptFields.city = JSONRes.Message.Body.Page.BroadcastMetadata.Station.Location.split(
+        ','
+      )[0];
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName) {
+      transcriptFields.station =
+        JSONRes.Message.Body.Page.BroadcastMetadata.Station.StationName;
+      if (
+        transcriptFields.station.includes('Radio') ||
+        transcriptFields.station.includes('radio')
+      ) {
+        //dont send if radio station
+        return res.json();
+      }
+    }
+    if (JSONRes.Message.Body.Excerpts.TranscriptExcerpt) {
+      transcriptFields.fullText =
+        JSONRes.Message.Body.Excerpts.TranscriptExcerpt;
+    }
+    if (JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl) {
+      transcriptFields.videoLink = JSONRes.Message.Body.Page.BroadcastMetadata.TranscriptUrl.split(
+        'amp;'
+      ).join('');
+      // transcriptFields.videoLink = transcriptFields.videoLink.replace(
+      //   'amp;',
+      //   ''
+      // );
+      console.log(transcriptFields.videoLink);
+    }
+    transcriptFields.viewership = 'n/a';
+    //figure out local viewership data
+    try {
+      if (
+        JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+          .LocalViewershipData.DMADemos
+      ) {
+        var obj =
+          JSONRes.Message.Body.Page.BroadcastMetadata.ViewershipData
+            .LocalViewershipData.DMADemos;
+        transcriptFields.viewership = 0;
+        Object.keys(obj).forEach(function(key) {
+          transcriptFields.viewership += obj[key];
+        });
+      }
+    } catch (error) {
+      transcriptFields.viewership = 'n/a';
+    }
+
+    transcriptFields.totalViewership = 'n/a';
+    //calculate Total Viewership
+    if (
+      transcriptFields.viewership !== 'n/a' &&
+      transcriptFields.programName !== 'n/a'
+    ) {
+      var samePrograms = await Transcript.find({
+        programName: transcriptFields.programName
+      });
+      var tViewerShip = 0;
+      samePrograms.forEach(function(item) {
+        if (item.viewership != 'n/a') {
+          tViewerShip += parseInt(item.viewership);
+        }
+      });
+
+      await Transcript.updateMany(
+        { programName: transcriptFields.programName },
+        { $set: { totalViewership: tViewerShip + transcriptFields.viewership } }
+      );
+      transcriptFields.totalViewership = tViewerShip;
+    }
+    // console.log(transcriptFields);
+    transcript = new Transcript(transcriptFields);
+    await transcript.save(function(err, book) {
+      if (err) return console.error(err.message);
+      // console.log('MONGO save success');
+      console.log(book.name + ' saved to bookstore collection.');
+    });
+    res.json(transcript);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 module.exports = router;

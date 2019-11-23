@@ -189,7 +189,7 @@ router.delete('/searchHistory/:hist_id', auth, async (req, res) => {
     //open up receiver again
     var receivers = await Receiver.find();
     receivers = receivers[0];
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= 15; i++) {
       if (receivers[`${i}`] === SearchGUID) {
         receivers[`${i}`] = '';
       }
