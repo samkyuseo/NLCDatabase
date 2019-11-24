@@ -55,11 +55,7 @@ const App = () => {
                 path='/edit-profile'
                 component={EditProfile}
               />
-              <PrivateRoute
-                exact
-                path='/search'
-                component={props => <Search {...props} />}
-              />
+              <PrivateRoute exact path='/search' component={Search} />
               <PrivateRoute
                 exact
                 path='/transcripts/:id'

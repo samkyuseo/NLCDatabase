@@ -30,6 +30,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         searchString: null,
+        savedSearch: null,
         transcripts: [],
         loading: false
       };

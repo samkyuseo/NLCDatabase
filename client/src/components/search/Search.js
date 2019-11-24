@@ -18,6 +18,7 @@ const Search = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
+    clearSearch();
   }, [getCurrentProfile, clearSearch]);
   // {
   //   window.onload = function() {
