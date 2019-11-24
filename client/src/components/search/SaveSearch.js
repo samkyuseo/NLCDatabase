@@ -2,12 +2,13 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addSearchHistory } from '../../actions/profile';
-import { createSavedSearch } from '../../actions/search';
+import { createSavedSearch, clearSearch } from '../../actions/search';
 
 const SaveSearch = ({
   addSearchHistory,
   savedSearch: { SearchGUID, SearchQuery, SearchDate },
-  searchString
+  searchString,
+  clearSearch
 }) => {
   useEffect(() => {
     if (searchString !== null) {
@@ -17,7 +18,8 @@ const SaveSearch = ({
         SearchGUID: SearchGUID
       });
     }
-  }, [addSearchHistory]);
+    clearSearch();
+  }, [addSearchHistory, clearSearch]);
 
   return (
     <div>
@@ -30,6 +32,7 @@ const SaveSearch = ({
 
 SaveSearch.propTypes = {
   addSearchHistory: PropTypes.func.isRequired,
+  clearSearch: PropTypes.func.isRequired,
   searchString: PropTypes.object.isRequired,
   transcripts: PropTypes.array.isRequired,
   savedSearch: PropTypes.object.isRequired
@@ -41,4 +44,6 @@ const mapStateToProps = state => ({
   savedSearch: state.search.savedSearch
 });
 
-export default connect(mapStateToProps, { addSearchHistory })(SaveSearch);
+export default connect(mapStateToProps, { addSearchHistory, clearSearch })(
+  SaveSearch
+);
