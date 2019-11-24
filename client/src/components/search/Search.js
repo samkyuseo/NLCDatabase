@@ -18,6 +18,7 @@ const Search = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
+    clearSearch();
   }, [getCurrentProfile, clearSearch]);
 
   return loading && profile === null ? (
