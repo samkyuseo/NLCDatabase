@@ -13,7 +13,7 @@ const SearchBar = ({ searchTranscripts, createSavedSearch, searchString }) => {
         onSubmit={e => {
           e.preventDefault();
           //searchTranscripts(text);
-          createSavedSearch(text);
+          //createSavedSearch(text);
         }}
       >
         <div className='form-group'>
@@ -22,13 +22,18 @@ const SearchBar = ({ searchTranscripts, createSavedSearch, searchString }) => {
             value={text}
             type='text'
             placeholder={
-              searchString === null ? 'Enter Search Terms' : searchString
+              // searchString === null ? 'Enter Search Terms' : searchString
+              'Enter Search Terms'
             }
             onChange={e => setText(e.target.value)}
             required
           />
         </div>
-        <input type='submit' value='Search' className='btn btn-primary' />
+        <input
+          type='submit'
+          value='Create a Saved Search'
+          className='btn btn-primary'
+        />
       </form>
     </div>
   );
@@ -43,10 +48,10 @@ const mapStateToProps = state => ({
   searchString: state.search.searchString
 });
 
-export default connect(
-  mapStateToProps,
-  { searchTranscripts, createSavedSearch }
-)(SearchBar);
+export default connect(mapStateToProps, {
+  searchTranscripts,
+  createSavedSearch
+})(SearchBar);
 
 // import React, { Fragment, useState } from 'react';
 // import { Link, withRouter } from 'react-router-dom';

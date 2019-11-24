@@ -2,16 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addSearchHistory } from '../../actions/profile';
+import { createSavedSearch } from '../../actions/search';
 
 const SaveSearch = ({
   addSearchHistory,
-  savedSearch: { SearchGUID, SearchQuery, SearchDate }
+  savedSearch: { SearchGUID, SearchQuery, SearchDate },
+  searchString
 }) => {
   return (
     <div>
       <button
         className='btn btn-danger'
         onClick={() => {
+          createSavedSearch(searchString);
           console.log(SearchGUID);
           addSearchHistory({
             SearchQuery: SearchQuery,
@@ -39,7 +42,4 @@ const mapStateToProps = state => ({
   savedSearch: state.search.savedSearch
 });
 
-export default connect(
-  mapStateToProps,
-  { addSearchHistory }
-)(SaveSearch);
+export default connect(mapStateToProps, { addSearchHistory })(SaveSearch);
