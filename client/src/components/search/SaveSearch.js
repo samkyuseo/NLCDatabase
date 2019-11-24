@@ -10,11 +10,13 @@ const SaveSearch = ({
   searchString
 }) => {
   useEffect(() => {
-    addSearchHistory({
-      SearchQuery: SearchQuery,
-      SearchDate: SearchDate,
-      SearchGUID: SearchGUID
-    });
+    if (searchString !== null) {
+      addSearchHistory({
+        SearchQuery: SearchQuery,
+        SearchDate: SearchDate,
+        SearchGUID: SearchGUID
+      });
+    }
   }, [addSearchHistory]);
 
   return (
