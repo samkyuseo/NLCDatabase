@@ -19,19 +19,9 @@ const SaveSearch = ({
 
   return (
     <div>
-      <button
-        className='btn btn-danger'
-        onLoad={() => {
-          console.log(SearchGUID);
-          addSearchHistory({
-            SearchQuery: SearchQuery,
-            SearchDate: SearchDate,
-            SearchGUID: SearchGUID
-          });
-        }}
-      >
-        Save this search
-      </button>
+      <p className='lead'>
+        Your search was made and added to your search history!
+      </p>
     </div>
   );
 };
