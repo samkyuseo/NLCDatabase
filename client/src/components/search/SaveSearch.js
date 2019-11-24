@@ -9,6 +9,14 @@ const SaveSearch = ({
   savedSearch: { SearchGUID, SearchQuery, SearchDate },
   searchString
 }) => {
+  useEffect(() => {
+    addSearchHistory({
+      SearchQuery: SearchQuery,
+      SearchDate: SearchDate,
+      SearchGUID: SearchGUID
+    });
+  }, [addSearchHistory]);
+
   return (
     <div>
       <button
