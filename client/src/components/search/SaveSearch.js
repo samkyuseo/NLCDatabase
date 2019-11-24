@@ -10,7 +10,8 @@ const SaveSearch = ({
   searchString,
   clearSearch
 }) => {
-  useEffect(() => {
+  useEffect(() => {}, [addSearchHistory, clearSearch]);
+  {
     if (searchString !== null) {
       addSearchHistory({
         SearchQuery: SearchQuery,
@@ -19,7 +20,7 @@ const SaveSearch = ({
       });
     }
     clearSearch();
-  }, [addSearchHistory, clearSearch]);
+  }
 
   return (
     <div>
