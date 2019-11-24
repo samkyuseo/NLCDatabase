@@ -10,10 +10,10 @@ const SavedSearchItem = ({
   <div class='post bg-white p-1 my-1'>
     <div>
       <p className='text-primary'>Query: {SearchQuery}</p>
-      {/* <p className='post-date'>SearchGUID: {SearchGUID}</p> */}
-      {/* <p class='post-date'>
+      <p className='post-date'>SearchGUID: {SearchGUID}</p>
+      <p class='post-date'>
         Published: <Moment format='YYYY/MM/DD'>{SearchDate}</Moment>
-      </p> */}
+      </p>
     </div>
   </div>
 );

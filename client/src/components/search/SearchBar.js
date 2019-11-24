@@ -13,7 +13,7 @@ const SearchBar = ({ searchTranscripts, createSavedSearch, searchString }) => {
         onSubmit={e => {
           e.preventDefault();
           //searchTranscripts(text);
-          //createSavedSearch(text);
+          createSavedSearch(text);
         }}
       >
         <div className='form-group'>
