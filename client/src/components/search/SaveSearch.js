@@ -14,7 +14,6 @@ const SaveSearch = ({
       <button
         className='btn btn-danger'
         onClick={() => {
-          createSavedSearch(searchString);
           console.log(SearchGUID);
           addSearchHistory({
             SearchQuery: SearchQuery,

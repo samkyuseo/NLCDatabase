@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { searchTranscripts, createSavedSearch } from '../../actions/search';
+import { addSearchHistory } from '../../actions/profile';
 
-const SearchBar = ({ searchTranscripts, createSavedSearch, searchString }) => {
+const SearchBar = ({
+  searchTranscripts,
+  addSearchHistory,
+  createSavedSearch,
+  searchString,
+  savedSearch: { SearchGUID, SearchQuery, SearchDate }
+}) => {
   const [text, setText] = useState('');
 
   return (
@@ -14,6 +21,11 @@ const SearchBar = ({ searchTranscripts, createSavedSearch, searchString }) => {
           e.preventDefault();
           //searchTranscripts(text);
           createSavedSearch(text);
+          addSearchHistory({
+            SearchQuery: SearchQuery,
+            SearchDate: SearchDate,
+            SearchGUID: SearchGUID
+          });
         }}
       >
         <div className='form-group'>
@@ -41,7 +53,9 @@ const SearchBar = ({ searchTranscripts, createSavedSearch, searchString }) => {
 
 SearchBar.propTypes = {
   searchTranscripts: PropTypes.func.isRequired,
-  createSavedSearch: PropTypes.func.isRequired
+  createSavedSearch: PropTypes.func.isRequired,
+  savedSearch: PropTypes.object.isRequired,
+  addSearchHistory: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -50,7 +64,8 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   searchTranscripts,
-  createSavedSearch
+  createSavedSearch,
+  addSearchHistory
 })(SearchBar);
 
 // import React, { Fragment, useState } from 'react';

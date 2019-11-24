@@ -24,7 +24,7 @@ const Search = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Create Saved Search</h1>
+      <h1 className='large text-primary'>Create a Saved Search</h1>
 
       {profile !== null ? (
         <Fragment>
@@ -32,7 +32,7 @@ const Search = ({
           {searchString === null ? (
             <Fragment>
               {' '}
-              <p className='lead'>Enter search terms to make a query!</p>
+              <p className='lead'>Enter to make a Saved Search</p>
             </Fragment>
           ) : search.loading ? (
             <Spinner />
@@ -71,10 +71,11 @@ const mapStateToProps = state => ({
   profile: state.profile //this prop type is here to check if the user has a profile.
 });
 
-export default connect(
-  mapStateToProps,
-  { getCurrentProfile, clearSearch, addSearchHistory }
-)(Search);
+export default connect(mapStateToProps, {
+  getCurrentProfile,
+  clearSearch,
+  addSearchHistory
+})(Search);
 
 // import React, { Fragment, useEffect } from 'react'; //allows us to call get current profile as soon as it loads
 // import { Link } from 'react-router-dom';
