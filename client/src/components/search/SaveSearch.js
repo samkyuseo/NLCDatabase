@@ -13,7 +13,7 @@ const SaveSearch = ({
     <div>
       <button
         className='btn btn-danger'
-        onClick={() => {
+        onLoad={() => {
           console.log(SearchGUID);
           addSearchHistory({
             SearchQuery: SearchQuery,
