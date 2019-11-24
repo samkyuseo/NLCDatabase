@@ -9,7 +9,7 @@ const SearchBar = ({
   addSearchHistory,
   createSavedSearch,
   searchString,
-  savedSearch: { SearchGUID, SearchQuery, SearchDate }
+  savedSearch
 }) => {
   const [text, setText] = useState('');
 
@@ -22,9 +22,9 @@ const SearchBar = ({
           //searchTranscripts(text);
           createSavedSearch(text);
           addSearchHistory({
-            SearchQuery: SearchQuery,
-            SearchDate: SearchDate,
-            SearchGUID: SearchGUID
+            SearchQuery: savedSearch.SearchQuery,
+            SearchDate: savedSearch.SearchDate,
+            SearchGUID: savedSearch.SearchGUID
           });
         }}
       >
@@ -59,7 +59,8 @@ SearchBar.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  searchString: state.search.searchString
+  searchString: state.search.searchString,
+  savedSearch: state.search.savedSearch
 });
 
 export default connect(mapStateToProps, {
