@@ -17,9 +17,8 @@ const Search = ({
   search: { searchString, transcripts, savedSearch }
 }) => {
   useEffect(() => {
-    window.location.reload();
     getCurrentProfile();
-    clearSearch();
+    // clearSearch();
   }, [getCurrentProfile, clearSearch]);
 
   return loading && profile === null ? (
