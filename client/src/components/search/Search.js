@@ -19,22 +19,21 @@ const Search = ({
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile, clearSearch]);
-
+  // {
+  //   window.onload = function() {
+  //     //considering there aren't any hashes in the urls already
+  //     if (!window.location.hash) {
+  //       //setting window location
+  //       window.location = window.location + '#loaded';
+  //       //using reload() method to reload web page
+  //       window.location.reload();
+  //     }
+  //   };
+  // }
   return loading && profile === null ? (
     <Spinner />
   ) : (
     <Fragment>
-      {
-        (window.onload = function() {
-          //considering there aren't any hashes in the urls already
-          if (!window.location.hash) {
-            //setting window location
-            window.location = window.location + '#loaded';
-            //using reload() method to reload web page
-            window.location.reload();
-          }
-        })
-      }
       <h1 className='large text-primary'>Create a Saved Search</h1>
       {profile !== null ? (
         <Fragment>
